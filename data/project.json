@@ -1,0 +1,578 @@
+{
+  "platform": {
+    "name": "MilcharSec",
+    "description": "An interactive web-based cybersecurity learning and awareness platform designed specifically to help non-technical users understand, recognize, and respond to common cybersecurity threats.",
+    "target_audience": [
+      "Non-technical employees",
+      "Students",
+      "Beginners",
+      "Individuals seeking to improve digital and workplace cybersecurity awareness"
+    ],
+    "learning_philosophy": {
+      "cycle_formula": "Learn -> Practice -> Assess -> Track -> Improve",
+      "cycle_steps": [
+        "Learn",
+        "Practice",
+        "Analyze",
+        "Quiz",
+        "Assess",
+        "Track Progress",
+        "Improve"
+      ]
+    },
+    "learning_workflow": [
+      "User Registration/Login",
+      "User Dashboard",
+      "Select or Continue Learning Module",
+      "Interactive Lesson Content",
+      "Use Related Cybersecurity Tool",
+      "Complete Practical Exercise or Scenario",
+      "Attempt Quiz",
+      "Receive Score and Feedback",
+      "Update Progress and Awareness Score",
+      "Identify Weak Areas",
+      "Recommend Next Module"
+    ]
+  },
+  "tracks": [
+    {
+      "id": "track-01",
+      "title": "Digital Security Basics",
+      "description": "A complete eight-module learning path covering cybersecurity fundamentals, account security, phishing, safe browsing, data privacy, mobile & remote work, incident reporting, and business email security.",
+      "module_ids": [
+        "module-01",
+        "module-02",
+        "module-03",
+        "module-04",
+        "module-05",
+        "module-06",
+        "module-07",
+        "module-08"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "module-01",
+      "title": "Cybersecurity Fundamentals",
+      "why_this_matters": "Cybersecurity is not only the responsibility of an IT or security team. Everyday actions—opening an email, choosing a password, sharing a file, connecting a device, or clicking a link—can either reduce risk or create an opportunity for an attacker.",
+      "study_time_minutes": null,
+      "topics": [
+        "What is cybersecurity?",
+        "Why cybersecurity is important",
+        "Common cyber threats",
+        "Malware basics",
+        "Viruses and ransomware",
+        "Social engineering",
+        "Personal and organizational assets",
+        "Confidentiality, Integrity and Availability",
+        "Basic cybersecurity practices",
+        "Human role in cybersecurity"
+      ],
+      "learning_outcome": "After completing this module, users should understand the purpose of cybersecurity and recognize common digital threats.",
+      "interactive_activity": "CIA Triad Challenge (Scenario-based analysis of email data sharing, grade manipulation, and server availability)",
+      "practical_scenarios": [
+        "Scenario: Ali accidentally sends a confidential customer spreadsheet to the wrong external email address (Confidentiality impact)",
+        "Scenario: Someone secretly changes student grades inside a database (Integrity impact)",
+        "Scenario: Server becomes unavailable and employees cannot access a spreadsheet (Availability impact)",
+        "Scenario: Financial bank detail change request from regular supplier (Fake Invoice Scenario)"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 5,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-02",
+      "title": "Password & Account Security",
+      "why_this_matters": "Your online accounts are often the gateway to your personal information, academic records, communications, files, and other digital resources. An attacker does not always need to break into a complicated system. Sometimes, obtaining or guessing a user's password is enough.",
+      "study_time_minutes": null,
+      "topics": [
+        "Strong and weak passwords",
+        "Password length and complexity",
+        "Password reuse",
+        "Common password mistakes",
+        "Password managers",
+        "Multi-Factor Authentication",
+        "Account takeover",
+        "Credential theft",
+        "Password reset scams",
+        "Protecting important accounts"
+      ],
+      "learning_outcome": "Users should understand how to create and maintain stronger and more secure accounts.",
+      "interactive_activity": "Password Strength Checker exploration and Build a Better Account simulation",
+      "practical_scenarios": [
+        "Scenario: Phone alert requesting verification code after unexpected IT call",
+        "Scenario: Spotting warning signs in a high-urgency account deletion notification",
+        "Scenario: Investigating a login notification alert from an unfamiliar, unrecognized device"
+      ],
+      "tool_ids": [
+        "tool-01"
+      ],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-03",
+      "title": "Phishing & Social Engineering",
+      "why_this_matters": "Attackers do not always need to break through sophisticated technical defenses. Sometimes, they try to manipulate people into making the security mistake for them.",
+      "study_time_minutes": null,
+      "topics": [
+        "What is phishing?",
+        "Email phishing",
+        "Smishing",
+        "Vishing",
+        "Social engineering",
+        "Urgency and fear tactics",
+        "Authority impersonation",
+        "Fake login pages",
+        "Suspicious links",
+        "Suspicious attachments",
+        "How to verify suspicious communication"
+      ],
+      "learning_outcome": "Users should be able to recognize common phishing and social-engineering indicators.",
+      "interactive_activity": "Spot the Phish simulated email analysis & Phishing and Message Checker text testing",
+      "practical_scenarios": [
+        "Scenario: Student account suspension warning email asking for password/MFA within 15 minutes",
+        "Scenario: Direct message claiming bank closure unless link clicked immediately",
+        "Scenario: Voice call claiming suspicious account activity and requesting OTP",
+        "Scenario: Director requesting urgent confidential report bypass procedures"
+      ],
+      "tool_ids": [
+        "tool-02",
+        "tool-03"
+      ],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-04",
+      "title": "Safe Browsing & Device Hygiene",
+      "why_this_matters": "Your browser and devices are constantly connected to the digital world. Every day, you may visit websites, download files, install applications, open documents, connect to Wi-Fi, log into accounts, receive notifications, and update software. These everyday activities can introduce security risks when performed without enough caution.",
+      "study_time_minutes": null,
+      "topics": [
+        "Safe browsing practices",
+        "HTTPS and website awareness",
+        "Suspicious websites",
+        "Fake websites",
+        "Unsafe downloads",
+        "Browser security",
+        "Software updates",
+        "Operating system updates",
+        "Malware prevention",
+        "Application security",
+        "Basic device protection"
+      ],
+      "learning_outcome": "Users should be able to recognize potentially suspicious websites and maintain better device security practices.",
+      "interactive_activity": "Website Investigation scenario and URL Safety Checker domain analysis",
+      "practical_scenarios": [
+        "Scenario: Selecting video-editing software from official developer vs. premium-unlocked random site",
+        "Scenario: Analyzing a look-alike domain university-login-example.com for credentials risk",
+        "Scenario: Facing a pop-up alert warning of 12 device viruses requesting software installation",
+        "Scenario: Applying operating system settings update alert vs. random download updater site"
+      ],
+      "tool_ids": [
+        "tool-03"
+      ],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-05",
+      "title": "Data Handling & Privacy at Work",
+      "why_this_matters": "Information is one of the most valuable assets in an organization. Everyday work involves customer information, student records, financial files, internal communications, passwords, and contracts. A security incident does not always require malware or hacking. Accidentally sending the right information to the wrong person can also become a serious security and privacy incident.",
+      "study_time_minutes": null,
+      "topics": [
+        "Sensitive information",
+        "Personal data",
+        "Confidential business information",
+        "Data classification concepts",
+        "Safe data sharing",
+        "Cloud storage awareness",
+        "Unauthorized disclosure",
+        "Data leakage",
+        "Privacy",
+        "Secure handling of organizational information",
+        "Sharing information with the correct recipient"
+      ],
+      "learning_outcome": "Users should understand how improper handling of data can create cybersecurity and privacy risks.",
+      "interactive_activity": "Choose the Correct Data Classification challenge and Wrong Recipient simulation",
+      "practical_scenarios": [
+        "Scenario: Sending a customer spreadsheet to accounting@example.net instead of accounts@example.com (Wrong Recipient)",
+        "Scenario: Accidentally selecting Reply All to a group email with confidential details attached",
+        "Scenario: Managing sharing configuration on a folder of confidential files set to 'Anyone with the link can view'",
+        "Scenario: Handling a colleague's/friend's unauthorized request to view confidential records out of curiosity"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-06",
+      "title": "Mobile & Remote Work Security",
+      "why_this_matters": "Cybersecurity does not stop when you leave the office. Today, people access organizational systems from smartphones, tablets, laptops, home networks, and public Wi-Fi. Working outside a traditional office can create additional risks because devices may be lost, stolen, connected to unfamiliar networks, or used around other people.",
+      "study_time_minutes": null,
+      "topics": [
+        "Mobile device security",
+        "Screen locking",
+        "Application permissions",
+        "Software updates",
+        "Public Wi-Fi awareness",
+        "Remote work security",
+        "Laptop security",
+        "Lost or stolen devices",
+        "Secure access practices",
+        "Physical device protection",
+        "Working safely outside the office"
+      ],
+      "learning_outcome": "Users should understand how to maintain cybersecurity while using mobile devices or working remotely.",
+      "interactive_activity": "H.O.M.E. and D.E.V.I.C.E. routine mapping challenges & Permission evaluation",
+      "practical_scenarios": [
+        "Scenario: Evaluating permissions (mic, location, camera, contacts) requested by simple flashlight app",
+        "Scenario: Connecting to faked or unverified public Wi-Fi networks in hotels/cafes (Hotel_Guest_WiFi)",
+        "Scenario: Shoulder surfing threats in crowded cafes during confidential doc access",
+        "Scenario: Handling unlocked laptop in public space while stepping away to order coffee",
+        "Scenario: Immediate reporting process when a corporate laptop containing sensitive credentials goes missing"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-07",
+      "title": "Security Incident Recognition & Reporting",
+      "why_this_matters": "Not every cybersecurity problem requires a technical expert. A normal employee, student, or user may be the first person to notice something unusual. Recognizing warning signs early and reporting them correctly can help an organization respond before the situation becomes more serious. The goal of this module is not to turn non-technical users into forensic investigators.",
+      "study_time_minutes": null,
+      "topics": [
+        "What is a security incident?",
+        "Suspicious login activity",
+        "Possible account compromise",
+        "Lost or stolen devices",
+        "Accidental data exposure",
+        "Malware warnings",
+        "Unexpected password changes",
+        "Suspicious files",
+        "Unauthorized access indicators",
+        "When to report an incident",
+        "What information should be included in a report"
+      ],
+      "learning_outcome": "Users should understand when a cybersecurity issue may require reporting and what their role should be during an incident.",
+      "interactive_activity": "Incident Report Assistant reporting simulation & Incident recognition exercises",
+      "practical_scenarios": [
+        "Scenario: Differentiating normal events (expiring password prompt) from incidents (unsolicited password change confirmation)",
+        "Scenario: Handling unexpected account password resets and spam MFA push notification requests",
+        "Scenario: Reacting appropriately to malware detection alerts without attempting manual fixes or security software deactivation",
+        "Scenario: Creating a high-signal report (What, When, Where, Who, How, Actions taken) rather than guess-based reports"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-08",
+      "title": "Email & Business Communication Security",
+      "why_this_matters": "Email is one of the most important communication tools used by organizations. Because email is so widely used, attackers often target it. A malicious email may attempt to steal credentials, deliver malware, redirect payments, obtain confidential information, or impersonate an executive.",
+      "study_time_minutes": null,
+      "topics": [
+        "Business email security",
+        "Suspicious attachments",
+        "Suspicious links",
+        "Fake invoices",
+        "Executive impersonation",
+        "Business Email Compromise concepts",
+        "Sender verification",
+        "Payment or bank-detail change requests",
+        "Safe use of CC and BCC",
+        "Misaddressed emails",
+        "Secure communication practices",
+        "Reporting suspicious business emails"
+      ],
+      "learning_outcome": "Users should understand how to communicate securely and identify common email-based business threats.",
+      "interactive_activity": "Email Verification domain inspections & Red Flags detection simulated challenges",
+      "practical_scenarios": [
+        "Scenario: Unexpected attachment from look-alike email claiming to be your manager sending a PDF",
+        "Scenario: Supplier invoice received requesting bank routing modifications (Fake Invoice check)",
+        "Scenario: Executive impersonation (CEO) request to purchase gift cards urgently while in a busy meeting",
+        "Scenario: Detecting look-alike domains (company-example.com vs company-examp1e.com)",
+        "Scenario: Evaluating the security risks and access control limits of CC and BCC fields"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    }
+  ],
+  "tools": [
+    {
+      "id": "tool-01",
+      "name": "Password Strength Checker",
+      "type": "Interactive Analyzer",
+      "description": "Users can test password strength and receive detailed educational feedback explaining factors such as length, repeated patterns, predictability, and complexity without permanently storing any entries.",
+      "inputs_required": [
+        "password"
+      ],
+      "outputs_provided": {
+        "strength_level": [
+          "Weak",
+          "Moderate",
+          "Strong",
+          "Very Strong"
+        ],
+        "weaknesses_identified": "Array of specific layout issues found",
+        "improvement_recommendations": "Array of actionable modification tips",
+        "educational_explanation": "Explanation of password entropy principles"
+      },
+      "privacy_rules": [
+        "The system should not permanently store user passwords.",
+        "Checker should evaluate the password locally or process it temporarily without retaining original values.",
+        "Instruct users to enter fictional test passwords (e.g., Training-Example-Only-2026!), never real passwords."
+      ],
+      "related_modules": [
+        "module-02"
+      ]
+    },
+    {
+      "id": "tool-02",
+      "name": "Phishing & Message Checker",
+      "type": "Text Content Parser",
+      "description": "Users enter or paste a suspicious message, email content, or SMS. The tool evaluates potential phishing or social engineering indicators to output risk insights and recommendations.",
+      "inputs_required": [
+        "message_text"
+      ],
+      "outputs_provided": {
+        "risk_level": [
+          "Low Risk",
+          "Medium Risk",
+          "High Risk"
+        ],
+        "detected_indicators": "Array of flagged techniques (e.g., urgent language, sensitive requests, impersonation, suspicious links, threat/fear, social engineering)",
+        "explanation": "Detailed rationale on why the context triggered specific indicators",
+        "recommended_safe_action": "Clear guidance on how to safely respond to or report the message"
+      },
+      "privacy_rules": [
+        "Users must not paste real passwords, MFA codes, banking details, or other sensitive personal info.",
+        "Fictional or sanitized examples must be used for training."
+      ],
+      "related_modules": [
+        "module-03"
+      ]
+    },
+    {
+      "id": "tool-03",
+      "name": "URL Safety Checker",
+      "type": "Domain structure Inspector",
+      "description": "Analyzes an entered website address to inspect structural indicators of suspicion (such as protocol usage, domain layout, subdomains, IP usage, keywords, and look-alike domains) and return an educational assessment.",
+      "inputs_required": [
+        "url_string"
+      ],
+      "outputs_provided": {
+        "risk_level": [
+          "Low Risk",
+          "Medium Risk",
+          "High Risk"
+        ],
+        "detected_indicators": "Array of flagged structure traits (HTTPS usage, suspicious URL structure, IP-address-based URL, excessive or misleading subdomains, suspicious keywords, look-alike patterns)",
+        "educational_assessment": "Explanation of URL components and common hijacking methods",
+        "recommended_action": "Clear verification guidelines"
+      },
+      "privacy_rules": [
+        "Do not enter passwords, MFA codes, private account info, confidential URLs, or sensitive organizational information."
+      ],
+      "related_modules": [
+        "module-03",
+        "module-04"
+      ]
+    },
+    {
+      "id": "tool-04",
+      "name": "Cybersecurity Quick Check",
+      "type": "Self-Assessment Diagnostic",
+      "description": "A platform-wide cybersecurity awareness diagnostic tool. Users answer targeted habit and awareness questions to evaluate their security habits and identify overall training recommendations.",
+      "inputs_required": [
+        "habit_questions_responses"
+      ],
+      "outputs_provided": {
+        "overall_progress_percentage": "Computed percentage of completion",
+        "cybersecurity_awareness_score": "Dynamic score out of 100",
+        "weak_areas_identified": "Array of low-performing categories",
+        "recommended_modules": "List of learning modules mapped to weak categories"
+      },
+      "privacy_rules": [],
+      "related_modules": []
+    }
+  ],
+  "assessment": {
+    "module_structure": {
+      "steps": [
+        "Lesson Content",
+        "Interactive Activity",
+        "Mini Quiz",
+        "Scenario-Based Question",
+        "Module Score"
+      ]
+    },
+    "quiz_rules": {
+      "questions_per_module": {
+        "min": 5,
+        "max": 10
+      },
+      "types_of_questions": [
+        "Multiple-choice questions",
+        "Scenario-based questions",
+        "Identify suspicious behavior",
+        "Identify safe behavior",
+        "Match threats with appropriate responses",
+        "Decision-based security scenarios"
+      ]
+    },
+    "scoring_rules": {
+      "components": [
+        "Module completion percentage",
+        "Quiz scores",
+        "Practical scenario scores",
+        "Tool-based activity",
+        "Cybersecurity awareness score",
+        "Overall progress"
+      ],
+      "awareness_score_range": {
+        "min": 0,
+        "max": 100
+      },
+      "example_categories_benchmarks": {
+        "Password & Account Security": 85,
+        "Phishing Awareness": 62,
+        "Safe Browsing": 78,
+        "Data Handling & Privacy": 70,
+        "Mobile Security": 81,
+        "Incident Recognition": 55
+      }
+    },
+    "weak_area_identification": {
+      "rules": "Analyse user quiz and scenario results under each category. Any category displaying a score below the benchmark or significantly below other categories triggers weak-area status.",
+      "minimum_threshold": null
+    },
+    "recommendations": {
+      "trigger_basis": "Weak-area status triggers an automated targeted suggestion pointing to corresponding corrective content."
+    }
+  },
+  "dashboard": {
+    "requirements": {
+      "metrics": [
+        "Overall Cybersecurity Awareness Score",
+        "Modules Completed Count (e.g. 5/8)",
+        "Overall Progress Percentage (e.g. 62%)",
+        "Current Module (bookmark to resume)",
+        "Strongest Area Identification",
+        "Weak Areas / Areas for Improvement",
+        "Recommended Next Module",
+        "Recent Activity Feed"
+      ]
+    }
+  },
+  "recommendation_system": {
+    "relationships": [
+      {
+        "category_id": "password_account_security",
+        "category_name": "Password & Account Security",
+        "related_module_id": "module-02",
+        "related_tool_ids": [
+          "tool-01"
+        ],
+        "remediation_activity": "practical password scenarios and checker tool exercises"
+      },
+      {
+        "category_id": "phishing_awareness",
+        "category_name": "Phishing Awareness",
+        "related_module_id": "module-03",
+        "related_tool_ids": [
+          "tool-02",
+          "tool-03"
+        ],
+        "remediation_activity": "phishing check scenarios and email analysis"
+      },
+      {
+        "category_id": "safe_browsing",
+        "category_name": "Safe Browsing",
+        "related_module_id": "module-04",
+        "related_tool_ids": [
+          "tool-03"
+        ],
+        "remediation_activity": "website safety scenarios and URL safety checker exercises"
+      },
+      {
+        "category_id": "data_handling_privacy",
+        "category_name": "Data Handling & Privacy",
+        "related_module_id": "module-05",
+        "related_tool_ids": [],
+        "remediation_activity": "data classification tasks and cloud sharing scenarios"
+      },
+      {
+        "category_id": "mobile_security",
+        "category_name": "Mobile Security",
+        "related_module_id": "module-06",
+        "related_tool_ids": [],
+        "remediation_activity": "remote workspace and permissions challenge scenarios"
+      },
+      {
+        "category_id": "incident_recognition",
+        "category_name": "Incident Recognition",
+        "related_module_id": "module-07",
+        "related_tool_ids": [],
+        "remediation_activity": "5-step incident process scenarios and reporter assistant activities"
+      },
+      {
+        "category_id": "email_business_communication",
+        "category_name": "Email & Business Communication",
+        "related_module_id": "module-08",
+        "related_tool_ids": [],
+        "remediation_activity": "BEC scenarios and email red-flag detection tasks"
+      }
+    ]
+  }
+}
