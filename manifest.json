@@ -1,13 +1,22 @@
 {
-  "background_color": "#080a5b",
-  "dir": "ltr",
-  "display": "standalone",
-  "name": "milchar-sec.vercel",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "milchar-sec.vercel",
-  "start_url": "/",
-  "theme_color": "#0a1535",
+  "name": "MilcharSec - Cybersecurity Learning",
+  "short_name": "MilcharSec",
   "id": "com.milcharsec.app",
-  "description": "A role-based cybersecurity learning and awareness platform."
+  "description": "A role-based cybersecurity learning and awareness platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080A5B",
+  "theme_color": "#0A1535",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }
