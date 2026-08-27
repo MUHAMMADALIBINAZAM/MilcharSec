@@ -1,0 +1,204 @@
+{
+  "moduleMetadata": {
+    "id": "module-01",
+    "title": "Cybersecurity Fundamentals",
+    "description": "An introduction to the core concepts of cybersecurity, the importance of individual actions, and the fundamental principles of digital protection.",
+    "whyThisMatters": "Cybersecurity is not only the responsibility of an IT or security team. Everyday actions—opening an email, choosing a password, sharing a file, connecting a device, or clicking a link—can either reduce risk or create an opportunity for an attacker.",
+    "studyTimeMinutes": 30,
+    "learningOutcome": "After completing this module, users should understand the purpose of cybersecurity and recognize common digital threats."
+  },
+  "learningObjectives": [
+    "Define cybersecurity and its importance in personal and professional contexts.",
+    "Identify common cyber threats such as malware and social engineering.",
+    "Understand the roles of Confidentiality, Integrity, and Availability (the CIA Triad).",
+    "Recognize the human role in maintaining digital security.",
+    "Adopt basic cybersecurity practices to protect digital assets."
+  ],
+  "sections": [
+    {
+      "title": "What is Cybersecurity?",
+      "content": "Cybersecurity is the practice of protecting systems, networks, and programs from digital attacks. These attacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.",
+      "subsections": [
+        {
+          "title": "The Human Element",
+          "content": "Technology alone cannot protect an organization. Every individual's actions contribute to the overall security posture. A single click can bypass millions of dollars in technical defenses."
+        }
+      ]
+    },
+    {
+      "title": "Why Cybersecurity is Important",
+      "content": "In our connected world, everyone benefits from advanced cyber-defense programs. At an individual level, a cybersecurity attack can result in everything from identity theft to the loss of important data like family photos. Everyone relies on critical infrastructure like power plants, hospitals, and financial service companies. Securing these and other organizations is essential to keeping our society functioning.",
+      "bulletPoints": [
+        "Protects personal and financial information.",
+        "Ensures business continuity and reputation.",
+        "Safeguards national security and critical infrastructure."
+      ]
+    },
+    {
+      "title": "Common Cyber Threats",
+      "content": "Attackers use various methods to compromise security. Understanding these threats is the first step toward prevention.",
+      "subsections": [
+        {
+          "title": "Malware Basics",
+          "content": "Malware is 'malicious software' designed to damage or gain unauthorized access to a computer system. Common types include viruses, worms, and Trojans."
+        },
+        {
+          "title": "Ransomware",
+          "content": "A specific type of malware that encrypts a victim's files. The attacker then demands a ransom from the victim to restore access to the data upon payment."
+        },
+        {
+          "title": "Social Engineering",
+          "content": "Social engineering is an attack that relies on human interaction and often involves tricking people into breaking normal security procedures and best practices in order to gain access to systems, networks, or physical locations, or for financial gain."
+        }
+      ]
+    },
+    {
+      "title": "Personal and Organizational Assets",
+      "content": "Assets are anything of value that needs protection. These can be physical (laptops, servers) or digital (passwords, customer data, intellectual property).",
+      "examples": [
+        "Passwords and login credentials.",
+        "Customer spreadsheets and financial records.",
+        "Proprietary software and trade secrets.",
+        "Employee personal information."
+      ]
+    },
+    {
+      "title": "The CIA Triad",
+      "content": "The CIA Triad is a foundational model in cybersecurity used to guide policies for information security within an organization.",
+      "subsections": [
+        {
+          "title": "Confidentiality",
+          "content": "Ensuring that data is accessible only to those authorized to have access."
+        },
+        {
+          "title": "Integrity",
+          "content": "Ensuring that data is accurate and has not been tampered with or modified by unauthorized parties."
+        },
+        {
+          "title": "Availability",
+          "content": "Ensuring that data and systems are available to authorized users when they need them."
+        }
+      ]
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-01-01",
+      "type": "scenario-analysis",
+      "title": "CIA Triad Challenge",
+      "question": "Which component of the CIA Triad is primarily impacted when an employee accidentally sends a confidential customer spreadsheet to the wrong external email address?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "correctAnswer": "Confidentiality",
+      "explanation": "Confidentiality is about ensuring only authorized people see the data. Sending it to an unauthorized external recipient violates this principle."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-01-01",
+      "title": "The Accidental Disclosure",
+      "content": "Ali accidentally sends a confidential customer spreadsheet to the wrong external email address.",
+      "impact": "Confidentiality violation.",
+      "lesson": "Always double-check recipient addresses before sending sensitive data."
+    },
+    {
+      "id": "sc-01-02",
+      "title": "The Ghost in the Database",
+      "content": "Someone secretly changes student grades inside a database.",
+      "impact": "Integrity violation.",
+      "lesson": "Data accuracy and protection against unauthorized changes are critical."
+    },
+    {
+      "id": "sc-01-03",
+      "title": "System Downtime",
+      "content": "A server becomes unavailable, and employees cannot access a spreadsheet needed for their work.",
+      "impact": "Availability violation.",
+      "lesson": "System uptime is a core security requirement."
+    },
+    {
+      "id": "sc-01-04",
+      "title": "The Fake Invoice",
+      "content": "A financial bank detail change request arrives from a regular supplier, but something seems off.",
+      "impact": "Potential financial loss / Fraud.",
+      "lesson": "Verify any changes to financial details through a secondary, trusted channel."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-01-01",
+      "type": "multiple-choice",
+      "question": "What is the primary goal of social engineering?",
+      "options": [
+        "To damage hardware with magnets.",
+        "To trick people into giving up sensitive information.",
+        "To speed up internet connections.",
+        "To install solar panels on servers."
+      ],
+      "correctAnswer": "To trick people into giving up sensitive information.",
+      "explanation": "Social engineering targets the human element to bypass security controls."
+    },
+    {
+      "id": "q-01-02",
+      "type": "multiple-choice",
+      "question": "Which part of the CIA Triad is affected if a website is taken down by an attacker so customers cannot use it?",
+      "options": [
+        "Confidentiality",
+        "Integrity",
+        "Availability"
+      ],
+      "correctAnswer": "Availability",
+      "explanation": "Availability ensures that systems and data are accessible when needed."
+    },
+    {
+      "id": "q-01-03",
+      "type": "multiple-choice",
+      "question": "Malware stands for:",
+      "options": [
+        "Malfunctioning Hardware",
+        "Malicious Software",
+        "Multiple Layered Warehousing",
+        "Mail-order Ware"
+      ],
+      "correctAnswer": "Malicious Software",
+      "explanation": "Malware is any software intentionally designed to cause damage to a computer, server, client, or computer network."
+    },
+    {
+      "id": "q-01-04",
+      "type": "multiple-choice",
+      "question": "Is cybersecurity ONLY the responsibility of the IT department?",
+      "options": [
+        "Yes, they are the experts.",
+        "No, it is everyone's responsibility."
+      ],
+      "correctAnswer": "No, it is everyone's responsibility.",
+      "explanation": "Every user plays a role in the security of an organization through their daily actions."
+    },
+    {
+      "id": "q-01-05",
+      "type": "multiple-choice",
+      "question": "What does Ransomware do?",
+      "options": [
+        "It cleans your computer's hard drive.",
+        "It demands payment to unlock your encrypted files.",
+        "It sends spam emails to your contacts.",
+        "It makes your computer run faster."
+      ],
+      "correctAnswer": "It demands payment to unlock your encrypted files.",
+      "explanation": "Ransomware locks files and demands a ransom for the decryption key."
+    }
+  ],
+  "keyTakeaways": [
+    "Cybersecurity is about people, processes, and technology.",
+    "The CIA Triad (Confidentiality, Integrity, Availability) is the core of security planning.",
+    "Social engineering tricks people, not just machines.",
+    "Every individual action counts toward total security."
+  ],
+  "reflectApply": [
+    "Think about the digital assets you use daily. Which one would be most damaging if its confidentiality was lost?",
+    "Identify one simple action you can take today to improve your personal cybersecurity."
+  ]
+}

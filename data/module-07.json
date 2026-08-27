@@ -1,0 +1,233 @@
+{
+  "moduleMetadata": {
+    "id": "module-07",
+    "title": "Security Incident Recognition & Reporting",
+    "description": "Learn how to spot the early warning signs of a security breach and understand your role in the reporting process.",
+    "whyThisMatters": "Not every cybersecurity problem requires a technical expert. A normal employee, student, or user may be the first person to notice something unusual. Recognizing warning signs early and reporting them correctly can help an organization respond before the situation becomes more serious. The goal of this module is not to turn non-technical users into forensic investigators.",
+    "studyTimeMinutes": 35,
+    "learningOutcome": "Users should understand when a cybersecurity issue may require reporting and what their role should be during an incident."
+  },
+  "learningObjectives": [
+    "Define what constitutes a security incident.",
+    "Identify common indicators of account compromise or malware infection.",
+    "Understand the 'When, What, and How' of reporting an incident.",
+    "Distinguish between normal technical issues and security-related events.",
+    "Recognize the importance of timely and accurate reporting."
+  ],
+  "sections": [
+    {
+      "title": "What is a Security Incident?",
+      "content": "A security incident is an event that may indicate that an organization's systems or data have been compromised, or that measures put in place to protect them have failed.",
+      "examples": [
+        "Unauthorized access to an account.",
+        "Loss or theft of a device.",
+        "Malware or ransomware infection.",
+        "Accidental sharing of sensitive data."
+      ]
+    },
+    {
+      "title": "Warning Signs of Compromise",
+      "content": "Being alert to unusual behavior can save an organization from a major breach.",
+      "subsections": [
+        {
+          "title": "Account Indicators",
+          "content": "Unexpected password reset emails, login alerts from unfamiliar locations, or 'sent' emails you didn't write."
+        },
+        {
+          "title": "Device Indicators",
+          "content": "Extreme slowness, unexpected pop-ups, new software appearing without your knowledge, or security software being disabled."
+        }
+      ]
+    },
+    {
+      "title": "The Reporting Process",
+      "content": "When in doubt, report it. It is better to report a false alarm than to ignore a real threat.",
+      "steps": [
+        "Stop what you are doing (but don't turn off the computer unless instructed).",
+        "Document the details (What happened? When? What did you see?).",
+        "Contact the designated reporting channel (IT Helpdesk, Security Team).",
+        "Follow instructions from the security team."
+      ]
+    },
+    {
+      "title": "Your Role During an Incident",
+      "content": "The goal is to provide 'high-signal' information to the experts.",
+      "bulletPoints": [
+        "Be honest—mistakes happen, and reporting them is the right thing to do.",
+        "Don't try to 'fix' it yourself (e.g., by running random 'cleaner' software).",
+        "Don't delete evidence (like the suspicious email).",
+        "Maintain confidentiality—don't share incident details on social media."
+      ]
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-07-01",
+      "type": "simulation",
+      "title": "Incident Report Assistant",
+      "instruction": "Practice creating a report for a suspicious login alert.",
+      "fields": [
+        "Type of incident",
+        "Time observed",
+        "Details/Screenshots",
+        "Actions already taken"
+      ]
+    },
+    {
+      "id": "ex-07-02",
+      "type": "categorization",
+      "title": "Normal vs. Incident",
+      "question": "Which of the following is a security incident that needs reporting?",
+      "options": [
+        "Your password expires today according to a standard prompt.",
+        "You receive an unsolicited password change confirmation for an account you haven't used.",
+        "Your internet is slow because of a local outage.",
+        "Your monitor is flickering."
+      ],
+      "correctAnswer": "You receive an unsolicited password change confirmation for an account you haven't used.",
+      "explanation": "This indicates someone else may be trying to access or has accessed your account."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-07-01",
+      "title": "MFA Push Spam",
+      "content": "You receive 10 MFA push notifications in a row while you are watching TV and not trying to log in.",
+      "action": "Do NOT approve the request. Report it to IT immediately. This means an attacker has your password and is trying to bypass MFA.",
+      "lesson": "MFA fatigue is a tactic where attackers wear you down until you hit 'Approve'."
+    },
+    {
+      "id": "sc-07-02",
+      "title": "The Malware Alert",
+      "content": "Your antivirus software pops up saying 'Malware Blocked: Trojan.Generic' but your computer seems to be running fine.",
+      "action": "Note the details of the alert and report it to the security team. They may need to check if the threat was fully neutralized.",
+      "lesson": "Security alerts should always be followed up on, even if they say the threat was 'blocked'."
+    },
+    {
+      "id": "sc-07-03",
+      "title": "The High-Signal Report",
+      "content": "You need to report a suspicious email. Which report is more helpful?",
+      "option_a": "'I think my computer is hacked, help.'",
+      "option_b": "'I received a suspicious email claiming to be from HR at 2:15 PM. I did not click the link. See attached screenshot and original email.'",
+      "correctAnswer": "Option B",
+      "lesson": "Specific details help security teams react faster."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-07-01",
+      "type": "multiple-choice",
+      "question": "A security incident is:",
+      "options": [
+        "Whenever the IT guy is busy.",
+        "Any event that indicates a potential compromise of data or systems.",
+        "A planned software update.",
+        "A slow internet connection."
+      ],
+      "correctAnswer": "Any event that indicates a potential compromise of data or systems.",
+      "explanation": "Incidents involve threats to confidentiality, integrity, or availability."
+    },
+    {
+      "id": "q-07-02",
+      "type": "multiple-choice",
+      "question": "If you accidentally click a phishing link, you should:",
+      "options": [
+        "Hide it and hope nothing happens.",
+        "Report it immediately to the security team.",
+        "Try to hack the attacker back.",
+        "Reinstall your operating system yourself."
+      ],
+      "correctAnswer": "Report it immediately to the security team.",
+      "explanation": "Honest and fast reporting is the best way to limit damage."
+    },
+    {
+      "id": "q-07-03",
+      "type": "multiple-choice",
+      "question": "Which of these is a sign of a compromised account?",
+      "options": [
+        "A 'Happy Birthday' email from a friend.",
+        "Unsolicited password reset emails.",
+        "The battery life is getting shorter.",
+        "The screen is too bright."
+      ],
+      "correctAnswer": "Unsolicited password reset emails.",
+      "explanation": "This suggests someone is trying to take over your account."
+    },
+    {
+      "id": "q-07-04",
+      "type": "multiple-choice",
+      "question": "Should you turn off your computer immediately if you suspect a malware infection?",
+      "options": [
+        "Yes, always.",
+        "No, follow your organization's specific instructions (turning it off might delete evidence).",
+        "Only if it's a laptop.",
+        "Yes, and throw it away."
+      ],
+      "correctAnswer": "No, follow your organization's specific instructions (turning it off might delete evidence).",
+      "explanation": "Security teams may need to capture 'volatile' data from the computer's memory."
+    },
+    {
+      "id": "q-07-05",
+      "type": "multiple-choice",
+      "question": "What does 'High-Signal' information mean in a report?",
+      "options": [
+        "Information that is very loud.",
+        "Specific, accurate, and useful details about the event.",
+        "Information sent via radio waves.",
+        "Guesses about who the attacker is."
+      ],
+      "correctAnswer": "Specific, accurate, and useful details about the event.",
+      "explanation": "Specifics like timestamps and error messages are 'high signal'."
+    },
+    {
+      "id": "q-07-06",
+      "type": "multiple-choice",
+      "question": "If you see your security software has been disabled, this is:",
+      "options": [
+        "A way to make the computer faster.",
+        "A potential sign of a malware infection.",
+        "A standard Windows feature.",
+        "Nothing to worry about."
+      ],
+      "correctAnswer": "A potential sign of a malware infection.",
+      "explanation": "Malware often tries to disable defenses to stay hidden."
+    },
+    {
+      "id": "q-07-07",
+      "type": "multiple-choice",
+      "question": "Why is it important to report a lost work laptop immediately?",
+      "options": [
+        "So IT can give you a better one.",
+        "To allow the security team to remotely wipe data and disable access.",
+        "To make sure you aren't blamed.",
+        "So they can track your location."
+      ],
+      "correctAnswer": "To allow the security team to remotely wipe data and disable access.",
+      "explanation": "The faster the report, the less time an attacker has to access the data."
+    },
+    {
+      "id": "q-07-08",
+      "type": "multiple-choice",
+      "question": "Who should you contact first to report a potential incident at work?",
+      "options": [
+        "Your family.",
+        "The local news.",
+        "The designated security reporting channel or IT helpdesk.",
+        "Social media."
+      ],
+      "correctAnswer": "The designated security reporting channel or IT helpdesk.",
+      "explanation": "They are trained to handle the response."
+    }
+  ],
+  "keyTakeaways": [
+    "You are the organization's 'human sensor' for security issues.",
+    "When in doubt, report—reporting is a positive security behavior.",
+    "Fast and detailed reporting limits the damage of an attack.",
+    "Don't attempt to fix security incidents yourself."
+  ],
+  "reflectApply": [
+    "Do you know the exact email address or phone number for reporting security issues in your organization?",
+    "If you saw a 'New Login' alert from a city you've never visited, what would be your first three steps?"
+  ]
+}

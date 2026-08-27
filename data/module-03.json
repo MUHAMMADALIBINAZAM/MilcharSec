@@ -1,0 +1,231 @@
+{
+  "moduleMetadata": {
+    "id": "module-03",
+    "title": "Phishing & Social Engineering",
+    "description": "Learn to recognize the signs of phishing and social engineering attacks that target people rather than technical systems.",
+    "whyThisMatters": "Attackers do not always need to break through sophisticated technical defenses. Sometimes, they try to manipulate people into making the security mistake for them.",
+    "studyTimeMinutes": 40,
+    "learningOutcome": "Users should be able to recognize common phishing and social-engineering indicators."
+  },
+  "learningObjectives": [
+    "Define phishing and its various forms (email, smishing, vishing).",
+    "Identify common psychological tactics like urgency, fear, and authority.",
+    "Recognize red flags in emails, messages, and calls.",
+    "Apply verification techniques to suspicious communications.",
+    "Understand the risks of fake login pages and malicious attachments."
+  ],
+  "sections": [
+    {
+      "title": "What is Phishing?",
+      "content": "Phishing is a type of social engineering where an attacker sends a fraudulent message designed to trick a person into revealing sensitive information or deploying malicious software.",
+      "subsections": [
+        {
+          "title": "Email Phishing",
+          "content": "The most common form. Attackers send emails that look like they come from a trusted source (bank, manager, tech support)."
+        },
+        {
+          "title": "Smishing (SMS Phishing)",
+          "content": "Phishing attempts sent via text message."
+        },
+        {
+          "title": "Vishing (Voice Phishing)",
+          "content": "Phishing attempts made over the phone."
+        }
+      ]
+    },
+    {
+      "title": "The Psychology of an Attack",
+      "content": "Attackers use human emotions to make you act quickly without thinking.",
+      "bulletPoints": [
+        "Urgency: 'Act now or lose access!'",
+        "Fear: 'Your account has been hacked!'",
+        "Authority: 'I am the CEO, and I need this done immediately.'",
+        "Curiosity: 'You won't believe what's in this attachment!'"
+      ]
+    },
+    {
+      "title": "Spotting Red Flags",
+      "content": "Look for these indicators of a phishing attempt:",
+      "list": [
+        "Mismatched sender address (e.g., support@paypa1.com instead of paypal.com).",
+        "Generic greetings ('Dear Customer').",
+        "Spelling and grammar mistakes.",
+        "Suspicious links (hover over a link to see the real destination).",
+        "Unexpected or unusual attachments."
+      ]
+    },
+    {
+      "title": "Fake Login Pages",
+      "content": "Attackers create websites that look exactly like a real login page (e.g., Office 365 or a bank). When you enter your credentials, they are stolen.",
+      "tip": "Always check the URL in the browser's address bar before typing your password."
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-03-01",
+      "type": "scenario-analysis",
+      "title": "Spot the Phish",
+      "question": "You receive an email from 'Service@Amazon.net' stating your recent order for a $900 TV cannot be shipped. It asks you to click a link to 'verify your billing info'. What is the biggest red flag?",
+      "options": [
+        "The price of the TV.",
+        "The sender's domain (@Amazon.net instead of @amazon.com).",
+        "The font used in the email.",
+        "The fact that it's about an order."
+      ],
+      "correctAnswer": "The sender's domain (@Amazon.net instead of @amazon.com).",
+      "explanation": "Attackers use look-alike domains to appear legitimate."
+    },
+    {
+      "id": "ex-03-02",
+      "type": "tool-interaction",
+      "title": "Phishing and Message Checker",
+      "instruction": "Paste the content of a suspicious message into the tool to analyze its risk level.",
+      "toolId": "tool-02"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-03-01",
+      "title": "15-Minute Suspension",
+      "content": "An email claims your student account will be suspended in 15 minutes unless you verify your password and MFA code immediately via a link.",
+      "action": "Delete the email or report it. Never click links in high-urgency emails. Go to the official portal directly.",
+      "lesson": "Extreme time pressure is a classic phishing tactic."
+    },
+    {
+      "id": "sc-03-02",
+      "title": "The Bank SMS",
+      "content": "A text message says: 'Your bank account is closed. Click here to reactivate: bit.ly/fake-bank'.",
+      "action": "Do not click. Banks will not send account closure notices with shortened links via SMS.",
+      "lesson": "Smishing often uses shortened links to hide the real destination."
+    },
+    {
+      "id": "sc-03-03",
+      "title": "The OTP Voice Call",
+      "content": "A caller says they are from 'Fraud Detection' and they need the One-Time Password (OTP) sent to your phone to 'secure' your account.",
+      "action": "Hang up. Legitimate companies will never call and ask for an OTP that they sent to you.",
+      "lesson": "Vishing attempts to steal MFA codes through social pressure."
+    },
+    {
+      "id": "sc-03-04",
+      "title": "The CEO's Urgent Favor",
+      "content": "The Director sends a DM: 'I'm in a meeting. Can you bypass the normal procedure and send me the confidential sales report for last year immediately?'",
+      "action": "Verify through a different channel (e.g., call them or wait for the meeting to end).",
+      "lesson": "Authority impersonation tries to make you ignore security procedures."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-03-01",
+      "type": "multiple-choice",
+      "question": "What is 'Smishing'?",
+      "options": [
+        "Phishing via email.",
+        "Phishing via SMS (text message).",
+        "Phishing via a voice call.",
+        "Phishing via a fake website."
+      ],
+      "correctAnswer": "Phishing via SMS (text message).",
+      "explanation": "Smishing uses text messages to deliver fraudulent content."
+    },
+    {
+      "id": "q-03-02",
+      "type": "multiple-choice",
+      "question": "When you hover your mouse over a link in an email, what should you look for?",
+      "options": [
+        "The color of the link.",
+        "The actual destination URL shown at the bottom of the window.",
+        "How many words are in the link.",
+        "If the link has a 'click here' button."
+      ],
+      "correctAnswer": "The actual destination URL shown at the bottom of the window.",
+      "explanation": "Hovering reveals where the link will actually take you, which may differ from what is written."
+    },
+    {
+      "id": "q-03-03",
+      "type": "multiple-choice",
+      "question": "Which of these is a common 'Psychological Trigger' used by attackers?",
+      "options": [
+        "Extreme Urgency",
+        "Extreme Calmness",
+        "Offering to help you with chores",
+        "Asking about your weekend"
+      ],
+      "correctAnswer": "Extreme Urgency",
+      "explanation": "Urgency stops people from thinking critically about the request."
+    },
+    {
+      "id": "q-03-04",
+      "type": "multiple-choice",
+      "question": "Is a 'Dear Valued Customer' greeting a sign of a legitimate personalized email?",
+      "options": [
+        "Yes, it is very respectful.",
+        "No, it is a generic greeting often used in bulk phishing."
+      ],
+      "correctAnswer": "No, it is a generic greeting often used in bulk phishing.",
+      "explanation": "Legitimate services you have an account with will usually address you by name."
+    },
+    {
+      "id": "q-03-05",
+      "type": "multiple-choice",
+      "question": "What is the best way to verify a suspicious email from your bank?",
+      "options": [
+        "Reply to the email and ask if it's real.",
+        "Click the link in the email and see if it looks professional.",
+        "Call the bank's official number from their website or your card.",
+        "Ask a friend what they think."
+      ],
+      "correctAnswer": "Call the bank's official number from their website or your card.",
+      "explanation": "Verify through an 'out-of-band' or trusted secondary channel."
+    },
+    {
+      "id": "q-03-06",
+      "type": "multiple-choice",
+      "question": "Social engineering is an attack on:",
+      "options": [
+        "Computer hardware.",
+        "Software code.",
+        "Human psychology.",
+        "Internet routers."
+      ],
+      "correctAnswer": "Human psychology.",
+      "explanation": "It relies on manipulating people into making security mistakes."
+    },
+    {
+      "id": "q-03-07",
+      "type": "multiple-choice",
+      "question": "What is the risk of opening an unexpected attachment?",
+      "options": [
+        "It might be a large file and slow down your computer.",
+        "It might contain malware that infects your system.",
+        "It might be a boring document.",
+        "It might be a gift from a stranger."
+      ],
+      "correctAnswer": "It might contain malware that infects your system.",
+      "explanation": "Attachments are a primary delivery method for viruses and ransomware."
+    },
+    {
+      "id": "q-03-08",
+      "type": "multiple-choice",
+      "question": "Vishing involves:",
+      "options": [
+        "Fake emails.",
+        "Malicious text messages.",
+        "Fraudulent phone calls.",
+        "Corrupted USB drives."
+      ],
+      "correctAnswer": "Fraudulent phone calls.",
+      "explanation": "Vishing is voice-based phishing."
+    }
+  ],
+  "keyTakeaways": [
+    "Phishing can happen via email, text, or phone call.",
+    "Be skeptical of any message that creates intense urgency or fear.",
+    "Always verify the sender's real address and link destinations.",
+    "Never share passwords or MFA codes over the phone or in a message."
+  ],
+  "reflectApply": [
+    "Look at your spam folder. Can you identify three red flags in the most recent phishing attempt there?",
+    "If you received an 'urgent' call from your manager today, how would you verify it was really them before sharing data?"
+  ]
+}

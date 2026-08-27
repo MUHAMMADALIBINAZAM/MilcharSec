@@ -1,0 +1,237 @@
+{
+  "moduleMetadata": {
+    "id": "module-08",
+    "title": "Email & Business Communication Security",
+    "description": "Identify and prevent sophisticated email-based threats like Business Email Compromise (BEC) and executive impersonation.",
+    "whyThisMatters": "Email is one of the most important communication tools used by organizations. Because email is so widely used, attackers often target it. A malicious email may attempt to steal credentials, deliver malware, redirect payments, obtain confidential information, or impersonate an executive.",
+    "studyTimeMinutes": 40,
+    "learningOutcome": "Users should understand how to communicate securely and identify common email-based business threats."
+  },
+  "learningObjectives": [
+    "Identify Business Email Compromise (BEC) and executive impersonation tactics.",
+    "Verify senders and recognize look-alike domains.",
+    "Safely handle suspicious attachments and links in a business context.",
+    "Recognize fraudulent requests for bank detail or payment modifications.",
+    "Apply safe use of CC and BCC fields and manage misaddressed emails."
+  ],
+  "sections": [
+    {
+      "title": "Business Email Compromise (BEC)",
+      "content": "BEC is a sophisticated scam where an attacker impersonates a business associate or executive to trick employees into transferring funds or revealing sensitive data.",
+      "subsections": [
+        {
+          "title": "Executive Impersonation",
+          "content": "An attacker sends an email appearing to be from the CEO or a Director, often requesting 'urgent' help with a task or a payment."
+        },
+        {
+          "title": "The Fake Invoice",
+          "content": "An attacker impersonates a supplier and sends an invoice with 'updated' bank account details for payment."
+        }
+      ]
+    },
+    {
+      "title": "Advanced Sender Verification",
+      "content": "Don't trust the 'Display Name'. Always check the actual email address.",
+      "bulletPoints": [
+        "Look-alike domains: 'ceo@milchar-sec.com' vs 'ceo@milchar-sec.co' or 'ceo@milchar-sec.org'.",
+        "Character swaps: 'admin@google.com' vs 'admin@g00gle.com'.",
+        "Unusual sender: A request from an external address claiming to be internal."
+      ]
+    },
+    {
+      "title": "Secure Communication Practices",
+      "content": "How you manage recipients can prevent data leakage.",
+      "subsections": [
+        {
+          "title": "CC vs. BCC",
+          "content": "Use CC (Carbon Copy) when everyone needs to see who else is on the thread. Use BCC (Blind Carbon Copy) to hide recipient addresses, especially for large external groups."
+        },
+        {
+          "title": "Misaddressed Emails",
+          "content": "Always double-check the 'To' field. Auto-complete can easily insert the wrong person with a similar name."
+        }
+      ]
+    },
+    {
+      "title": "Verifying Unusual Requests",
+      "content": "If a request involves money, sensitive data, or bypassing procedures, verify it through a secondary channel (e.g., a phone call or a new, separate email to a known address).",
+      "rule": "Never use the contact details provided in the suspicious email itself."
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-08-01",
+      "type": "analysis",
+      "title": "Email Verification",
+      "question": "Which of these sender addresses is most likely a look-alike domain for 'security@bank-example.com'?",
+      "options": [
+        "security@bank-example.com",
+        "security@bank-examp1e.com",
+        "support@bank-example.com",
+        "alerts@bank-example.com"
+      ],
+      "correctAnswer": "security@bank-examp1e.com",
+      "explanation": "Replacing a 'l' with a '1' is a common tactic to trick the eye."
+    },
+    {
+      "id": "ex-08-02",
+      "type": "sorting",
+      "title": "Red Flags Detection",
+      "question": "Identify the red flags in this 'CEO' email: 'I'm in a secret meeting and need you to buy $500 in gift cards for a client. Don't call me, just reply with the codes. Hurry!'",
+      "redFlags": [
+        "Urgency ('Hurry!')",
+        "Unusual request (Gift cards)",
+        "Bypassing procedure ('Don't call me')",
+        "Secrecy ('Secret meeting')"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-08-01",
+      "title": "The Manager's PDF",
+      "content": "You receive an unexpected attachment 'Project_Update.pdf' from your manager's real email address, but the text is very short and generic.",
+      "action": "Call your manager to verify. Their account may have been compromised and is now sending malware to contacts.",
+      "lesson": "Compromised accounts can send malicious mail from 'trusted' addresses."
+    },
+    {
+      "id": "sc-08-02",
+      "title": "The Supplier Invoice",
+      "content": "A regular supplier emails: 'Our bank is being audited. Please send all future payments to this new account number.'",
+      "action": "Do NOT pay. Call the supplier on their known, official number to verify the change.",
+      "lesson": "Financial detail changes must always be verified out-of-band."
+    },
+    {
+      "id": "sc-08-03",
+      "title": "The CEO Gift Card Request",
+      "content": "The CEO emails you (a junior staff member) directly, asking for an urgent favor while they are 'busy in a meeting'.",
+      "action": "Be highly skeptical. CEOs rarely ask junior staff for urgent financial favors via email.",
+      "lesson": "Attackers target staff who might be intimidated by authority."
+    },
+    {
+      "id": "sc-08-04",
+      "title": "CC vs BCC Risk",
+      "content": "You need to send an update to 200 external customers. You put all their addresses in the 'CC' field.",
+      "impact": "Privacy violation. Every customer can now see every other customer's email address.",
+      "action": "Use BCC for large external distributions.",
+      "lesson": "BCC protects the privacy of recipients."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-08-01",
+      "type": "multiple-choice",
+      "question": "What does BEC stand for?",
+      "options": [
+        "Business Email Compromise",
+        "Basic Encryption Code",
+        "Backup Email Center",
+        "Browser Error Check"
+      ],
+      "correctAnswer": "Business Email Compromise",
+      "explanation": "BEC is a type of fraud that targets organizations."
+    },
+    {
+      "id": "q-08-02",
+      "type": "multiple-choice",
+      "question": "Why do attackers impersonate executives?",
+      "options": [
+        "To make friends with employees.",
+        "To use the executive's authority to pressure staff into making mistakes.",
+        "To get better at their jobs.",
+        "To practice their writing skills."
+      ],
+      "correctAnswer": "To use the executive's authority to pressure staff into making mistakes.",
+      "explanation": "People are more likely to bypass procedures if they think the boss is asking."
+    },
+    {
+      "id": "q-08-03",
+      "type": "multiple-choice",
+      "question": "A 'Look-alike Domain' is:",
+      "options": [
+        "A website that sells binoculars.",
+        "An email domain that looks very similar to a legitimate one (e.g., mircosoft.com).",
+        "A domain that has a lot of pictures.",
+        "A domain used for testing."
+      ],
+      "correctAnswer": "An email domain that looks very similar to a legitimate one (e.g., mircosoft.com).",
+      "explanation": "These are used to trick users into thinking a message is from a trusted source."
+    },
+    {
+      "id": "q-08-04",
+      "type": "multiple-choice",
+      "question": "What is the best way to verify a request to change a supplier's bank details?",
+      "options": [
+        "Reply to the email and ask for confirmation.",
+        "Call the supplier using a trusted phone number you already have.",
+        "Check the sender's display name.",
+        "Just make the change, it's probably fine."
+      ],
+      "correctAnswer": "Call the supplier using a trusted phone number you already have.",
+      "explanation": "Never use contact information provided within a suspicious request."
+    },
+    {
+      "id": "q-08-05",
+      "type": "multiple-choice",
+      "question": "When should you use the BCC field?",
+      "options": [
+        "When you want everyone to see who you are emailing.",
+        "When you want to hide the list of recipients from each other.",
+        "When you are only emailing one person.",
+        "When you want to highlight a specific person."
+      ],
+      "correctAnswer": "When you want to hide the list of recipients from each other.",
+      "explanation": "BCC (Blind Carbon Copy) ensures privacy by hiding other recipients' addresses."
+    },
+    {
+      "id": "q-08-06",
+      "type": "multiple-choice",
+      "question": "Executive impersonation often includes a request for:",
+      "options": [
+        "Gift cards or wire transfers.",
+        "A new office chair.",
+        "A lunch recommendation.",
+        "A software update."
+      ],
+      "correctAnswer": "Gift cards or wire transfers.",
+      "explanation": "These are hard-to-trace methods of moving money."
+    },
+    {
+      "id": "q-08-07",
+      "type": "multiple-choice",
+      "question": "What is 'Misaddressed Email' risk?",
+      "options": [
+        "The email taking too long to arrive.",
+        "Accidentally sending sensitive information to the wrong person due to auto-complete or typos.",
+        "The email getting lost in spam.",
+        "The email having a bad subject line."
+      ],
+      "correctAnswer": "Accidentally sending sensitive information to the wrong person due to auto-complete or typos.",
+      "explanation": "This is a common cause of accidental data breaches."
+    },
+    {
+      "id": "q-08-08",
+      "type": "multiple-choice",
+      "question": "An email from 'billing@amazon-support.co' (instead of .com) is likely a:",
+      "options": [
+        "New regional office.",
+        "Phishing attempt using a look-alike domain.",
+        "Typo by Amazon.",
+        "Secure server address."
+      ],
+      "correctAnswer": "Phishing attempt using a look-alike domain.",
+      "explanation": "Slight variations in the top-level domain (.co vs .com) are red flags."
+    }
+  ],
+  "keyTakeaways": [
+    "Verify the sender's actual email address, not just the name.",
+    "Be wary of urgent requests for money or sensitive data.",
+    "Verify financial changes through a secondary, trusted channel.",
+    "Use BCC for large distributions to protect privacy."
+  ],
+  "reflectApply": [
+    "Check your 'Sent' folder. Have you used CC when BCC would have been more private?",
+    "If you received a request for a 'secret' wire transfer from your CEO right now, what would you do?"
+  ]
+}

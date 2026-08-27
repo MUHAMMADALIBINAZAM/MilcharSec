@@ -1,0 +1,251 @@
+{
+  "moduleMetadata": {
+    "id": "module-05",
+    "title": "Data Handling & Privacy at Work",
+    "description": "Understand how to identify, classify, and securely handle sensitive organizational and personal information.",
+    "whyThisMatters": "Information is one of the most valuable assets in an organization. Everyday work involves customer information, student records, financial files, internal communications, passwords, and contracts. A security incident does not always require malware or hacking. Accidentally sending the right information to the wrong person can also become a serious security and privacy incident.",
+    "studyTimeMinutes": 40,
+    "learningOutcome": "Users should understand how improper handling of data can create cybersecurity and privacy risks."
+  },
+  "learningObjectives": [
+    "Define sensitive information and personal data.",
+    "Apply data classification concepts (Public, Internal, Confidential, Restricted).",
+    "Practice safe data sharing and cloud storage awareness.",
+    "Recognize the risks of unauthorized disclosure and data leakage.",
+    "Understand the importance of privacy and correct recipient verification."
+  ],
+  "sections": [
+    {
+      "title": "What is Sensitive Information?",
+      "content": "Sensitive information is data that must be protected from unauthorized access to safeguard the privacy or security of an individual or organization.",
+      "subsections": [
+        {
+          "title": "Personal Data (PII)",
+          "content": "Personally Identifiable Information (PII) is any data that can be used to identify a specific person, such as name, social security number, or medical records."
+        },
+        {
+          "title": "Confidential Business Information",
+          "content": "This includes trade secrets, financial records, and internal strategy documents."
+        }
+      ]
+    },
+    {
+      "title": "Data Classification",
+      "content": "Organizations often use levels to determine how data should be handled.",
+      "levels": [
+        {
+          "label": "Public",
+          "description": "Safe for everyone to see (e.g., marketing brochures)."
+        },
+        {
+          "label": "Internal",
+          "description": "Intended for employees only (e.g., company policies)."
+        },
+        {
+          "label": "Confidential",
+          "description": "Sensitive data requiring limited access (e.g., department budgets)."
+        },
+        {
+          "label": "Restricted/Secret",
+          "description": "Highly sensitive data (e.g., customer passwords, medical data)."
+        }
+      ]
+    },
+    {
+      "title": "Safe Data Sharing",
+      "content": "How you share data is as important as what you share.",
+      "bulletPoints": [
+        "Double-check recipient email addresses.",
+        "Use encrypted links instead of attachments for sensitive files.",
+        "Set expiration dates on shared links.",
+        "Verify if the recipient is authorized to see the data."
+      ]
+    },
+    {
+      "title": "Cloud Storage and Privacy",
+      "content": "Cloud tools (like OneDrive, Google Drive, or Dropbox) are convenient but require careful permission management.",
+      "tip": "Avoid setting folders to 'Anyone with the link can view' unless the data is truly public."
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-05-01",
+      "type": "sorting",
+      "title": "Choose the Correct Data Classification",
+      "question": "Match the following items to their correct classification level:",
+      "items": [
+        {
+          "data": "Employee Home Address",
+          "level": "Restricted/Confidential"
+        },
+        {
+          "data": "Public Website Text",
+          "level": "Public"
+        },
+        {
+          "data": "Internal Team Meeting Minutes",
+          "level": "Internal"
+        }
+      ]
+    },
+    {
+      "id": "ex-05-02",
+      "type": "simulation",
+      "title": "Wrong Recipient Simulation",
+      "question": "You are about to send a spreadsheet with student grades. You type 'Accounting' and the auto-complete suggests 'accounting@example.net' (external) and 'accounting@your-org.edu' (internal). Which do you choose?",
+      "options": [
+        "accounting@example.net",
+        "accounting@your-org.edu"
+      ],
+      "correctAnswer": "accounting@your-org.edu",
+      "explanation": "Always verify that the recipient's domain matches your organization for internal sensitive data."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-05-01",
+      "title": "The Accounting Error",
+      "content": "You need to send a spreadsheet to 'accounts@example.com' but accidentally send it to 'accounting@example.net' because of auto-complete.",
+      "impact": "Data breach / Unauthorized disclosure.",
+      "lesson": "Auto-complete is helpful but dangerous for sensitive data."
+    },
+    {
+      "id": "sc-05-02",
+      "title": "The 'Reply All' Trap",
+      "content": "A colleague sends an email to 50 people. You reply with a confidential attachment meant only for the colleague, but you hit 'Reply All'.",
+      "action": "Immediately contact IT and the recipients to request deletion, and report the incident.",
+      "lesson": "Always check the 'To' and 'CC' fields before hitting send."
+    },
+    {
+      "id": "sc-05-03",
+      "title": "Open Folder Risk",
+      "content": "You find a folder of salary information on the company cloud drive set to 'Anyone with the link can view'.",
+      "action": "Report it to the folder owner or IT immediately to restrict access.",
+      "lesson": "Permissions should always follow the 'Principle of Least Privilege'."
+    },
+    {
+      "id": "sc-05-04",
+      "title": "The Curious Friend",
+      "content": "A friend in a different department asks to see a customer's record 'just to check something out' because they know you have access.",
+      "action": "Politely refuse. Access to data should only be for authorized business purposes.",
+      "lesson": "Unauthorized access, even by trusted colleagues, is a security violation."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-05-01",
+      "type": "multiple-choice",
+      "question": "What does PII stand for?",
+      "options": [
+        "Personal Internet Identity",
+        "Personally Identifiable Information",
+        "Private Internal Index",
+        "Public Information Item"
+      ],
+      "correctAnswer": "Personally Identifiable Information",
+      "explanation": "PII is data that can be used on its own or with other information to identify, contact, or locate a single person."
+    },
+    {
+      "id": "q-05-02",
+      "type": "multiple-choice",
+      "question": "Which data classification level is appropriate for a company's public press release?",
+      "options": [
+        "Public",
+        "Internal",
+        "Confidential",
+        "Restricted"
+      ],
+      "correctAnswer": "Public",
+      "explanation": "Public data is intended for general consumption."
+    },
+    {
+      "id": "q-05-03",
+      "type": "multiple-choice",
+      "question": "The 'Principle of Least Privilege' means:",
+      "options": [
+        "Giving everyone access to everything to be fair.",
+        "Giving users only the access they need to perform their job.",
+        "Only managers get to use the printer.",
+        "Passwords should be short."
+      ],
+      "correctAnswer": "Giving users only the access they need to perform their job.",
+      "explanation": "This limits the potential damage from a compromised account or accidental error."
+    },
+    {
+      "id": "q-05-04",
+      "type": "multiple-choice",
+      "question": "What is the danger of using 'Anyone with the link' for sensitive cloud files?",
+      "options": [
+        "The link might expire too soon.",
+        "Anyone who finds or is forwarded the link can see the data without logging in.",
+        "It makes the files too large.",
+        "It changes the file names."
+      ],
+      "correctAnswer": "Anyone who finds or is forwarded the link can see the data without logging in.",
+      "explanation": "This bypasses identity verification and makes the data public."
+    },
+    {
+      "id": "q-05-05",
+      "type": "multiple-choice",
+      "question": "Is it okay to store sensitive work data on a personal USB drive?",
+      "options": [
+        "Yes, if you are working from home.",
+        "No, unless it is specifically authorized and the drive is encrypted.",
+        "Yes, as long as you don't lose it.",
+        "Only on Fridays."
+      ],
+      "correctAnswer": "No, unless it is specifically authorized and the drive is encrypted.",
+      "explanation": "Unencrypted personal drives are a major source of data leakage."
+    },
+    {
+      "id": "q-05-06",
+      "type": "multiple-choice",
+      "question": "What should you do if you receive an email with sensitive data that wasn't meant for you?",
+      "options": [
+        "Read it and then delete it.",
+        "Forward it to your friends.",
+        "Notify the sender and delete the email.",
+        "Save it for later."
+      ],
+      "correctAnswer": "Notify the sender and delete the email.",
+      "explanation": "This helps the sender correct their mistake and prevents further unauthorized access."
+    },
+    {
+      "id": "q-05-07",
+      "type": "multiple-choice",
+      "question": "Data Leakage occurs when:",
+      "options": [
+        "A computer gets wet.",
+        "Sensitive data is transferred to an unauthorized person or destination.",
+        "The internet is slow.",
+        "You delete a file."
+      ],
+      "correctAnswer": "Sensitive data is transferred to an unauthorized person or destination.",
+      "explanation": "Leakage can be accidental or intentional."
+    },
+    {
+      "id": "q-05-08",
+      "type": "multiple-choice",
+      "question": "Which of these is a PII?",
+      "options": [
+        "A company's logo.",
+        "The office address.",
+        "A student's ID number.",
+        "The weather forecast."
+      ],
+      "correctAnswer": "A student's ID number.",
+      "explanation": "An ID number is a unique identifier linked to a specific person."
+    }
+  ],
+  "keyTakeaways": [
+    "Identify the sensitivity of data before you handle it.",
+    "Verify recipients and permissions every single time.",
+    "Follow the Principle of Least Privilege.",
+    "Report accidental data exposure immediately."
+  ],
+  "reflectApply": [
+    "Look at your recent outgoing emails. Did any contain sensitive data? Were the recipients correct?",
+    "Check the sharing settings on your most active cloud folder. Is access restricted to only those who need it?"
+  ]
+}

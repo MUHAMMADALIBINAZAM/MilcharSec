@@ -1,0 +1,226 @@
+{
+  "moduleMetadata": {
+    "id": "module-04",
+    "title": "Safe Browsing & Device Hygiene",
+    "description": "Maintain security while navigating the web and ensure your devices are updated and protected against malware.",
+    "whyThisMatters": "Your browser and devices are constantly connected to the digital world. Every day, you may visit websites, download files, install applications, open documents, connect to Wi-Fi, log into accounts, receive notifications, and update software. These everyday activities can introduce security risks when performed without enough caution.",
+    "studyTimeMinutes": 35,
+    "learningOutcome": "Users should be able to recognize potentially suspicious websites and maintain better device security practices."
+  },
+  "learningObjectives": [
+    "Recognize safe browsing indicators like HTTPS.",
+    "Identify signs of fake or suspicious websites.",
+    "Understand the risks of unsafe downloads and unofficial software.",
+    "Apply software and operating system updates correctly.",
+    "Implement basic device protection and malware prevention."
+  ],
+  "sections": [
+    {
+      "title": "Safe Browsing Practices",
+      "content": "Navigating the web safely requires awareness of where you are and what you are interacting with.",
+      "subsections": [
+        {
+          "title": "The HTTPS Lock",
+          "content": "The 'HTTPS' and the padlock icon in your browser mean the connection to the site is encrypted. However, be careful—attackers can also use HTTPS on their malicious sites. It means the connection is private, but it doesn't guarantee the site is 'good'."
+        },
+        {
+          "title": "Website Awareness",
+          "content": "Look for signs of low quality or suspicion: excessive pop-ups, weird domain names (e.g., 'free-movies-2026.xyz'), and requests for personal info before you've even seen the content."
+        }
+      ]
+    },
+    {
+      "title": "The Risk of Unsafe Downloads",
+      "content": "Downloading files is a high-risk activity. Only download from trusted, official sources.",
+      "bulletPoints": [
+        "Avoid 'cracked' or 'premium-unlocked' software from random sites.",
+        "Be wary of 'Download' buttons that appear in advertisements.",
+        "Check file extensions—a file named 'Invoice.pdf.exe' is actually a program, not a document."
+      ]
+    },
+    {
+      "title": "Keeping Software Updated",
+      "content": "Updates are not just for new features; they often fix 'vulnerabilities' (security holes) that attackers use to gain access to your device.",
+      "subsections": [
+        {
+          "title": "Operating System (OS) Updates",
+          "content": "Regularly update Windows, macOS, iOS, or Android."
+        },
+        {
+          "title": "Application Updates",
+          "content": "Update browsers (Chrome, Firefox), Office apps, and other software."
+        }
+      ]
+    },
+    {
+      "title": "Malware Prevention",
+      "content": "Malware (Viruses, Trojans, Spyware) can steal your data or lock your computer.",
+      "tips": [
+        "Use reputable antivirus/antimalware software.",
+        "Don't ignore security warnings from your browser or OS.",
+        "Avoid clicking on 'You have 10 viruses!' pop-ups—those ARE the malware."
+      ]
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-04-01",
+      "type": "scenario-analysis",
+      "title": "Website Investigation",
+      "question": "You need to download a video editor. Which site is the safest choice?",
+      "options": [
+        "The official developer's website (e.g., adobe.com).",
+        "A site called 'free-premium-software-downloads.net'.",
+        "A link sent by an unknown person in a forum.",
+        "A pop-up that says 'Your video editor is out of date, click here'."
+      ],
+      "correctAnswer": "The official developer's website (e.g., adobe.com).",
+      "explanation": "Official sources are the most reliable way to avoid malware-infected software."
+    },
+    {
+      "id": "ex-04-02",
+      "type": "tool-interaction",
+      "title": "URL Safety Checker",
+      "instruction": "Enter a URL to analyze its domain structure and risk indicators.",
+      "toolId": "tool-03"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-04-01",
+      "title": "Look-alike University Domain",
+      "content": "You see a link for university-login-example.com, but your university's real site is university.edu.",
+      "action": "Do not enter credentials. This is a look-alike domain designed to steal your login.",
+      "lesson": "Always verify the domain name in the address bar."
+    },
+    {
+      "id": "sc-04-02",
+      "title": "The Virus Pop-up",
+      "content": "While browsing, a window appears: 'WARNING: Your device has 12 viruses! Install SecureFix now to clean them.'",
+      "action": "Close the window/browser tab immediately. Do not click anything inside the pop-up.",
+      "lesson": "Scareware uses fake warnings to trick you into installing real malware."
+    },
+    {
+      "id": "sc-04-03",
+      "title": "The Update Alert",
+      "content": "You get a system notification from Windows/macOS about a security update. At the same time, a website you are on says 'Browser Update Required' with a download button.",
+      "action": "Trust the system notification. Never download 'updates' from a random website.",
+      "lesson": "Legitimate updates come through your device's built-in update tool, not a website pop-up."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-04-01",
+      "type": "multiple-choice",
+      "question": "What does HTTPS stand for?",
+      "options": [
+        "Hyper-Text Transfer Protocol Secure",
+        "High-Tech Temporary Password System",
+        "Hard-To-Pick Security",
+        "Home Technology Private Site"
+      ],
+      "correctAnswer": "Hyper-Text Transfer Protocol Secure",
+      "explanation": "The 'S' at the end indicates that the connection to the website is encrypted."
+    },
+    {
+      "id": "q-04-02",
+      "type": "multiple-choice",
+      "question": "Does a padlock icon mean a website is 100% safe and trustworthy?",
+      "options": [
+        "Yes, it's guaranteed.",
+        "No, it only means the connection is encrypted."
+      ],
+      "correctAnswer": "No, it only means the connection is encrypted.",
+      "explanation": "Attackers can use HTTPS on malicious sites to appear legitimate and encrypt their own communications."
+    },
+    {
+      "id": "q-04-03",
+      "type": "multiple-choice",
+      "question": "Why are software updates important for security?",
+      "options": [
+        "They make the icons look better.",
+        "They fix vulnerabilities that attackers can exploit.",
+        "They delete your old files.",
+        "They give you more storage space."
+      ],
+      "correctAnswer": "They fix vulnerabilities that attackers can exploit.",
+      "explanation": "Security updates 'patch' holes in software that could let malware in."
+    },
+    {
+      "id": "q-04-04",
+      "type": "multiple-choice",
+      "question": "Which file extension is most likely a suspicious program if it's supposed to be a PDF document?",
+      "options": [
+        "document.pdf",
+        "document.pdf.exe",
+        "document.txt",
+        "document.docx"
+      ],
+      "correctAnswer": "document.pdf.exe",
+      "explanation": "The actual file extension is the one at the very end. .exe files are executable programs."
+    },
+    {
+      "id": "q-04-05",
+      "type": "multiple-choice",
+      "question": "What should you do if a website tells you your computer is infected with viruses?",
+      "options": [
+        "Download the software it recommends.",
+        "Call the number on the screen.",
+        "Close the browser tab immediately.",
+        "Pay the fine it asks for."
+      ],
+      "correctAnswer": "Close the browser tab immediately.",
+      "explanation": "Websites cannot scan your local computer for viruses; these are fake warnings."
+    },
+    {
+      "id": "q-04-06",
+      "type": "multiple-choice",
+      "question": "Which of these is the SAFEST place to download a new app for your phone?",
+      "options": [
+        "A link from a friend's SMS.",
+        "The official Apple App Store or Google Play Store.",
+        "A random website found on Google.",
+        "A third-party 'free app' store."
+      ],
+      "correctAnswer": "The official Apple App Store or Google Play Store.",
+      "explanation": "Official stores vet apps for security before allowing them to be listed."
+    },
+    {
+      "id": "q-04-07",
+      "type": "multiple-choice",
+      "question": "Browser 'Safe Browsing' warnings (red screens) should be:",
+      "options": [
+        "Ignored because they are annoying.",
+        "Taken seriously and the site should be closed.",
+        "Shared with friends.",
+        "Clicked through to see what the site looks like."
+      ],
+      "correctAnswer": "Taken seriously and the site should be closed.",
+      "explanation": "These warnings indicate the site is known to host malware or phishing content."
+    },
+    {
+      "id": "q-04-08",
+      "type": "multiple-choice",
+      "question": "Vulnerability refers to:",
+      "options": [
+        "A strong password.",
+        "A weakness in a computer system that can be exploited.",
+        "A new feature in a software update.",
+        "A fast internet connection."
+      ],
+      "correctAnswer": "A weakness in a computer system that can be exploited.",
+      "explanation": "Attackers look for vulnerabilities to gain unauthorized access."
+    }
+  ],
+  "keyTakeaways": [
+    "HTTPS protects your connection but doesn't guarantee the site's intent.",
+    "Always download software from official, trusted sources.",
+    "Install security updates for your OS and apps as soon as they are available.",
+    "Never trust pop-up warnings about viruses on your device."
+  ],
+  "reflectApply": [
+    "Check your computer and phone for pending updates. Are you up to date?",
+    "Think about the last three apps you downloaded. Did they come from an official store?"
+  ]
+}

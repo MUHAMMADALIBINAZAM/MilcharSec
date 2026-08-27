@@ -1,0 +1,240 @@
+{
+  "moduleMetadata": {
+    "id": "module-06",
+    "title": "Mobile & Remote Work Security",
+    "description": "Learn to secure your devices and maintain cybersecurity best practices while working from home or in public spaces.",
+    "whyThisMatters": "Cybersecurity does not stop when you leave the office. Today, people access organizational systems from smartphones, tablets, laptops, home networks, and public Wi-Fi. Working outside a traditional office can create additional risks because devices may be lost, stolen, connected to unfamiliar networks, or used around other people.",
+    "studyTimeMinutes": 30,
+    "learningOutcome": "Users should understand how to maintain cybersecurity while using mobile devices or working remotely."
+  },
+  "learningObjectives": [
+    "Apply mobile device security features like screen locking and encryption.",
+    "Evaluate application permissions and update software regularly.",
+    "Recognize the risks of public Wi-Fi and use secure access methods.",
+    "Implement physical device protection in public or home settings.",
+    "Understand the reporting process for lost or stolen devices."
+  ],
+  "sections": [
+    {
+      "title": "Mobile Device Security",
+      "content": "Your phone is a powerful computer that contains vast amounts of personal and work data.",
+      "subsections": [
+        {
+          "title": "Screen Locking",
+          "content": "Always use a PIN, password, or biometric lock. A device without a lock screen is an open door to your data."
+        },
+        {
+          "title": "Application Permissions",
+          "content": "Be wary of apps that ask for more access than they need (e.g., a calculator asking for your location and contacts)."
+        }
+      ]
+    },
+    {
+      "title": "Public Wi-Fi Awareness",
+      "content": "Public Wi-Fi (in cafes, hotels, or airports) is often unencrypted and can be monitored by attackers.",
+      "tips": [
+        "Avoid accessing sensitive accounts (banking, work) on public Wi-Fi.",
+        "Use a Virtual Private Network (VPN) to encrypt your traffic.",
+        "Disable 'Auto-Join' for Wi-Fi networks."
+      ]
+    },
+    {
+      "title": "Remote Work Security",
+      "content": "Working from home requires the same level of caution as the office.",
+      "bulletPoints": [
+        "Secure your home Wi-Fi with a strong password.",
+        "Keep work devices separate from personal use when possible.",
+        "Don't let family members or guests use your work laptop."
+      ]
+    },
+    {
+      "title": "Physical Security and Shoulder Surfing",
+      "content": "Physical threats are more common when working remotely.",
+      "subsections": [
+        {
+          "title": "Shoulder Surfing",
+          "content": "People nearby can see your screen or watch you type passwords. Use privacy screens in public."
+        },
+        {
+          "title": "Device Theft",
+          "content": "Never leave your laptop or phone unattended in a public space, even for a minute."
+        }
+      ]
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-06-01",
+      "type": "mapping",
+      "title": "H.O.M.E. and D.E.V.I.C.E. Routine",
+      "instruction": "Map your daily remote work routine to identify potential security gaps.",
+      "components": [
+        "H - Home Wi-Fi Security",
+        "O - Off-limits to others",
+        "M - Mobile updates",
+        "E - Encryption enabled"
+      ]
+    },
+    {
+      "id": "ex-06-02",
+      "type": "analysis",
+      "title": "Permission Evaluation",
+      "question": "A simple 'Flashlight App' asks for the following permissions. Which one is a red flag?",
+      "options": [
+        "Camera (to use the flash).",
+        "Contacts and Call History.",
+        "Storage (to save settings).",
+        "Battery status."
+      ],
+      "correctAnswer": "Contacts and Call History.",
+      "explanation": "A flashlight app has no legitimate reason to access your personal contacts or call logs."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-06-01",
+      "title": "Hotel Guest Wi-Fi",
+      "content": "You are at a hotel and see two networks: 'Hotel_Guest_WiFi' and 'Hotel_Free_HighSpeed_WiFi' (no password).",
+      "action": "Use the official network with a password and your VPN. The free, open network might be a 'Twin' set up by an attacker.",
+      "lesson": "Open, unencrypted networks are high-risk."
+    },
+    {
+      "id": "sc-06-02",
+      "title": "The Cafe Coffee Break",
+      "content": "You are working in a crowded cafe. You need to step away for 60 seconds to grab your coffee from the counter.",
+      "action": "Lock your screen and take your device with you, or at least ensure it is physically secured and locked.",
+      "lesson": "A minute is all it takes for someone to steal a device or insert a malicious USB."
+    },
+    {
+      "id": "sc-06-03",
+      "title": "Shoulder Surfing in the Park",
+      "content": "You are reviewing a confidential report on a bench. You notice someone sitting close behind you who seems to be looking at your screen.",
+      "action": "Adjust your position, use a privacy filter, or stop working on sensitive data until you are in a private area.",
+      "lesson": "Be aware of your physical surroundings when accessing sensitive data."
+    },
+    {
+      "id": "sc-06-04",
+      "title": "The Missing Laptop",
+      "content": "You realize your corporate laptop was stolen from your car trunk.",
+      "action": "Report it to IT and the police immediately. Speed is critical for remote wiping and disabling access.",
+      "lesson": "Immediate reporting minimizes the window for data exploitation."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-06-01",
+      "type": "multiple-choice",
+      "question": "What is the most basic security measure for a mobile device?",
+      "options": [
+        "A colorful case.",
+        "A screen lock (PIN, Password, or Biometric).",
+        "Setting the brightness to low.",
+        "Using a custom wallpaper."
+      ],
+      "correctAnswer": "A screen lock (PIN, Password, or Biometric).",
+      "explanation": "Screen locks prevent immediate access to your data if the device is lost or stolen."
+    },
+    {
+      "id": "q-06-02",
+      "type": "multiple-choice",
+      "question": "A VPN (Virtual Private Network) is used to:",
+      "options": [
+        "Make your internet faster.",
+        "Encrypt your data and create a secure connection over the internet.",
+        "Download movies for free.",
+        "Clean your computer's screen."
+      ],
+      "correctAnswer": "Encrypt your data and create a secure connection over the internet.",
+      "explanation": "VPNs are essential for protecting data on untrusted networks like public Wi-Fi."
+    },
+    {
+      "id": "q-06-03",
+      "type": "multiple-choice",
+      "question": "What is 'Shoulder Surfing'?",
+      "options": [
+        "A new water sport.",
+        "Looking over someone's shoulder to see their screen or keystrokes.",
+        "Borrowing someone's laptop charger.",
+        "Surfing the web while standing up."
+      ],
+      "correctAnswer": "Looking over someone's shoulder to see their screen or keystrokes.",
+      "explanation": "It's a low-tech way to steal passwords or sensitive information."
+    },
+    {
+      "id": "q-06-04",
+      "type": "multiple-choice",
+      "question": "Is it safe to let a friend use your work laptop to check their email?",
+      "options": [
+        "Yes, if you trust them.",
+        "No, work devices should only be used by authorized personnel.",
+        "Only if they use a guest account.",
+        "Yes, as long as you are watching."
+      ],
+      "correctAnswer": "No, work devices should only be used by authorized personnel.",
+      "explanation": "Work devices contain sensitive data and access that should not be shared."
+    },
+    {
+      "id": "q-06-05",
+      "type": "multiple-choice",
+      "question": "What should you do before installing a new app on your phone?",
+      "options": [
+        "Check its reviews and the permissions it requests.",
+        "Delete all your other apps.",
+        "Restart your phone.",
+        "Check your bank balance."
+      ],
+      "correctAnswer": "Check its reviews and the permissions it requests.",
+      "explanation": "Reviewing permissions helps you identify potential malware or privacy risks."
+    },
+    {
+      "id": "q-06-06",
+      "type": "multiple-choice",
+      "question": "Why should you disable 'Auto-Join' for Wi-Fi?",
+      "options": [
+        "It saves battery.",
+        "It prevents your device from connecting to a malicious network with a familiar name.",
+        "It makes your phone look cooler.",
+        "It stops you from using the internet."
+      ],
+      "correctAnswer": "It prevents your device from connecting to a malicious network with a familiar name.",
+      "explanation": "Attackers can create faked networks that match common names (like 'Starbucks_WiFi') to trick devices."
+    },
+    {
+      "id": "q-06-07",
+      "type": "multiple-choice",
+      "question": "If you lose your work phone, when should you report it?",
+      "options": [
+        "After you've looked for it for a few days.",
+        "Immediately.",
+        "Next time you are in the office.",
+        "Only if you think someone stole it."
+      ],
+      "correctAnswer": "Immediately.",
+      "explanation": "Prompt reporting allows the organization to secure the account and wipe the device."
+    },
+    {
+      "id": "q-06-08",
+      "type": "multiple-choice",
+      "question": "Encryption on a mobile device:",
+      "options": [
+        "Makes the screen brighter.",
+        "Scrambles the data so it cannot be read without the correct key.",
+        "Increases the storage space.",
+        "Deletes old messages automatically."
+      ],
+      "correctAnswer": "Scrambles the data so it cannot be read without the correct key.",
+      "explanation": "Encryption is a vital layer of protection for stored data."
+    }
+  ],
+  "keyTakeaways": [
+    "Secure your devices with strong locks and encryption.",
+    "Be skeptical of public Wi-Fi; use a VPN.",
+    "Protect your device physically and avoid shoulder surfing.",
+    "Report lost or stolen work devices immediately."
+  ],
+  "reflectApply": [
+    "Open your phone settings. Do you have a screen lock enabled? Is your data encrypted?",
+    "Review your app list. Are there any apps you haven't used in months that still have access to your location or contacts?"
+  ]
+}
