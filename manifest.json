@@ -1,0 +1,13 @@
+{
+  "background_color": "#080a5b",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "milchar-sec.vercel",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "milchar-sec.vercel",
+  "start_url": "/",
+  "theme_color": "#0a1535",
+  "id": "com.milcharsec.app",
+  "description": "A role-based cybersecurity learning and awareness platform."
+}
