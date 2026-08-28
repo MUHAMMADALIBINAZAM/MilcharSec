@@ -14,12 +14,30 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/tools.css">
+    <link rel="stylesheet" href="css/auth.css">
     <link rel="manifest" href="/manifest.json" />
 </head>
 <body class="h-full font-sans antialiased text-gray-900 overflow-x-hidden">
 
     <!-- App Container -->
-    <div id="app" class="flex flex-col min-h-screen">
+    <section id="auth-view" class="auth-screen">
+        <div class="auth-card">
+            <div class="auth-brand"><span><i data-lucide="shield-check"></i></span><strong>MilcharSec</strong></div>
+            <p class="eyebrow">Secure learning access</p>
+            <h1 id="auth-title">Welcome back</h1>
+            <p id="auth-intro" class="auth-intro">Sign in to continue your cybersecurity learning journey.</p>
+            <form id="auth-form" class="auth-form">
+                <label id="username-field" hidden>Username<input name="username" autocomplete="username" maxlength="80" placeholder="Your name or username"></label>
+                <label>Email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+                <label>Password<input name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters"></label>
+                <button id="auth-submit" class="primary-btn" type="submit">Log in</button>
+            </form>
+            <p id="auth-message" class="auth-message" role="status" aria-live="polite"></p>
+            <button id="switch-auth-mode" class="auth-switch" type="button">Need access? Request an account</button>
+        </div>
+    </section>
+
+    <div id="app" class="hidden flex flex-col min-h-screen">
         
         <!-- Navigation / Header -->
         <header id="main-header" class="bg-white border-b border-gray-200 sticky top-0 z-50">
@@ -41,7 +59,7 @@
                             <p class="text-xs text-gray-500 font-medium">Awareness Score</p>
                             <p id="awareness-score-display" class="text-sm font-bold text-indigo-600">--/100</p>
                         </div>
-                        <button class="bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition-colors">
+                        <button class="bg-gray-100 p-2 rounded-full hover:bg-gray-200 transition-colors" data-auth-signout title="Log out">
                             <i data-lucide="user" class="w-5 h-5 text-gray-600"></i>
                         </button>
                     </div>
@@ -82,6 +100,7 @@
     </div>
 
     <!-- Scripts -->
+    <script src="src/auth/auth.js" type="module"></script>
     <script src="modules/module-engine.js" type="module"></script>
     <script>
         document.addEventListener('click', (event) => {
