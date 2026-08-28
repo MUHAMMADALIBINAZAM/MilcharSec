@@ -11,6 +11,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/dashboard.css">
     <link rel="stylesheet" href="css/tools.css">
@@ -100,6 +101,14 @@
     </div>
 
     <!-- Scripts -->
+    <script>
+        window.addEventListener('error', (event) => {
+            if (event.filename && /auth|supabase/i.test(event.filename)) {
+                const message = document.getElementById('auth-message');
+                if (message) { message.textContent = event.error?.message || 'Authentication could not be initialized. Refresh and try again.'; message.className = 'auth-message error'; }
+            }
+        });
+    </script>
     <script src="src/auth/auth.js" type="module"></script>
     <script src="modules/module-engine.js" type="module"></script>
     <script>
