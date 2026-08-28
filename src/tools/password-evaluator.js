@@ -13,18 +13,3 @@ export function analyzePassword(password) {
   result.timeToCrack = result.entropyBits < 35 ? 'Common guesses may succeed quickly.' : result.entropyBits < 55 ? 'Could resist basic guessing, but should be improved.' : result.entropyBits < 70 ? 'Estimated to resist common offline guessing for a meaningful period.' : 'Estimated to be highly resistant to offline guessing when unique.';
   return result;
 }
-
-export async function checkPasswordBreach(password) {
-  try {
-    const bytes = new TextEncoder().encode(password);
-    const digest = await crypto.subtle.digest('SHA-1', bytes);
-    const fullHash = [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('').toUpperCase();
-    const prefix = fullHash.slice(0, 5);
-    // k-anonymity: HIBP receives only this 5-character prefix, never the password or full hash.
-    const response = await fetch(`https://api.pwnedpasswords.com/range/${prefix}`, { headers: { 'Add-Padding': 'true' } });
-    if (!response.ok) throw new Error('Breach service unavailable');
-    const suffix = fullHash.slice(5);
-    const match = (await response.text()).split('\n').map((line) => line.trim().split(':')).find(([hash]) => hash?.toUpperCase() === suffix);
-    return match ? { status:'breached', count:Number(match[1]) || 0 } : { status:'not-found' };
-  } catch { return { status:'unavailable' }; }
-}
