@@ -33,7 +33,7 @@
                     </div>
                     <nav class="flex items-center space-x-3 md:space-x-8 text-xs md:text-sm">
                         <a href="./" data-nav-dashboard class="text-xs md:text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">Dashboard</a>
-                        <a href="./" data-nav-dashboard class="text-xs md:text-sm font-medium text-indigo-600 border-b-2 border-indigo-600 pb-5">Modules</a>
+                        <a href="?modules" data-nav-modules class="text-xs md:text-sm font-medium text-indigo-600 border-b-2 border-indigo-600 pb-5">Modules</a>
                         <a href="?tools" data-nav-tools class="text-xs md:text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors">Tools</a>
                     </nav>
                     <div class="flex items-center gap-4">
@@ -87,6 +87,8 @@
         document.addEventListener('click', (event) => {
             const dashboard = event.target.closest('[data-nav-dashboard]');
             if (dashboard) { event.preventDefault(); history.pushState({}, '', location.pathname); window.dispatchEvent(new PopStateEvent('popstate')); }
+            const modules = event.target.closest('[data-nav-modules]');
+            if (modules) { event.preventDefault(); history.pushState({}, '', '?modules'); window.dispatchEvent(new PopStateEvent('popstate')); }
             const tools = event.target.closest('[data-nav-tools]');
             if (tools) { event.preventDefault(); history.pushState({}, '', '?tools'); window.dispatchEvent(new PopStateEvent('popstate')); }
         });
