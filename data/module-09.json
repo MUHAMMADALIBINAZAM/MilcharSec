@@ -1,0 +1,170 @@
+{
+  "moduleMetadata": {
+    "id": "module-09",
+    "title": "Women's Digital Safety & Online Privacy",
+    "description": "Empowering women and girls to navigate digital spaces with confidence through privacy control, identity protection, and informed response strategies.",
+    "whyThisMatters": "Women's digital safety is essential for ensuring confident, secure participation in digital life. By understanding how to protect personal information, secure accounts, and respond effectively to threats like harassment or online blackmail, users can maintain control over their digital identities and privacy.",
+    "studyTimeMinutes": 45,
+    "learningOutcome": "Users will be able to recognize common digital risks, implement robust privacy controls, and apply a structured response model when facing online safety incidents."
+  },
+  "learningObjectives": [
+    "Define women's digital safety and its core goals: Protect, Control, Respond.",
+    "Identify common digital risks including harassment, impersonation, and blackmail.",
+    "Implement privacy controls on social media and personal accounts.",
+    "Apply the WHO/WHAT/WHERE/WHEN/WHY framework to evaluate posting risks.",
+    "Preserve evidence correctly in the event of an online safety incident.",
+    "Recognize the signs of account takeover and fake support scams.",
+    "Utilize a structured response framework (S.A.F.E.R.) for managing blackmail and AI-manipulated content.",
+    "Navigate Pakistan-specific reporting and support resources."
+  ],
+  "sections": [
+    {
+      "title": "What Is Women's Digital Safety?",
+      "content": "Digital safety is not about avoiding technology, but about using it with control and confidence. It has three major goals: Protecting your information, Controlling who accesses it, and Responding effectively when things go wrong.",
+      "subsections": [
+        {
+          "title": "Core Goals",
+          "content": "Protect accounts and devices; Control visibility and access; Respond to incidents safely."
+        }
+      ]
+    },
+    {
+      "title": "Protecting Your Primary Email",
+      "content": "Your primary email is a master key for your digital life and account recovery. It requires the strongest protection.",
+      "bulletPoints": [
+        "Use a unique, strong password.",
+        "Enable Multi-Factor Authentication (MFA).",
+        "Regularly review recovery options and active sessions."
+      ]
+    },
+    {
+      "title": "Location and Photo Privacy",
+      "content": "Real-time location sharing and unfiltered photos can reveal your daily routines and personal identifiers.",
+      "tips": [
+        "Review app location permissions.",
+        "Avoid posting real-time location when unnecessary.",
+        "Check photos for IDs, documents, or workplace signs before posting."
+      ]
+    },
+    {
+      "title": "The S.A.F.E.R. Response Framework",
+      "content": "In the event of blackmail, threats, or harassment, follow this model to maintain control.",
+      "steps": [
+        "Stop: Do not immediately comply with demands.",
+        "Avoid: Do not continue unnecessary negotiation.",
+        "File: Preserve all evidence (screenshots, URLs).",
+        "Enhance: Change passwords, enable MFA.",
+        "Report: Use platform and appropriate legal channels."
+      ]
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-09-01",
+      "type": "simulation",
+      "title": "Privacy Setting Simulator",
+      "question": "Which of these settings creates the highest privacy exposure?",
+      "options": [
+        "Public profile with visible phone number and location sharing.",
+        "Private profile with limited tag access.",
+        "Allowing friends-only messaging."
+      ],
+      "correctAnswer": "Public profile with visible phone number and location sharing.",
+      "explanation": "Publicly exposing contact and location details is a high-risk practice."
+    },
+    {
+      "id": "ex-09-02",
+      "type": "analysis",
+      "title": "Fake Profile Detector",
+      "question": "An account claiming to be a friend messages you, demanding money urgently. What is the most likely indicator that this is a fake profile?",
+      "options": [
+        "They used your name.",
+        "They are using a profile picture of you.",
+        "They are pressuring you for money and private communication.",
+        "The profile was created 2 days ago."
+      ],
+      "correctAnswer": "They are pressuring you for money and private communication.",
+      "explanation": "Urgency and pressure for financial/private action are classic indicators of an impersonation or fraud attempt."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-09-01",
+      "title": "The Fake Impersonation Account",
+      "content": "You discover an Instagram account using your name and photos to message people.",
+      "impact": "Impersonation and privacy violation.",
+      "lesson": "Preserve evidence and report immediately.",
+      "choices": [
+        {
+          "text": "Message the fake account and threaten them",
+          "correct": false,
+          "consequence": "Engaging unnecessarily may increase harassment or provide them with more information about you."
+        },
+        {
+          "text": "Preserve evidence (screenshots, profile URL), secure your own account, and report the fake profile to the platform",
+          "correct": true,
+          "consequence": "This is the safest path to protect your identity and remove the offending content."
+        }
+      ],
+      "correctAnswer": "Preserve evidence (screenshots, profile URL), secure your own account, and report the fake profile to the platform"
+    },
+    {
+      "id": "sc-09-02",
+      "title": "The Blackmail Threat",
+      "content": "Someone threatens to publish private images of you unless you send money.",
+      "impact": "Digital blackmail.",
+      "lesson": "Do not pay. Panic leads to poor decisions. Follow S.A.F.E.R.",
+      "choices": [
+        {
+          "text": "Send a small amount to make them stop",
+          "correct": false,
+          "consequence": "Paying once rarely stops the threat; it marks you as a target who will pay, often leading to increased demands."
+        },
+        {
+          "text": "Stay calm, do not pay, preserve the messages, and contact a trusted person/authority",
+          "correct": true,
+          "consequence": "Maintaining composure and seeking support breaks the power dynamic. Do not negotiate with attackers."
+        }
+      ],
+      "correctAnswer": "Stay calm, do not pay, preserve the messages, and contact a trusted person/authority"
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-09-01",
+      "type": "multiple-choice",
+      "question": "What should you do if you receive an unexpected MFA request?",
+      "options": [
+        "Approve it to see what happens.",
+        "Do not approve it, preserve information, and check your account security.",
+        "Share it with your friend to ask for advice."
+      ],
+      "correctAnswer": "Do not approve it, preserve information, and check your account security.",
+      "explanation": "Unexpected MFA prompts are a sign of unauthorized access attempts."
+    },
+    {
+      "id": "q-09-02",
+      "type": "multiple-choice",
+      "question": "What is the official cybercrime helpline in Pakistan?",
+      "options": [
+        "100",
+        "1799",
+        "911"
+      ],
+      "correctAnswer": "1799",
+      "explanation": "1799 is the NCCIA helpline for reporting cybercrime."
+    }
+  ],
+  "keyTakeaways": [
+    "Digital safety is about taking control, not avoiding technology.",
+    "Primary email accounts require the strongest possible protection (unique password + MFA).",
+    "Never pay blackmail demands; preserve evidence and seek help instead.",
+    "Automated 'deepfake detectors' for intimate content are not reliable; rely on personal discretion and support services.",
+    "Pakistan-specific resources like NCCIA (1799) and Digital Rights Foundation (0800-39393) provide necessary support."
+  ],
+  "reflectApply": [
+    "Review your current social media privacy settings. Are there any that could be stricter?",
+    "Identify a trusted person you could contact if you experienced an online safety incident."
+  ]
+}

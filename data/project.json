@@ -47,7 +47,8 @@
         "module-05",
         "module-06",
         "module-07",
-        "module-08"
+        "module-08",
+        "module-09"
       ]
     }
   ],
@@ -344,6 +345,38 @@
           "max": 10
         },
         "questions_count": 8,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-09",
+      "title": "Women's Digital Safety & Online Privacy",
+      "why_this_matters": "Women's digital safety is essential for ensuring confident, secure participation in digital life. By understanding how to protect personal information, secure accounts, and respond effectively to threats like harassment or online blackmail, users can maintain control over their digital identities and privacy.",
+      "study_time_minutes": 45,
+      "topics": [
+        "Digital safety goals",
+        "Protecting primary email",
+        "Privacy settings",
+        "Location and photo privacy",
+        "S.A.F.E.R. response model",
+        "Impersonation and fake profiles",
+        "Digital blackmail awareness",
+        "Pakistan cybercrime reporting"
+      ],
+      "learning_outcome": "Users will be able to recognize common digital risks, implement robust privacy controls, and apply a structured response model when facing online safety incidents.",
+      "interactive_activity": "Privacy Setting Simulator & Fake Profile Awareness Checker",
+      "practical_scenarios": [
+        "Scenario: Discovering an impersonation account on social media",
+        "Scenario: Receiving a blackmail threat involving private content",
+        "Scenario: Identifying indicators of AI-manipulated media"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 5,
         "passing_threshold_percentage": null
       }
     }
