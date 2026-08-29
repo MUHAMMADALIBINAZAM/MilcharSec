@@ -3,6 +3,9 @@ import { analyzePassword } from './password-evaluator.js';
 import { inspectEmail } from './phishing-inspector.js';
 import { validateURL } from './url-validator.js';
 import { calculateSeverity, generateReportDraft } from './incident-reporter.js';
+import { analyzeLog, SAMPLES as LOG_SAMPLES } from './log-analyzer.js';
+
+export { LOG_SAMPLES as SAMPLES };
 
 let module07Guidance = null;
 export function setIncidentGuidance(module) { module07Guidance = module; }
@@ -13,7 +16,8 @@ export const TOOL_DEFINITIONS = {
   'tool-03': { name: 'Safe URL & Link Validator', icon: 'link-2', kind: 'url', note: 'Safe for real daily use: the address is checked entirely in this browser and never transmitted or stored.' },
   'tool-04': { name: 'Cybersecurity Quick Check', icon: 'clipboard-pen-line', kind: 'incident', note: 'Safe for real daily use: incident details are assessed entirely in this browser and never transmitted or stored.' },
   'tool-05': { name: 'Incident Report Assistant', icon: 'file-text', kind: 'incident-assistant', note: 'Safe for real daily use: report details stay in this browser and are never transmitted or stored. This tool never submits reports or contacts anyone.' },
-  'tool-06': { name: 'QR Code Safety Checker', icon: 'qr-code', kind: 'qr', note: 'Safe for real daily use: QR images and decoded content are processed entirely in this browser and never transmitted or stored.' }
+  'tool-06': { name: 'QR Code Safety Checker', icon: 'qr-code', kind: 'qr', note: 'Safe for real daily use: QR images and decoded content are processed entirely in this browser and never transmitted or stored.' },
+  'tool-07': { name: 'Security Log Analyzer', icon: 'scroll-text', kind: 'log', note: 'Safe for real daily use: your log text is analyzed entirely in this browser and never transmitted or stored.' }
 };
 
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
@@ -25,6 +29,7 @@ export function analyze(id, input) {
   if (id === 'tool-02') return inspectEmail(input);
   if (id === 'tool-03') return validateURL(input.url || '');
   if (id === 'tool-05') return analyzeAssistant(input);
+  if (id === 'tool-07') return analyzeLog(input.logText || LOG_SAMPLES.compromised.text);
   const assessment = calculateSeverity(input);
   return { ...assessment, draft: generateReportDraft({ ...input, severity: assessment.severity }) };
 }
@@ -63,6 +68,18 @@ function resultPanel(result, id) {
   if (id === 'tool-02') return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge ${result.riskLevel.toLowerCase().replace(' ','-')}">${esc(result.riskLevel)}</span><strong>${result.indicators.length} red flag${result.indicators.length === 1 ? '' : 's'}</strong></div>${list(result.indicators)}<h4>Why this matters</h4><p>${esc(result.explanation)}</p><h4>Recommended action</h4><p>${esc(result.recommendedAction)}</p>${result.links?.length ? `<h4>Link hover reveal</h4><ul class="tool-links">${result.links.map((l) => `<li><code>${esc(l)}</code></li>`).join('')}</ul>` : ''}</div>`;
   if (id === 'tool-03') return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge ${result.riskLevel.toLowerCase().replace(' ','-')}">${esc(result.riskLevel)}</span><strong>${esc(result.parts.hostname || 'Unrecognized host')}</strong></div><div class="domain-breaker"><span>Subdomain <b>${esc(result.parts.subdomain || '—')}</b></span><span>Domain <b>${esc(result.parts.domain || '—')}</b></span><span>TLD <b>${esc(result.parts.tld || '—')}</b></span></div>${list(result.flags)}<h4>Assessment</h4><p>${esc(result.educationalAssessment)}</p><h4>Recommended action</h4><p>${esc(result.recommendedAction)}</p></div>`;
   if (id === 'tool-05') return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge low">Report summary ready</span></div><p>Your report stays in this page session and is never transmitted or stored by this tool. Review it, then use your organization’s approved reporting channel yourself.</p><pre class="report-preview" data-report-text>${esc(result.report)}</pre><div class="report-actions"><button class="secondary-btn" data-copy-report>Copy report</button><button class="secondary-btn" data-download-report>Download .txt</button></div></div>`;
+  if (id === 'tool-07') {
+    const lineRows = result.entries.map((entry, i) => {
+      const flagged = entry.flags.length > 0;
+      const pills = entry.flags.map((f) => `<span class="log-rule-pill log-risk-${f.risk}">${esc(result.ruleLabels[f.rule] || f.rule)}</span>`).join('');
+      const reasons = entry.flags.map((f) => `<p class="log-reason">${esc(f.why)}</p>`).join('');
+      return `<li class="log-line ${flagged ? 'log-line-flagged' : 'log-line-clean'}"><span class="log-line-no">${i + 1}</span><code class="log-line-text">${esc(entry.line)}</code><div class="log-line-meta">${pills}${reasons}</div></li>`;
+    }).join('');
+    const ruleRows = Object.keys(result.ruleCounts).length
+      ? `<ul class="log-rule-summary">${Object.entries(result.ruleCounts).map(([k, v]) => `<li><span class="log-rule-pill log-risk-${result.entries.some((e) => e.flags.some((f) => f.rule === k && f.risk === 'critical')) ? 'critical' : result.entries.find((e) => e.flags.some((f) => f.rule === k))?.flags.find((f) => f.rule === k)?.risk || 'medium'}">${esc(result.ruleLabels[k] || k)}</span><strong>${v} hit${v === 1 ? '' : 's'}</strong></li>`).join('')}</ul>`
+      : '<p class="tool-muted">No detection rules triggered. This log looks clean.</p>';
+    return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="log-risk-badge log-risk-${esc(result.risk)}">${esc(result.risk)} risk</span><strong>${result.flaggedCount} of ${result.totalLines} lines flagged</strong></div><p>${esc(result.headline)}</p>${ruleRows}<h4>Line-by-line review</h4><ol class="log-lines">${lineRows}</ol><p class="tool-privacy">This log was analyzed locally and is never transmitted or stored.</p></div>`;
+  }
   return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge ${result.severity.toLowerCase()}">${esc(result.severity)} severity</span></div><p>Your incident details were assessed locally and are never transmitted or stored by this tool.</p><pre class="report-preview">${esc(result.draft)}</pre></div>`;
 }
 
@@ -71,6 +88,11 @@ function form(id, instance) {
   if (id === 'tool-02') return `<div class="tool-grid"><label>Sender email<input data-tool-input="sender" placeholder="security@example.test"></label><label>Subject<input data-tool-input="subject" placeholder="Action required"></label></div><label>Message body<textarea data-tool-input="body" placeholder="Paste the message to inspect"></textarea></label><label>Visible links (one per line)<textarea data-tool-input="links" placeholder="https://example.test/login"></textarea></label><button class="primary-btn" data-analyze-tool="${id}">Inspect message ${icon('scan-search','w-4 h-4')}</button>`;
   if (id === 'tool-03') return `<label>Website address<input data-tool-input="url" inputmode="url" placeholder="https://example.test/account"></label><button class="primary-btn" data-analyze-tool="${id}">Validate URL ${icon('scan-search','w-4 h-4')}</button>`;
   if (id === 'tool-05') return `<p class="assistant-disclaimer">This form helps structure a report for your organization’s process. Your entries are processed in this browser and never transmitted or stored; it does not submit anything or contact anyone.</p><div class="assistant-steps"><fieldset data-assistant-step="0"><legend>1. Identify the event</legend><label>What happened?<select data-tool-input="incidentType"><option value="">Choose an incident type</option><option>Suspicious email</option><option>Lost/stolen device</option><option>Accidental data exposure</option><option>Malware warning</option><option>Suspicious login</option><option>Other</option></select></label><button type="button" class="primary-btn" data-assistant-next>Next</button></fieldset><fieldset data-assistant-step="1" hidden><legend>2. Add context</legend><label>When did it happen?<input data-tool-input="when" placeholder="Date and time, if known"></label><label>What device or system was involved?<input data-tool-input="system" placeholder="Work laptop, email account, phone…"></label><div class="assistant-actions"><button type="button" class="secondary-btn" data-assistant-back>Back</button><button type="button" class="primary-btn" data-assistant-next>Next</button></div></fieldset><fieldset data-assistant-step="2" hidden><legend>3. Record your response</legend><label>What have you already done?<textarea data-tool-input="actions" placeholder="For example: stopped interacting, saved the message"></textarea></label><label>Relevant details<textarea data-tool-input="details" placeholder="Add the facts needed for your report"></textarea></label><div class="assistant-actions"><button type="button" class="secondary-btn" data-assistant-back>Back</button><button type="button" class="primary-btn" data-analyze-tool="${id}">Generate report</button></div></fieldset></div>`;
+  if (id === 'tool-07') {
+    const sampleKeys = Object.keys(LOG_SAMPLES);
+    const sampleButtons = sampleKeys.map((k, i) => `<button type="button" class="secondary-btn log-sample-btn ${i === 1 ? 'active' : ''}" data-log-sample="${k}">${esc(LOG_SAMPLES[k].label)}</button>`).join('');
+    return `<p class="assistant-disclaimer">Paste or edit a plain-text activity log. The detection rules run only in this browser — nothing is transmitted or stored. Try the sample logs to see how different patterns are interpreted.</p><div class="log-samples"><strong>Sample logs</strong><div class="log-sample-toolbar">${sampleButtons}</div></div><label>Activity log (one event per line)<textarea data-tool-input="logText" class="log-textarea" spellcheck="false" placeholder="08:41 Login successful&#10;08:43 Login failed&#10;…">${esc(LOG_SAMPLES.compromised.text)}</textarea></label><button class="primary-btn" data-analyze-tool="${id}">Analyze log ${icon('scan-search','w-4 h-4')}</button>`;
+  }
   return `<div class="tool-grid"><label>Incident category<select data-tool-input="category"><option>Phishing or social engineering</option><option>Account compromise</option><option>Lost or stolen device</option><option>Accidental data exposure</option><option>Malware or suspicious file</option></select></label><label>Potential impact<select data-tool-input="impact"><option>Low</option><option>Medium</option><option>High</option></select></label></div><label>Affected users<input data-tool-input="affectedUsers" type="number" min="0" placeholder="0"></label><label>What happened?<textarea data-tool-input="description" placeholder="Describe the incident"></textarea></label><div class="timeline-builder"><strong>Build a timeline</strong><div class="tool-grid"><input data-timeline-time placeholder="Time or date"><input data-timeline-event placeholder="What happened?"></div><button type="button" class="secondary-btn" data-add-timeline>Add timeline event</button><ol data-timeline-list></ol></div><button class="primary-btn" data-analyze-tool="${id}">Generate incident report ${icon('file-check-2','w-4 h-4')}</button>`;
 }
 
@@ -83,7 +105,7 @@ export function renderTool(id, { mode = 'standalone', instance = 'standalone' } 
 
 export function collectInput(view) {
   const get = (key) => view.querySelector(`[data-tool-input="${key}"]`)?.value.trim() || '';
-  return { password:get('password'), sender:get('sender'), subject:get('subject'), body:get('body'), links:get('links').split(/\n/).map((x) => x.trim()).filter(Boolean), url:get('url'), category:get('category'), impact:get('impact'), affectedUsers:Number(get('affectedUsers')) || 0, description:get('description'), timeline:[...view.querySelectorAll('[data-timeline-list] li')].map((x) => x.textContent).join('\n'), incidentType:get('incidentType'), when:get('when'), system:get('system'), actions:get('actions'), details:get('details') };
+  return { password:get('password'), sender:get('sender'), subject:get('subject'), body:get('body'), links:get('links').split(/\n/).map((x) => x.trim()).filter(Boolean), url:get('url'), category:get('category'), impact:get('impact'), affectedUsers:Number(get('affectedUsers')) || 0, description:get('description'), timeline:[...view.querySelectorAll('[data-timeline-list] li')].map((x) => x.textContent).join('\n'), incidentType:get('incidentType'), when:get('when'), system:get('system'), actions:get('actions'), details:get('details'), logText:get('logText') };
 }
 
 export function renderResult(view, result, id) { const target = view.querySelector('[data-tool-result]'); if (target) target.innerHTML = resultPanel(result, id); }
