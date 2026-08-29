@@ -1,0 +1,976 @@
+{
+  "moduleMetadata": {
+    "id": "module-10",
+    "title": "Industrial & Workplace Cybersecurity",
+    "description": "Cybersecurity Awareness for Industrial, Manufacturing, Engineering & Workplace Personnel",
+    "whyThisMatters": "Industrial organizations increasingly depend on digital technology to operate safely and efficiently. Cybersecurity is not only the responsibility of the IT or cybersecurity department. Every employee can either reduce or increase organizational risk through everyday actions.",
+    "studyTimeMinutes": 90,
+    "learningOutcome": "After completing this module, employees will be able to recognize common cyber risks in industrial and workplace environments, protect workplace information and devices, avoid unsafe actions, and report problems quickly using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model."
+  },
+  "learningObjectives": [
+    "Understand why cybersecurity matters in industrial environments.",
+    "Understand the difference between ordinary business IT and operational/industrial technology.",
+    "Understand how cyber incidents can affect business operations, equipment, people, and safety.",
+    "Recognize phishing, social engineering, suspicious USB devices, unauthorized software, suspicious remote-access requests, account compromise, physical-security issues, data leakage, and suspicious system behavior.",
+    "Practice secure account usage, safe email behavior, safe USB usage, secure remote working, physical security, data protection, and safe device usage.",
+    "Apply the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW incident response model.",
+    "Know what to include in an incident report and understand that fast reporting — even after a mistake — is always the right choice."
+  ],
+  "sections": [
+    {
+      "title": "Module Purpose",
+      "content": "Industrial organizations increasingly depend on digital technology to operate safely and efficiently. Employees may interact with:",
+      "bulletPoints": [
+        "Computers and laptops",
+        "Email",
+        "Production systems",
+        "Engineering applications",
+        "Industrial equipment",
+        "Sensors and monitoring systems",
+        "Printers and scanners",
+        "USB/removable media",
+        "Cloud services",
+        "Mobile devices",
+        "Remote-access systems",
+        "Company networks",
+        "Access-control systems"
+      ],
+      "callout": "Cybersecurity is not only the responsibility of the IT or cybersecurity department. Every employee can either reduce or increase organizational risk through everyday actions.\n\nThis module teaches employees how to recognize common cyber risks, protect workplace information and devices, avoid unsafe actions, and report problems quickly."
+    },
+    {
+      "title": "Section 1 — Why Industrial Cybersecurity Matters",
+      "content": "An industrial environment is a workplace where technology supports activities such as: Manufacturing; Energy; Construction; Transportation; Telecommunications; Utilities; Warehousing; Engineering; Production; Processing.\n\nModern organizations may combine physical machinery with digital systems.\n\nFor example: Sensor → Network → Computer/System → Employee → Industrial Process\n\nA problem affecting one part of this chain can potentially affect other parts.",
+      "subsections": [
+        {
+          "title": "Cybersecurity Is More Than Protecting Data",
+          "content": "For an ordinary employee, cybersecurity may sound like: 'Protect your password.' In industry, cybersecurity can involve much more. A cyber incident may potentially affect:",
+          "bulletPoints": [
+            "Information — Company files and confidential information.",
+            "Operations — Production and business processes.",
+            "Equipment — Connected equipment and supporting systems.",
+            "People — Employees, contractors, customers, and visitors.",
+            "Business — Financial and operational continuity.",
+            "Safety — Some industrial environments have systems where cybersecurity and physical safety can intersect."
+          ],
+          "callout": "Never treat an industrial cybersecurity problem as 'just a computer problem.'"
+        }
+      ]
+    },
+    {
+      "title": "Section 2 — IT and OT: Simple Explanation",
+      "content": "Understanding the difference between IT and OT helps employees know why different rules apply to different systems.",
+      "subsections": [
+        {
+          "title": "What Is IT?",
+          "content": "IT = Information Technology",
+          "bulletPoints": [
+            "Office computers",
+            "Email",
+            "Databases",
+            "File servers",
+            "Business applications",
+            "Cloud services",
+            "Employee accounts"
+          ]
+        },
+        {
+          "title": "What Is OT?",
+          "content": "OT = Operational Technology\n\nOT refers broadly to technology used to monitor or control physical processes.",
+          "bulletPoints": [
+            "Industrial control systems",
+            "Sensors",
+            "Controllers",
+            "Monitoring systems",
+            "Industrial networks",
+            "Engineering workstations",
+            "Production equipment"
+          ]
+        },
+        {
+          "title": "Why Does the Difference Matter?",
+          "content": "An employee may be able to restart an office computer without major consequences. The same assumption should not be applied to industrial systems.",
+          "callout": "Never restart, modify, disconnect, reconfigure, or update industrial equipment unless you are authorized and trained to do so."
+        }
+      ]
+    },
+    {
+      "title": "Section 3 — The Industrial Cybersecurity Golden Rules",
+      "content": "These seven rules form the foundation of safe behavior in an industrial workplace.",
+      "checklist": [
+        "Rule 1 — Protect Your Credentials: Never share passwords or authentication codes.",
+        "Rule 2 — Verify Unexpected Requests: Don't trust a request simply because it looks professional.",
+        "Rule 3 — Don't Connect Unknown Devices: Especially USB/removable media.",
+        "Rule 4 — Verify People: Employees, contractors, visitors, and vendors should follow authorization procedures.",
+        "Rule 5 — Don't Make Unauthorized Changes: Especially to industrial or production systems.",
+        "Rule 6 — Protect Company Information: Share information only with authorized recipients.",
+        "Rule 7 — Report Early: A small warning can become a large incident if ignored."
+      ]
+    },
+    {
+      "title": "Section 4 — Account Security",
+      "content": "An employee account may provide access to: Email; Files; Internal applications; Business systems; Communication tools; Industrial-support systems.\n\nYour account should be treated as a security asset.",
+      "subsections": [
+        {
+          "title": "Password Rules",
+          "content": "Use strong, unique passwords and enable MFA wherever available.",
+          "bulletPoints": [
+            "Use long passwords",
+            "Use unique passwords",
+            "Use strong authentication",
+            "Enable MFA where available"
+          ],
+          "dont": [
+            "Password reuse",
+            "Simple passwords",
+            "Shared passwords",
+            "Passwords based on easily known personal information"
+          ]
+        },
+        {
+          "title": "Multi-Factor Authentication (MFA)",
+          "content": "MFA adds another layer of protection.\n\nExample: Password + Authentication App\nor\nPassword + Security Key",
+          "callout": "If you receive an MFA request that you did not initiate: Do not approve it. Report it according to organizational procedures."
+        }
+      ]
+    },
+    {
+      "title": "Section 5 — Phishing in Industry",
+      "content": "Attackers may target industrial employees using highly believable messages.\n\nThey may impersonate:",
+      "bulletPoints": [
+        "CEO",
+        "Plant manager",
+        "Supervisor",
+        "IT department",
+        "HR",
+        "Finance",
+        "Supplier",
+        "Vendor",
+        "Maintenance company"
+      ],
+      "subsections": [
+        {
+          "title": "Example Industrial Phishing Message",
+          "content": "Subject: URGENT — MACHINE MAINTENANCE DOCUMENT\n\n'Please open the attached document immediately and send the requested information.'",
+          "bulletPoints": [
+            "Unexpected request",
+            "Urgency",
+            "Attachment",
+            "Unusual sender",
+            "Request to bypass normal procedures"
+          ]
+        },
+        {
+          "title": "Verify Before Acting — The WHO/WHAT/WHY/WHEN/HOW Framework",
+          "content": "Before opening or responding to any unexpected request, ask:",
+          "framework": [
+            ["WHO?", "Who sent this?"],
+            ["WHAT?", "What are they asking me to do?"],
+            ["WHY?", "Why do they need this?"],
+            ["WHEN?", "Why is it suddenly urgent?"],
+            ["HOW?", "Does the requested process match normal company procedure?"]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section 6 — Business Email Compromise",
+      "content": "An attacker may compromise or impersonate a legitimate business account.\n\nThey could request:",
+      "bulletPoints": [
+        "Payment",
+        "Bank-account changes",
+        "Supplier changes",
+        "Confidential information",
+        "Credentials",
+        "Documents"
+      ],
+      "callout": "Example: 'Our bank account has changed. Please use this new account for all future payments.'\n\nCorrect Action: Do not rely solely on the email. Verify the request through an approved, independent organizational procedure."
+    },
+    {
+      "title": "Section 7 — Social Engineering",
+      "content": "Social engineering means manipulating people into performing an action or revealing information.\n\nAttackers may use:",
+      "table": {
+        "headers": ["Technique", "Example"],
+        "rows": [
+          ["Authority", "I'm the manager."],
+          ["Urgency", "Do it right now."],
+          ["Fear", "Your account will be disabled."],
+          ["Helpfulness", "I'll fix this for you."],
+          ["Familiarity", "We work with your company."]
+        ]
+      },
+      "callout": "The Pressure Test: When someone pressures you, ask: 'Would I normally be allowed to do this?' If the answer is unclear: STOP → VERIFY"
+    },
+    {
+      "title": "Section 8 — USB & Removable Media",
+      "content": "USB devices are common in industrial workplaces. They may be used for legitimate purposes, but unknown devices can create security risks.",
+      "bulletPoints": [
+        "Never automatically trust found USB drives",
+        "Never automatically trust personal USB drives",
+        "Never automatically trust unknown vendor media",
+        "Never automatically trust unlabeled devices",
+        "Never automatically trust devices given by strangers",
+        "Never automatically trust devices that appear 'urgent'"
+      ],
+      "callout": "Golden Rule: If you don't know where a device came from, don't connect it to a company or industrial system.\n\nFollow your organization's approved removable-media process."
+    },
+    {
+      "title": "Section 9 — Unauthorized Software",
+      "content": "Employees may encounter software that promises faster performance, free tools, video conversion, remote support, driver updates, file recovery, or security scanning.\n\nBut unauthorized software can introduce:",
+      "bulletPoints": [
+        "Malware",
+        "Vulnerabilities",
+        "Unauthorized remote access",
+        "Data exposure",
+        "Compatibility problems"
+      ],
+      "callout": "Rule: Use only software approved by your organization."
+    },
+    {
+      "title": "Section 10 — Remote Access",
+      "content": "Remote access can be necessary for maintenance, technical support, engineering, and administration. But it should be controlled.",
+      "subsections": [
+        {
+          "title": "Employees Should",
+          "bulletPoints": [
+            "Use approved remote-access methods.",
+            "Protect credentials.",
+            "Verify support personnel.",
+            "Follow company procedures."
+          ]
+        },
+        {
+          "title": "Employees Should NOT",
+          "bulletPoints": [
+            "Create unauthorized remote connections.",
+            "Install random remote-control software.",
+            "Share credentials.",
+            "Bypass security controls."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Section 11 — Vendor & Contractor Security",
+      "content": "Industrial organizations frequently work with external parties.\n\nExamples: Equipment manufacturers; Maintenance companies; Contractors; Engineers; Consultants; IT service providers.",
+      "callout": "Before providing access: VERIFY → AUTHORIZE → FOLLOW PROCEDURE\n\nNever assume: 'They are a vendor, so they can access everything.'"
+    },
+    {
+      "title": "Section 12 — Physical Security",
+      "content": "Cybersecurity doesn't stop at the computer screen.\n\nProtect:",
+      "bulletPoints": [
+        "Laptops",
+        "Workstations",
+        "USB devices",
+        "Documents",
+        "Access cards",
+        "Server rooms",
+        "Control rooms",
+        "Network equipment"
+      ],
+      "subsections": [
+        {
+          "title": "Tailgating",
+          "content": "Someone enters a restricted area by following an authorized employee.\n\nExample: 'Hold the door for me; I forgot my card.'\n\nCorrect Response: Follow your organization's access-control procedures."
+        }
+      ]
+    },
+    {
+      "title": "Session 2 — Section 13: Clean Desk / Clean Screen",
+      "content": "Before leaving your workstation:",
+      "checklist": [
+        "Lock the screen",
+        "Secure confidential documents",
+        "Secure removable media",
+        "Protect access cards",
+        "Don't leave sensitive information visible to unauthorized people"
+      ]
+    },
+    {
+      "title": "Session 2 — Section 14: Data Protection",
+      "content": "Employees may handle:",
+      "bulletPoints": [
+        "Employee records",
+        "Customer information",
+        "Supplier information",
+        "Engineering documents",
+        "Production information",
+        "Business plans",
+        "Financial information",
+        "Technical documentation"
+      ],
+      "subsections": [
+        {
+          "title": "Before Sharing Information — The WHO/WHAT/WHERE/WHY Framework",
+          "content": "Ask these questions before sharing any company information:",
+          "framework": [
+            ["WHO?", "Is the recipient authorized?"],
+            ["WHAT?", "Does the person need this information?"],
+            ["WHERE?", "Am I using an approved communication/storage method?"],
+            ["WHY?", "Is sharing necessary?"]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Session 2 — Section 15: Wrong Recipient",
+      "content": "An employee intends to email a confidential document to Ali — Finance but accidentally sends it to Ali — External Contractor.\n\nDon't hide the mistake.",
+      "callout": "What should happen? Immediately: Stop → Report → Follow Instructions\n\nThe organization can then determine the appropriate response."
+    },
+    {
+      "title": "Session 2 — Section 16: Cloud Storage",
+      "content": "Employees may use company cloud storage, collaboration platforms, and file-sharing systems.\n\nRisks:",
+      "bulletPoints": [
+        "Incorrect permissions",
+        "Public sharing",
+        "Wrong recipient",
+        "Personal account usage",
+        "Unauthorized external access"
+      ],
+      "callout": "Rule: Use organization-approved storage and sharing methods."
+    },
+    {
+      "title": "Session 2 — Section 17: Mobile Device Security",
+      "content": "Company phones and tablets may contain sensitive information.",
+      "bulletPoints": [
+        "Use screen lock",
+        "Keep device updated",
+        "Use approved applications",
+        "Use secure authentication"
+      ],
+      "dont": [
+        "Share company devices unnecessarily",
+        "Install unknown applications",
+        "Leave devices unattended"
+      ]
+    },
+    {
+      "title": "Session 2 — Section 18: Lost Device",
+      "content": "An employee loses a company laptop containing work files.\n\nWrong response: 'I'll wait and see if someone returns it.'\n\nCorrect response: REPORT IMMEDIATELY",
+      "callout": "The organization may have procedures to: Disable access; Protect accounts; Remotely manage the device; Assess exposure."
+    },
+    {
+      "title": "Session 2 — Section 19: Remote Work",
+      "content": "When working outside the workplace, protect:",
+      "checklist": [
+        "Device — Keep your laptop/device secured",
+        "Account — Protect your credentials",
+        "Network — Use approved, secure connections",
+        "Information — Handle data according to company policy",
+        "Privacy — Be aware of your surroundings"
+      ],
+      "callout": "Be careful around: Public spaces; Shared computers; Public Wi-Fi; Untrusted devices; Shoulder surfing"
+    },
+    {
+      "title": "Session 2 — Section 20: Public Wi-Fi",
+      "content": "Public Wi-Fi isn't automatically malicious, but it may not provide the same level of trust or control as a managed organizational network.\n\nFollow company policy. Use approved secure connections for work activities where required."
+    },
+    {
+      "title": "Session 2 — Section 21: Suspicious System Behavior",
+      "content": "Employees should recognize warning signs. Possible signs:",
+      "bulletPoints": [
+        "Unexpected pop-ups",
+        "Security warnings",
+        "Unknown programs",
+        "Files behaving strangely",
+        "Unexpected login notifications",
+        "Password suddenly not working",
+        "Unexpected MFA requests",
+        "Unusual system messages",
+        "Unexpected configuration changes"
+      ]
+    },
+    {
+      "title": "Session 2 — Section 22: Don't Become an 'Accidental Investigator'",
+      "content": "This is particularly important for non-technical employees. If something looks suspicious:",
+      "dont": [
+        "Delete evidence",
+        "Randomly install security tools",
+        "Change configurations",
+        "Disable security software",
+        "Restart industrial systems unnecessarily",
+        "Attempt to 'fix' the problem yourself"
+      ],
+      "do": [
+        "STOP — Cease the potentially unsafe action",
+        "PRESERVE — Keep relevant information",
+        "REPORT — Tell the appropriate person/team"
+      ],
+      "callout": "Let the appropriate technical team investigate."
+    },
+    {
+      "title": "Session 2 — Section 23: Incident Recognition",
+      "content": "A possible security incident may involve any of the following categories:",
+      "subsections": [
+        {
+          "title": "Account Indicators",
+          "bulletPoints": [
+            "Unknown login",
+            "Unexpected password reset",
+            "MFA request you didn't initiate"
+          ]
+        },
+        {
+          "title": "Email Indicators",
+          "bulletPoints": [
+            "Suspicious attachment",
+            "Suspicious link",
+            "Fake executive request"
+          ]
+        },
+        {
+          "title": "Device Indicators",
+          "bulletPoints": [
+            "Malware warning",
+            "Lost laptop",
+            "Unknown software"
+          ]
+        },
+        {
+          "title": "Data Indicators",
+          "bulletPoints": [
+            "Wrong recipient",
+            "Unauthorized sharing",
+            "Missing files"
+          ]
+        },
+        {
+          "title": "Physical Indicators",
+          "bulletPoints": [
+            "Unknown person in restricted area",
+            "Missing access card",
+            "Unknown device"
+          ]
+        },
+        {
+          "title": "Industrial Indicators",
+          "bulletPoints": [
+            "Unexpected system behavior",
+            "Unauthorized changes",
+            "Unusual alerts"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Session 2 — Section 24: The MilcharSec Incident Model",
+      "content": "When something goes wrong, follow this five-step model:",
+      "framework": [
+        ["1 — RECOGNIZE", "Something doesn't look right."],
+        ["2 — STOP", "Don't continue the potentially unsafe action."],
+        ["3 — PRESERVE", "Keep relevant information."],
+        ["4 — REPORT", "Tell the appropriate person/team."],
+        ["5 — FOLLOW", "Follow authorized instructions."]
+      ],
+      "callout": "RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW"
+    },
+    {
+      "title": "Session 2 — Section 25: 'I Made a Mistake'",
+      "content": "You clicked a suspicious link. Your first thought: 'I should hide it.'\n\nMilcharSec says: DON'T HIDE IT.\n\nFast reporting can help the organization respond more effectively.",
+      "callout": "Correct behavior: I clicked → I stopped → I reported.\n\nNot: I clicked → I hid it → Problem became bigger."
+    },
+    {
+      "title": "Session 2 — Section 26: Reporting Without Fear",
+      "content": "Mistakes happen. Delayed reporting can make them harder to manage.\n\nIf you accidentally clicked something suspicious, opened an unexpected attachment, sent information to the wrong person, or connected an unknown device, report it promptly according to your organization's procedures."
+    },
+    {
+      "title": "Session 2 — Section 27: What to Include in a Report",
+      "content": "Employees don't need to write a technical report. Just answer:",
+      "framework": [
+        ["WHAT?", "What happened?"],
+        ["WHEN?", "When did it happen?"],
+        ["WHERE?", "Which device/system?"],
+        ["WHO?", "Who sent or requested it?"],
+        ["ACTION?", "What did you click/open/download?"],
+        ["EVIDENCE?", "Do you have the email, message, screenshot, filename, or other relevant information?"]
+      ]
+    },
+    {
+      "title": "Section 33 — Role-Based Awareness Guide",
+      "content": "Different roles face different risk profiles. Use the guide for your role to focus your awareness.",
+      "table": {
+        "headers": ["Role", "Key Focus Areas"],
+        "rows": [
+          ["General Employee", "Phishing, Passwords, Data, Devices, Reporting"],
+          ["Technician", "USB, Equipment, Remote support, Physical access, Suspicious system behavior"],
+          ["Engineer", "Engineering workstations, Technical information, Remote access, Vendor access, System changes"],
+          ["Manager", "Executive impersonation, Sensitive information, Payment requests, Incident escalation, Employee reporting"],
+          ["HR", "Employee information, Privacy, Phishing, Document security, Identity-related scams"],
+          ["Finance", "Fake invoices, Payment requests, Bank-detail changes, Business email compromise"],
+          ["Contractor", "Authorization, Device security, Physical access, Data handling, Remote access"]
+        ]
+      }
+    },
+    {
+      "title": "Section 34 — Who Should I Contact?",
+      "content": "Use the appropriate reporting channel for your situation:",
+      "table": {
+        "headers": ["Situation", "Contact"],
+        "rows": [
+          ["First contact — any concern", "Your Supervisor / Manager"],
+          ["Technical problem", "IT / Help Desk"],
+          ["Cybersecurity problem", "Security Team / SOC"],
+          ["Industrial system problem", "OT / Engineering / Control-System Team"],
+          ["Physical security", "Security Department"],
+          ["Emergency", "Follow your organization's emergency procedures"]
+        ]
+      },
+      "callout": "Your organization should configure the actual contact details. MilcharSec provides the framework; your workplace provides the specifics."
+    },
+    {
+      "title": "Section 36 — Final Industrial Security Checklist",
+      "content": "Use this checklist to review your current security posture across all key areas.",
+      "subsections": [
+        {
+          "title": "Account",
+          "checklist": [
+            "Unique password in use",
+            "MFA enabled",
+            "Password never shared",
+            "Unexpected login reported"
+          ]
+        },
+        {
+          "title": "Email",
+          "checklist": [
+            "Sender verified before acting",
+            "Links checked carefully",
+            "Attachments treated cautiously",
+            "Urgent requests verified independently"
+          ]
+        },
+        {
+          "title": "Devices",
+          "checklist": [
+            "Unknown USB not connected",
+            "Approved software only",
+            "Workstation locked when leaving",
+            "Lost devices reported immediately"
+          ]
+        },
+        {
+          "title": "People",
+          "checklist": [
+            "Visitors verified before access",
+            "Contractors authorized before access",
+            "Vendor identity confirmed",
+            "No unauthorized access granted"
+          ]
+        },
+        {
+          "title": "Data",
+          "checklist": [
+            "Correct recipient verified before sending",
+            "Approved storage method used",
+            "Correct sharing method used",
+            "Sensitive information protected"
+          ]
+        },
+        {
+          "title": "Remote Work",
+          "checklist": [
+            "Approved remote-access method used",
+            "Device secured",
+            "Account protected",
+            "Company procedures followed"
+          ]
+        },
+        {
+          "title": "Incidents",
+          "checklist": [
+            "Recognize warning signs",
+            "Stop the unsafe action",
+            "Preserve relevant information",
+            "Report to appropriate team",
+            "Follow authorized instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Module Completion — Five Things to Remember",
+      "content": "After completing Module 10, remember these five principles:",
+      "framework": [
+        ["PROTECT", "Protect accounts, devices, and information."],
+        ["VERIFY", "Don't trust unexpected requests automatically."],
+        ["STOP", "Don't continue a suspicious action."],
+        ["REPORT", "Report problems quickly — even if you made a mistake."],
+        ["FOLLOW", "Follow your organization's approved procedures."]
+      ],
+      "callout": "BEFORE YOU CLICK — THINK\nBEFORE YOU CONNECT — VERIFY\nBEFORE YOU GIVE ACCESS — AUTHORIZE\nBEFORE YOU SHARE — CHECK\nWHEN SOMETHING GOES WRONG — STOP → PRESERVE → REPORT\n\nYou don't need to be a cybersecurity expert to be part of the defense."
+    }
+  ],
+  "interactiveExercises": [
+    {
+      "id": "ex-10-01",
+      "title": "Industrial Cyber Risk Checker",
+      "type": "self-assessment",
+      "description": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.",
+      "questions": [
+        { "id": "q1", "text": "Do you use MFA on important accounts?", "safeAnswer": true },
+        { "id": "q2", "text": "Do you ever share passwords?", "safeAnswer": false },
+        { "id": "q3", "text": "Do you connect unknown USB devices to company systems?", "safeAnswer": false },
+        { "id": "q4", "text": "Do you install software without organizational approval?", "safeAnswer": false },
+        { "id": "q5", "text": "Do you lock your workstation when leaving it unattended?", "safeAnswer": true },
+        { "id": "q6", "text": "Do you verify unexpected requests before acting?", "safeAnswer": true },
+        { "id": "q7", "text": "Do you use only approved remote-access methods?", "safeAnswer": true },
+        { "id": "q8", "text": "Do you verify vendors and contractors before providing access?", "safeAnswer": true },
+        { "id": "q9", "text": "Do you report suspicious activity promptly?", "safeAnswer": true },
+        { "id": "q10", "text": "Do you know your organization's incident-reporting process?", "safeAnswer": true }
+      ],
+      "scoring": {
+        "high": { "label": "Good Security Habits", "description": "Strong awareness. Keep reinforcing these behaviors.", "threshold": 8 },
+        "medium": { "label": "Improvement Needed", "description": "Several behaviors should be improved to reduce workplace risk.", "threshold": 5 },
+        "low": { "label": "High Attention Required", "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules." }
+      },
+      "topImprovements": [
+        "Improve password practices — use unique passwords and enable MFA.",
+        "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+        "Learn the incident-reporting procedure — know who to contact and when."
+      ],
+      "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+    },
+    {
+      "id": "ex-10-02",
+      "title": "Industrial Phishing Simulator",
+      "type": "scenario-decision",
+      "description": "Realistic workplace phishing messages are shown. Choose the safest response for each.",
+      "scenarios": [
+        {
+          "id": "ips-01",
+          "from": "supplier-support@example",
+          "subject": "Urgent Equipment Update",
+          "body": "Your production equipment requires an immediate configuration update. Download the attached file and install it before your next shift.",
+          "options": [
+            { "id": "a", "text": "Open the attachment and install it." },
+            { "id": "b", "text": "Reply to the sender and ask for more details." },
+            { "id": "c", "text": "Verify the request independently through a known official contact." },
+            { "id": "d", "text": "Report the email as suspicious according to organizational procedures." }
+          ],
+          "correctOptions": ["c", "d"],
+          "explanation": "An unexpected attachment requesting urgent installation on production equipment is a classic phishing tactic. The correct responses are to verify through an independent, known channel and/or report the email. Never install software from an unexpected email — especially on industrial systems."
+        },
+        {
+          "id": "ips-02",
+          "from": "hr-noreply@company-hr.net",
+          "subject": "URGENT: Update Your Payroll Account Now",
+          "body": "Action required within 2 hours: log in and update your bank account details to avoid payment failure this Friday.",
+          "options": [
+            { "id": "a", "text": "Click the link in the email and update immediately." },
+            { "id": "b", "text": "Forward it to a colleague." },
+            { "id": "c", "text": "Verify by contacting HR directly through the official company directory." },
+            { "id": "d", "text": "Report it as a suspicious email." }
+          ],
+          "correctOptions": ["c", "d"],
+          "explanation": "Urgency plus a financial action request is a strong BEC indicator. Verify through the official HR contact, not a link in the email. The sending domain 'company-hr.net' is not the official company domain — a typical look-alike pattern."
+        }
+      ]
+    },
+    {
+      "id": "ex-10-03",
+      "title": "USB Decision Challenge",
+      "type": "scenario-decision",
+      "description": "Different USB situations are presented. Decide the correct action for each.",
+      "scenarios": [
+        {
+          "id": "usb-01",
+          "situation": "You find a USB drive in the company parking area. There is no label.",
+          "options": [
+            { "id": "a", "text": "Plug it in to see who it belongs to." },
+            { "id": "b", "text": "Give it to a colleague to check." },
+            { "id": "c", "text": "Do not connect it. Hand it to IT or security according to your organization's procedure." }
+          ],
+          "correctOptions": ["c"],
+          "explanation": "Found USB drives — especially unlabeled ones in public areas — are a known social-engineering technique (sometimes called a 'USB drop attack'). Never connect an unknown device to any company or industrial system. Follow your organization's found-device procedure."
+        },
+        {
+          "id": "usb-02",
+          "situation": "A colleague hands you a personal USB containing movies and asks you to copy them onto your work computer.",
+          "options": [
+            { "id": "a", "text": "Connect it — it's just movies." },
+            { "id": "b", "text": "Do not connect it to a company system. Personal media does not belong on work devices." },
+            { "id": "c", "text": "Ask IT first before connecting anything." }
+          ],
+          "correctOptions": ["b", "c"],
+          "explanation": "Even a device with legitimate personal content can introduce malware if it has been plugged into an infected machine elsewhere. Personal USB drives should not be connected to company or industrial systems."
+        },
+        {
+          "id": "usb-03",
+          "situation": "IT has issued you an approved company USB through established procedures and documented it in the asset register.",
+          "options": [
+            { "id": "a", "text": "Use it according to organizational policy." },
+            { "id": "b", "text": "Refuse to use it." },
+            { "id": "c", "text": "Use it freely for any purpose." }
+          ],
+          "correctOptions": ["a"],
+          "explanation": "An approved, documented company USB used according to policy is the correct approach. 'Freely for any purpose' is not correct — always follow the specific organizational policy for approved media."
+        }
+      ]
+    },
+    {
+      "id": "ex-10-04",
+      "title": "Visitor Verification Challenge",
+      "type": "scenario-decision",
+      "description": "A person arrives at the workplace claiming to need access. Choose the correct response.",
+      "scenarios": [
+        {
+          "id": "vvc-01",
+          "situation": "A person approaches you and says: 'I'm here from the equipment company.' They have no visible authorization badge or visitor pass.",
+          "options": [
+            { "id": "a", "text": "Let them enter the work area." },
+            { "id": "b", "text": "Give them access to a workstation so they can get started." },
+            { "id": "c", "text": "Follow your organization's visitor verification and authorization procedures." },
+            { "id": "d", "text": "Give them your account credentials so they can log in." }
+          ],
+          "correctOptions": ["c"],
+          "explanation": "Never grant access to a person who lacks proper authorization, regardless of their stated role or urgency. Follow your organization's visitor verification procedures — every time. Options A, B, and D all grant unauthorized access and are incorrect."
+        }
+      ]
+    },
+    {
+      "id": "ex-10-05",
+      "title": "Incident Decision Simulator",
+      "type": "scenario-decision",
+      "description": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.",
+      "scenarios": [
+        {
+          "id": "ids-01",
+          "situation": "You receive an unexpected MFA approval notification on your phone for an account you are not currently trying to access.",
+          "options": [
+            { "id": "a", "text": "Approve it — it's probably an IT update." },
+            { "id": "b", "text": "Do not approve it. Report the unexpected MFA request according to organizational procedures." },
+            { "id": "c", "text": "Ignore it." }
+          ],
+          "correctOptions": ["b"],
+          "explanation": "An MFA request you did not initiate may indicate that someone is attempting to log into your account using your credentials. Do not approve it. Report it immediately — your organization can investigate and protect your account."
+        },
+        {
+          "id": "ids-02",
+          "situation": "You realize you have left your company laptop on public transport and cannot retrieve it.",
+          "options": [
+            { "id": "a", "text": "Wait to see if someone hands it in tomorrow." },
+            { "id": "b", "text": "Report the loss immediately to IT and your manager." },
+            { "id": "c", "text": "Try to find it yourself before telling anyone." }
+          ],
+          "correctOptions": ["b"],
+          "explanation": "Lost devices must be reported immediately. The organization may be able to disable access, lock the device remotely, and assess what data was exposed. Delayed reporting increases risk significantly."
+        },
+        {
+          "id": "ids-03",
+          "situation": "You accidentally clicked a link in a suspicious email and a web page briefly opened before you closed it.",
+          "options": [
+            { "id": "a", "text": "Hope nothing happened and continue working." },
+            { "id": "b", "text": "Delete the email so no one knows." },
+            { "id": "c", "text": "Stop what you are doing and report it to IT immediately." }
+          ],
+          "correctOptions": ["c"],
+          "explanation": "Fast reporting after accidentally clicking a suspicious link gives the security team the best chance to respond before any potential harm spreads. Never hide a mistake — delayed reporting consistently makes incidents harder to manage."
+        },
+        {
+          "id": "ids-04",
+          "situation": "You sent a confidential engineering document to an external contractor who was not the intended recipient.",
+          "options": [
+            { "id": "a", "text": "Ask the contractor to delete it and say nothing more." },
+            { "id": "b", "text": "Report it immediately to your manager and follow organizational procedures." },
+            { "id": "c", "text": "Wait and see if it causes a problem." }
+          ],
+          "correctOptions": ["b"],
+          "explanation": "Accidental data disclosure must be reported immediately. The organization can assess the exposure, take appropriate steps, and determine if any obligations (contractual, regulatory) apply. Asking the recipient to delete it is not a substitute for a proper organizational response."
+        },
+        {
+          "id": "ids-05",
+          "situation": "An unknown person approaches a secure workstation area and asks you to log them in because 'the manager said it was okay.'",
+          "options": [
+            { "id": "a", "text": "Log them in — the manager approved it." },
+            { "id": "b", "text": "Ask the person to wait while you verify the authorization directly with the manager." },
+            { "id": "c", "text": "Give them your password so they can log in themselves." }
+          ],
+          "correctOptions": ["b"],
+          "explanation": "Always verify authorization through a direct, independent channel — not through the person making the request. Social engineering often uses claimed authority to bypass normal procedures. Logging someone in or sharing your password without verification violates Rule 1 and Rule 4 of the Industrial Cybersecurity Golden Rules."
+        }
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "sc-10-01",
+      "title": "A Normal Working Day",
+      "description": "You are starting your shift. Four things happen in quick succession. For each one, decide what the correct response is.",
+      "steps": [
+        {
+          "time": "8:05 AM",
+          "event": "You receive an email: 'Urgent maintenance document attached.' The sender is unfamiliar.",
+          "warningSign": "Suspicious attachment with urgency from an unexpected sender.",
+          "correctAction": "Don't open automatically. Verify through a known, official contact before taking any action."
+        },
+        {
+          "time": "8:20 AM",
+          "event": "Someone you don't recognize hands you a USB drive and says: 'Check this file quickly.'",
+          "warningSign": "Unknown removable media from an unverified person.",
+          "correctAction": "Don't connect it. Follow your organization's removable-media procedure. Verify the person's authorization."
+        },
+        {
+          "time": "8:40 AM",
+          "event": "A visitor says: 'The manager asked me to access this workstation.' They have no visitor badge.",
+          "warningSign": "Authorization issue — claimed verbal approval with no documented authorization.",
+          "correctAction": "Follow visitor verification procedures. Do not grant access until authorization is properly confirmed."
+        },
+        {
+          "time": "9:00 AM",
+          "event": "An unexpected security warning appears on your workstation screen.",
+          "warningSign": "Possible security incident or malware warning.",
+          "correctAction": "Stop what you are doing. Preserve the information (screenshot if possible, note the time). Report to IT. Do not attempt to 'fix' it yourself or dismiss it."
+        }
+      ],
+      "keyLesson": "Industrial environments present multiple potential threats in a single working day. The response is always the same: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW."
+    }
+  ],
+  "tools": [],
+  "quiz": [
+    {
+      "id": "q-10-01",
+      "type": "multiple-choice",
+      "question": "What does OT stand for in an industrial context?",
+      "options": [
+        "Online Technology",
+        "Operational Technology",
+        "Output Terminal",
+        "Organizational Tools"
+      ],
+      "correctAnswer": "Operational Technology",
+      "explanation": "OT (Operational Technology) refers broadly to technology used to monitor or control physical processes, such as industrial control systems, sensors, and production equipment. It is distinct from IT (Information Technology) used for office and business functions."
+    },
+    {
+      "id": "q-10-02",
+      "type": "multiple-choice",
+      "question": "You find a USB drive in the company car park. What is the correct action?",
+      "options": [
+        "Plug it in to find out who owns it.",
+        "Give it to a colleague to check on their computer.",
+        "Do not connect it. Hand it to IT or security according to your organization's procedure.",
+        "Take it home."
+      ],
+      "correctAnswer": "Do not connect it. Hand it to IT or security according to your organization's procedure.",
+      "explanation": "Found USB drives are a known social-engineering technique. Plugging in an unknown device — even to identify its owner — can introduce malware. Always follow the organizational procedure for found devices."
+    },
+    {
+      "id": "q-10-03",
+      "type": "multiple-choice",
+      "question": "You receive an MFA approval notification for an account you are not currently trying to access. What should you do?",
+      "options": [
+        "Approve it — it is probably an IT update.",
+        "Ignore it.",
+        "Do not approve it. Report the unexpected MFA request according to organizational procedures.",
+        "Approve it once and change your password later."
+      ],
+      "correctAnswer": "Do not approve it. Report the unexpected MFA request according to organizational procedures.",
+      "explanation": "An MFA request you did not initiate is a warning sign that someone may be attempting to access your account with stolen credentials. Never approve an MFA request you did not trigger. Report it immediately."
+    },
+    {
+      "id": "q-10-04",
+      "type": "multiple-choice",
+      "question": "An unknown visitor says: 'I'm from the equipment company.' They have no badge. What should you do?",
+      "options": [
+        "Let them in — they seem legitimate.",
+        "Follow your organization's visitor verification and authorization procedures.",
+        "Give them access to a workstation so they can start work.",
+        "Give them your credentials."
+      ],
+      "correctAnswer": "Follow your organization's visitor verification and authorization procedures.",
+      "explanation": "Access to secure areas must always be verified through proper authorization procedures. Claimed identity is not sufficient — every visitor and contractor must go through the correct verification process."
+    },
+    {
+      "id": "q-10-05",
+      "type": "multiple-choice",
+      "question": "You accidentally clicked a link in a suspicious email. What is the correct response?",
+      "options": [
+        "Hope nothing happened and continue working.",
+        "Delete the email and tell no one.",
+        "Stop what you are doing and report it to IT immediately.",
+        "Restart your computer and carry on."
+      ],
+      "correctAnswer": "Stop what you are doing and report it to IT immediately.",
+      "explanation": "Fast reporting after accidentally clicking a suspicious link gives the security team the best chance to respond before any potential damage spreads. Never hide mistakes — fast reporting is always the right choice."
+    },
+    {
+      "id": "q-10-06",
+      "type": "multiple-choice",
+      "question": "Which of the following is NOT one of the Industrial Cybersecurity Golden Rules?",
+      "options": [
+        "Protect your credentials.",
+        "Verify unexpected requests.",
+        "Connect unknown devices if they look safe.",
+        "Report early."
+      ],
+      "correctAnswer": "Connect unknown devices if they look safe.",
+      "explanation": "The Golden Rules state: never connect unknown devices, especially USB/removable media. How a device 'looks' is not a reliable safety indicator — unknown devices should never be connected to company or industrial systems."
+    },
+    {
+      "id": "q-10-07",
+      "type": "multiple-choice",
+      "question": "What is the MilcharSec Industrial Incident Model?",
+      "options": [
+        "Report → Fix → Document → Resume",
+        "Recognize → Stop → Preserve → Report → Follow",
+        "Check → Isolate → Delete → Restart",
+        "Notify → Escalate → Investigate → Close"
+      ],
+      "correctAnswer": "Recognize → Stop → Preserve → Report → Follow",
+      "explanation": "The MilcharSec incident model for industrial and workplace environments is: RECOGNIZE (something is wrong), STOP (cease the unsafe action), PRESERVE (keep relevant information), REPORT (tell the appropriate team), and FOLLOW (follow authorized instructions)."
+    },
+    {
+      "id": "q-10-08",
+      "type": "multiple-choice",
+      "question": "A supplier sends an email saying their bank account has changed and requests you update payment details immediately. What should you do?",
+      "options": [
+        "Update the payment details immediately — the email looks official.",
+        "Reply to the email to confirm.",
+        "Verify the request through an approved, independent organizational procedure — not via the email itself.",
+        "Ignore it."
+      ],
+      "correctAnswer": "Verify the request through an approved, independent organizational procedure — not via the email itself.",
+      "explanation": "This is a classic Business Email Compromise (BEC) pattern. Attackers compromise or impersonate supplier accounts and request payment detail changes. Always verify financial requests through an independent, approved channel — never rely solely on the email."
+    },
+    {
+      "id": "q-10-09",
+      "type": "multiple-choice",
+      "question": "Before leaving your workstation for a meeting, what should you do?",
+      "options": [
+        "Nothing — you will be back soon.",
+        "Lock the screen, secure documents, and secure any removable media.",
+        "Log out only.",
+        "Close all browser tabs."
+      ],
+      "correctAnswer": "Lock the screen, secure documents, and secure any removable media.",
+      "explanation": "The Clean Desk / Clean Screen principle requires locking the screen, securing confidential documents, securing removable media, and protecting access cards before leaving a workstation — regardless of how briefly you will be away."
+    },
+    {
+      "id": "q-10-10",
+      "type": "multiple-choice",
+      "question": "Which of the following is true about restarting industrial systems?",
+      "options": [
+        "You can restart industrial systems the same way you restart an office computer.",
+        "Never restart, modify, disconnect, reconfigure, or update industrial equipment unless you are authorized and trained to do so.",
+        "Restarting industrial systems is always safe.",
+        "It is fine to restart industrial systems if it seems like the right thing to do."
+      ],
+      "correctAnswer": "Never restart, modify, disconnect, reconfigure, or update industrial equipment unless you are authorized and trained to do so.",
+      "explanation": "Unlike an office computer restart, unauthorized changes to industrial systems can have consequences for production, equipment, and in some environments, safety. Only authorized, trained personnel should make changes to industrial systems."
+    }
+  ],
+  "keyTakeaways": [
+    "Cybersecurity is everyone's responsibility — not just IT. Every employee can reduce or increase organizational risk.",
+    "IT (business systems) and OT (operational/industrial systems) require different levels of caution. Never make unauthorized changes to industrial equipment.",
+    "The Industrial Cybersecurity Golden Rules: Protect credentials, Verify requests, Refuse unknown USB devices, Verify people, Avoid unauthorized changes, Protect information, Report early.",
+    "Phishing in industrial environments may impersonate managers, suppliers, or maintenance companies — always apply the WHO/WHAT/WHY/WHEN/HOW verification framework.",
+    "Found or unknown USB devices must never be connected to company or industrial systems.",
+    "The incident response model is: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW.",
+    "Fast reporting — even after making a mistake — is always better than hiding it. Delayed reporting makes incidents harder to manage.",
+    "Clean Desk / Clean Screen: lock your workstation, secure documents, and secure removable media whenever you leave your desk.",
+    "Never authorize access to visitors, contractors, or vendors without proper verification — regardless of claimed authority."
+  ],
+  "reflectApply": [
+    "Think about your typical working day. How many of the situations described in this module — unexpected emails, USB devices, visitors, system warnings — have you encountered? Which of the Golden Rules would help you respond better?",
+    "Identify the correct incident-reporting contact in your organization for each category: IT problem, cybersecurity problem, industrial system problem, and physical security issue. Write them down and keep them accessible.",
+    "Review your current account security: is MFA enabled on your work accounts? Is your workstation password unique? Do you lock your screen when you leave your desk?"
+  ]
+}

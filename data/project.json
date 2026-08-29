@@ -38,7 +38,7 @@
     {
       "id": "track-01",
       "title": "Digital Security Basics",
-      "description": "A complete eight-module learning path covering cybersecurity fundamentals, account security, phishing, safe browsing, data privacy, mobile & remote work, incident reporting, and business email security.",
+      "description": "A complete ten-module learning path covering cybersecurity fundamentals, account security, phishing, safe browsing, data privacy, mobile & remote work, incident reporting, business email security, women's digital safety, and industrial & workplace cybersecurity.",
       "module_ids": [
         "module-01",
         "module-02",
@@ -48,7 +48,8 @@
         "module-06",
         "module-07",
         "module-08",
-        "module-09"
+        "module-09",
+        "module-10"
       ]
     }
   ],
@@ -377,6 +378,54 @@
           "max": 10
         },
         "questions_count": 5,
+        "passing_threshold_percentage": null
+      }
+    },
+    {
+      "id": "module-10",
+      "title": "Industrial & Workplace Cybersecurity",
+      "why_this_matters": "Industrial organizations increasingly depend on digital technology to operate safely and efficiently. Cybersecurity is not only the responsibility of the IT or cybersecurity department. Every employee can either reduce or increase organizational risk through everyday actions.",
+      "study_time_minutes": 90,
+      "topics": [
+        "Why industrial cybersecurity matters",
+        "IT versus OT",
+        "Industrial Cybersecurity Golden Rules",
+        "Account and credential security",
+        "Phishing in industrial environments",
+        "Business Email Compromise",
+        "Social engineering pressure tactics",
+        "USB and removable media risks",
+        "Unauthorized software",
+        "Remote access security",
+        "Vendor and contractor verification",
+        "Physical security and tailgating",
+        "Clean desk and clean screen",
+        "Data protection and wrong-recipient scenarios",
+        "Cloud storage risks",
+        "Mobile device security",
+        "Lost device response",
+        "Remote work security",
+        "Suspicious system behavior recognition",
+        "Incident recognition and the RECOGNIZE-STOP-PRESERVE-REPORT-FOLLOW model",
+        "Reporting without fear",
+        "Role-based awareness"
+      ],
+      "learning_outcome": "After completing this module, employees will be able to recognize common cyber risks in industrial and workplace environments, protect workplace information and devices, avoid unsafe actions, and report problems quickly using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.",
+      "interactive_activity": "Industrial Cyber Risk Checker self-assessment, Industrial Phishing Simulator, USB Decision Challenge, Visitor Verification Challenge, Incident Decision Simulator",
+      "practical_scenarios": [
+        "Scenario: A Normal Working Day — four security events in one shift (suspicious email, unknown USB, unverified visitor, security warning)",
+        "Scenario: Accidental data disclosure to wrong recipient",
+        "Scenario: Unexpected MFA request",
+        "Scenario: Lost company laptop",
+        "Scenario: Unauthorized access request from unknown visitor"
+      ],
+      "tool_ids": [],
+      "quiz": {
+        "approximate_questions": {
+          "min": 5,
+          "max": 10
+        },
+        "questions_count": 10,
         "passing_threshold_percentage": null
       }
     }
