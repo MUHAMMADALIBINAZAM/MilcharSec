@@ -1,170 +1,32 @@
 {
-  "moduleMetadata": {
-    "id": "module-09",
-    "title": "Women's Digital Safety & Online Privacy",
-    "description": "Empowering women and girls to navigate digital spaces with confidence through privacy control, identity protection, and informed response strategies.",
-    "whyThisMatters": "Women's digital safety is essential for ensuring confident, secure participation in digital life. By understanding how to protect personal information, secure accounts, and respond effectively to threats like harassment or online blackmail, users can maintain control over their digital identities and privacy.",
-    "studyTimeMinutes": 45,
-    "learningOutcome": "Users will be able to recognize common digital risks, implement robust privacy controls, and apply a structured response model when facing online safety incidents."
-  },
-  "learningObjectives": [
-    "Define women's digital safety and its core goals: Protect, Control, Respond.",
-    "Identify common digital risks including harassment, impersonation, and blackmail.",
-    "Implement privacy controls on social media and personal accounts.",
-    "Apply the WHO/WHAT/WHERE/WHEN/WHY framework to evaluate posting risks.",
-    "Preserve evidence correctly in the event of an online safety incident.",
-    "Recognize the signs of account takeover and fake support scams.",
-    "Utilize a structured response framework (S.A.F.E.R.) for managing blackmail and AI-manipulated content.",
-    "Navigate Pakistan-specific reporting and support resources."
+  "moduleMetadata":{"id":"module-09","title":"Women's Digital Safety & Online Privacy","description":"Empowering women and girls to navigate digital spaces with confidence through privacy control, identity protection, and informed response strategies.","whyThisMatters":"Women's digital safety is essential for ensuring confident, secure participation in digital life. By understanding how to protect personal information, secure accounts, and respond effectively to threats like harassment or online blackmail, users can maintain control over their digital identities and privacy.","studyTimeMinutes":75,"learningOutcome":"Users will be able to recognize common digital risks, implement robust privacy controls, and apply a structured response model when facing online safety incidents."},
+  "learningObjectives":["Define women's digital safety and its core goals: Protect, Control, Respond.","Identify common digital risks including harassment, impersonation, and blackmail.","Implement privacy controls on social media and personal accounts.","Apply the WHO/WHAT/WHERE/WHEN/WHY framework to evaluate posting risks.","Preserve evidence correctly in the event of an online safety incident.","Recognize the signs of account takeover and fake support scams.","Utilize a structured response framework (S.A.F.E.R.) for managing blackmail and AI-manipulated content.","Navigate Pakistan-specific reporting and support resources."],
+  "sections":[
+    {"title":"Module Purpose","content":"This module is designed to help women and girls protect themselves from common digital threats such as:","bulletPoints":["Online harassment","Cyberstalking","Fake profiles and impersonation","Account takeover","Privacy violations","Location exposure","Unwanted contact","Online blackmail","Unauthorized sharing of personal information","Non-consensual sharing of private content","Social-media abuse","Identity theft","Suspicious online relationships","Device and account compromise"],"callout":"The objective is not to discourage women from using technology.\n\nMilcharSec helps users use digital platforms confidently while maintaining control over their privacy, identity, accounts, and personal information."},
+    {"title":"1. What Is Women's Digital Safety?","content":"Women's digital safety means protecting yourself from risks that can occur through:\n\nSocial media\nMessaging applications\nEmail\nOnline communities\nCloud accounts\nSmartphones\nLaptops\nEducational platforms\nShopping platforms\nProfessional networks","subsections":[{"title":"Protect","content":"Protect your accounts, devices, and information."},{"title":"Control","content":"Control who can access or see your information."},{"title":"Respond","content":"Know what to do when something goes wrong."}]},
+    {"title":"2. Common Digital Risks","content":"MilcharSec should introduce users to the following risks.","table":{"headers":["Risk","Example"],"rows":[["Account takeover","Someone gains access to your social account"],["Impersonation","Someone creates a fake account using your identity"],["Cyberstalking","Repeated unwanted online monitoring/contact"],["Harassment","Repeated abusive or unwanted communication"],["Privacy violation","Personal information shared without permission"],["Location exposure","Someone learns where you regularly go"],["Blackmail","Someone uses private information to pressure you"],["Fake profiles","Someone pretends to be another person"],["Phishing","Fake messages designed to steal information"],["Data theft","Personal information is obtained without authorization"]]},"callout":"Experiencing an online safety problem is not the victim's fault."},
+    {"title":"3. Protect Your Main Email Account","content":"Your primary email account deserves special protection because it can often be used for account recovery.\n\nMilcharSec recommends:","bulletPoints":["Use a unique password.","Enable MFA.","Review recovery options.","Review active sessions.","Remove unknown devices.","Never share verification codes.","Do not reuse the password on other websites."],"quiz":[{"question":"Which account should receive particularly strong protection?","options":["A. An account you never use","B. Your primary email account","C. A temporary account","D. A public website account"],"answer":"B"}]},
+    {"title":"4. Social-Media Privacy","content":"Users should regularly review:","checklist":["Profile visibility — Who can see your profile?","Posts — Who can see your posts?","Stories — Who can view temporary content?","Messages — Who can send you messages?","Tags — Who can tag or mention you?","Comments — Who can comment?","Searchability — Can strangers find you using your email or phone number?"]},
+    {"title":"5. Privacy Setting Simulator","content":"For your deployed MilcharSec platform, make this interactive.\n\nShow a fictional social-media profile:\n\nProfile: Sarah\n\nThen give switches:","bulletPoints":["Public profile","Public phone number","Public email","Location sharing","Allow unknown messages","Allow everyone to tag","Allow search by phone number"],"callout":"Privacy Exposure: HIGH\n\nReasons:\nPhone number publicly visible\nLocation enabled\nUnknown users can message\nEveryone can tag the account\n\nThen allow the user to click: Improve My Privacy\n\nThe platform explains each setting."},
+    {"title":"6. Location Privacy","content":"Location information can reveal patterns.\n\nFor example:\n\nHome → University → Gym → Home\n\nRepeated location sharing can potentially reveal someone's routine.\n\nSafer Practices\nUsers should consider:\nReviewing location permissions.\nAvoiding unnecessary real-time location sharing.\nChecking which apps have location access.\nReviewing location-related social-media settings.\nConsidering whether a location needs to be posted publicly.","callout":"Location services themselves are not necessarily dangerous.\n\nGive location access only when it is necessary and appropriate."},
+    {"title":"7. Think Before Posting","content":"Before posting something publicly, ask:","framework":[["WHO?","Who can see this?"],["WHAT?","What information does it reveal?"],["WHERE?","Does it reveal my location?"],["WHEN?","Does it reveal where I am right now?"],["WHY?","Does everyone who can see it actually need this information?"]]},
+    {"title":"8. Photo Privacy","content":"Photos may contain more information than the user realizes.\n\nCheck for:","checklist":["University cards","ID cards","Addresses","Documents","Vehicle information","Street signs","Workplace information","Visible personal details","Other people's private information"],"callout":"Photo Privacy Checklist\n\nUser uploads or selects a sample image.\n\nPossible personal information visible in the image.\n\nFor the first deployment, I recommend making this a privacy checklist rather than automatic facial/person identification."},
+    {"title":"9. Fake Profiles & Impersonation","content":"Someone may create an account pretending to be you.\n\nPossible indicators:\nYour name\nYour photograph\nSimilar username\nYour biography\nYour university/work information\nMessages sent pretending to be you","steps":["Save evidence.","Record the profile username.","Record the profile URL if available.","Report the account to the platform.","Secure your own account.","Tell trusted people if necessary.","Report serious cases to the appropriate authority."]},
+    {"title":"10. Interactive Tool — Fake Profile Detector","content":"Users can enter information about a suspicious profile.\n\nInput: Profile name; Username; Account age; Profile picture; Messages received; Claims made by account.\n\nEducational analysis can identify indicators such as:","bulletPoints":["Very new account","Identity mismatch","Suspicious requests","Pressure to communicate privately","Requests for personal information","Requests for money","Inconsistent identity information"],"callout":"Low Concern\nNeeds Verification\nHigh Concern\n\nThis is an educational assessment. It cannot confirm whether an account is genuine or malicious."},
+    {"title":"11–14. Unwanted Contact, Cyberstalking, Online Harassment, Threats & Blackmail","content":"Examples: Repeated DMs; Unwanted friend requests; Persistent comments; Repeated calls; Messages from multiple accounts.\n\nCyberstalking can involve repeated unwanted online behavior directed toward a person. Examples may include: Repeated unwanted communication; Persistent monitoring; Multiple fake accounts; Repeated unwanted contact after being asked to stop; Attempts to obtain private information.\n\nYou don't have to respond to someone simply because they contact you.\n\nHarassment may include: Abusive messages; Repeated unwanted contact; Threatening messages; Fake accounts; Coordinated abuse; Unwanted public posts.\n\nDon't engage unnecessarily. Instead: Preserve → Block/Restrict → Report → Seek Support.\n\nIf someone uses private information to threaten or pressure you:","dont":["Panic","Give them additional personal information","Share passwords","Share authentication codes","Continue unnecessary negotiation","Delete important evidence immediately"],"do":["Preserve relevant evidence","Tell a trusted person","Report the account/content","Secure affected accounts","Seek appropriate professional/legal help when necessary"]},
+    {"title":"15–16. Evidence Preservation and Evidence Checklist","content":"This should be an important interactive section in MilcharSec. Teach users to preserve:","checklist":["Screenshots","Username","Profile URL","Email address","Phone number if relevant","Date/time","Messages","Relevant platform notifications"],"callout":"Don't manipulate or edit evidence unnecessarily.","evidenceChecklist":[["Incident:","What happened?"],["Person/account:","Who was involved?"],["Platform:","Where did it happen?"],["Time:","When did it happen?"],["Content:","What was sent or posted?"],["Evidence:","What screenshots or records exist?"],["Action:","What has already been reported?"]]},
+    {"title":"17–19. Account Takeover, MFA Protection and Fake Support Accounts","content":"Possible warning signs:","checklist":["Password suddenly doesn't work","Unknown login","Unknown device","Unexpected password reset","Profile information changed","Messages sent without your knowledge","Recovery email changed","Unexpected MFA notifications"],"callout":"Secure → Verify → Report → Recover\n\nMFA provides an additional layer of account security. Never approve an MFA request you did not initiate. If unexpected MFA requests repeatedly appear: Do not approve them. Preserve the information. Review account security. Report the activity when appropriate.\n\nAn attacker may pretend to be: Instagram Support; Facebook Security; Account Recovery Team; Cybersecurity Department. They may ask for: Password; OTP; MFA code; Recovery code; Personal information.\n\nNever give your password or authentication code to someone who contacts you unexpectedly claiming to be support."},
+    {"title":"20–24. Digital Identity, University, Recovery, Device Safety and Personal Digital Safety Score","content":"Avoid unnecessarily publishing: CNIC information; Phone number; Home address; Personal email; Daily routine; Travel plans; University schedule; Workplace schedule; Private family information. This does not mean users must hide their identity. It means: Share information intentionally.\n\nA student posts: Every Monday and Wednesday I am in Lab 4 from 9 AM–1 PM. What information has been exposed? Routine; University location; Time pattern; Regular schedule. Avoid unnecessarily publishing detailed routines publicly.\n\nAccount Recovery Safety: Use the official account recovery process; Verify the correct website/app; Change compromised passwords; Enable MFA; Review active sessions; Review recovery email/phone; Report unauthorized access. Never give recovery codes to strangers claiming to help.\n\nDevice Safety Checklist: Screen lock; Automatic locking; Updated operating system; Updated applications; App permissions reviewed; Unknown applications removed; Account sessions reviewed.\n\nPersonal Digital Safety Score questions: Is MFA enabled on your main email? Do you reuse passwords? Is your phone number publicly visible? Is your profile public? Do you share your real-time location publicly? Can strangers message you? Do you review app permissions? Do you have a screen lock? Do you know how to report harassment on platforms you use? Do you know where to report cybercrime in Pakistan?\n\nResult: Digital Safety Score: 78/100. Strong Areas: Account protection; Device security. Improve: Location privacy; Social-media visibility. Recommended Actions: Review location settings; Restrict profile visibility; Enable MFA on remaining important accounts."},
+    {"title":"25–30. Pakistan — Get Help & Report","content":"National Cyber Crime Investigation Agency — NCCIA\n\nThe National Cyber Crime Investigation Agency (NCCIA) is Pakistan's current dedicated cybercrime investigation agency. Its official site provides cybercrime reporting information and specifically includes cyber-harassment guidance.\n\nReport Cybercrime: NCCIA Official Website: https://www.nccia.gov.pk/\nOnline Complaint Portal: https://complaint.nccia.gov.pk/\nHelpline: 1799\n\nNCCIA's FAQ says complaints can also be initiated through the Pakistan Citizen Portal and that formal investigation is handled through NCCIA's Cybercrime Reporting Centres.\n\nNCCIA — Cyber Harassment: NCCIA specifically advises users not to overshare personal information, to secure social-media accounts, use safer browsing practices, and avoid unnecessary interaction with unknown people. It lists 1799, its complaint system, and an official email as reporting channels. https://www.nccia.gov.pk/harrasment.php\n\nDigital Rights Foundation — Cyber Harassment Helpline: Helpline 0800-39393; Email helpdesk@digitalrightsfoundation.pk. DRF describes the service as free and confidential and says it assists people facing online harassment and digital-security threats. Label this Support / Guidance rather than presenting it as a law-enforcement reporting agency.\n\nPakistan Citizen Portal: https://web.citizenportal.gov.pk/\n\nCybercrime / Online Abuse: Fake account; Online harassment; Account compromise; Cyberstalking; Online blackmail; Unauthorized sharing. Use the appropriate cybercrime reporting/support channel.\n\nImmediate Physical Danger: If a user believes they face an immediate physical safety emergency, MilcharSec should tell them to contact appropriate local emergency services or a trusted person immediately rather than relying only on an online complaint."},
+    {"title":"31–34. Help UI, Privacy Design and Educational Risk Assessment","content":"Need Help? Report Cybercrime — NCCIA — Helpline: 1799 — https://complaint.nccia.gov.pk/\nCyber Harassment Support — Digital Rights Foundation — 0800-39393 — https://digitalrightsfoundation.pk/\nGovernment Complaint Portal — Pakistan Citizen Portal — https://web.citizenportal.gov.pk/\n\nInteractive I Need Help options: My account was hacked; Someone is harassing me; Someone created a fake profile; Someone is threatening/blackmailing me; My private information was shared; Someone is repeatedly contacting me; My device/account may be compromised; I don't know what happened. Then MilcharSec gives: Immediate Safety Steps; Evidence Checklist; Account Protection Steps; Platform Reporting Guidance; Pakistan Reporting Resources.\n\nDo NOT permanently store sensitive incident information unless there is a clear reason and proper consent. For interactive tools, preferably: Process → Analyze → Display Result → Delete Input. Your input is processed for this assessment and is not permanently stored. Only make this statement if your actual implementation truly does this.\n\nDo not ask users for unnecessary information: Passwords; OTP/MFA codes; Recovery codes; CNIC numbers for educational checks; Private photos unnecessarily; Exact home address; Unnecessary personal information. Collect the minimum information required to provide the feature.\n\nEvery automated result should include: Educational Assessment Only. This assessment does not establish that a crime has occurred. If you believe you are at risk, preserve relevant information and consider contacting an appropriate support or reporting service."},
+    {"title":"35–38. Final Scenario, Quiz, Checklist and Module Completion","content":"Scenario: A student discovers a fake Instagram account using her name and photograph. The account is contacting people pretending to be her.\n\nStep 1: Preserve relevant evidence.\nStep 2: Secure her own account.\nStep 3: Avoid unnecessary engagement with the impersonating account.\nStep 4: Report the fake account through the platform.\nStep 5: Seek support if needed.\nStep 6: If the situation constitutes cybercrime or serious harassment, consider reporting it to NCCIA.\n\nCorrect Response: PRESERVE → SECURE → REPORT → SEEK SUPPORT\n\nFinal Knowledge Quiz\nQ1. Should you share your MFA code with someone claiming to be support? No.\nQ2. Should real-time location always be publicly shared? No.\nQ3. What should you do if someone creates a fake profile using your identity? Preserve evidence, report the profile, secure your account, and seek appropriate help.\nQ4. What should you do with serious online threats? Preserve relevant information, seek support, and report appropriately.\nQ5. What is the current Pakistani cybercrime agency? NCCIA — National Cyber Crime Investigation Agency.\nQ6. What is the NCCIA cybercrime helpline? 1799.\nQ7. What organization provides a Cyber Harassment Helpline? Digital Rights Foundation.\nQ8. What is its listed helpline? 0800-39393.\n\nMilcharSec Women's Digital Safety Checklist\nAccounts: Unique passwords; MFA enabled; Recovery options secured; Unknown sessions removed.\nDevice: Screen lock; Automatic locking; Updated OS; App permissions reviewed.\nSocial Media: Profile privacy reviewed; Unknown messages restricted; Tags controlled; Phone/email visibility reviewed.\nLocation: Location permissions reviewed; Real-time sharing limited; Routine not unnecessarily public.\nPhotos: Background checked; IDs/documents hidden; Location considered; Audience checked.\nOnline Abuse: Evidence preserved; Account reported; Trusted person informed; Appropriate authority contacted if necessary.\n\nRemember: PROTECT → CONTROL → THINK → PRESERVE → REPORT\nYour digital identity belongs to you. You have the right to use technology without surrendering unnecessary control over your privacy.\n\nPakistan Resources: NCCIA — Cybercrime Reporting: https://complaint.nccia.gov.pk/; NCCIA — Official Website: https://www.nccia.gov.pk/; Digital Rights Foundation — Digital Safety Support: https://digitalrightsfoundation.pk/; Pakistan Citizen Portal: https://web.citizenportal.gov.pk/\n\nMilcharSec Core Habit: YOUR DATA. YOUR ACCOUNT. YOUR PRIVACY. YOUR CONTROL."},
+    {"title":"Session 2 — Online Blackmail, Deepfakes & AI-Manipulated Videos","content":"This session teaches users how to respond safely when someone: Threatens them using private information; Claims to possess private images/videos; Uses manipulated images or videos to impersonate them; Creates AI-generated or AI-manipulated content involving them; Threatens to publish or distribute fake content; Demands money or other actions; Creates fake social-media profiles using their identity.\n\nIf someone threatens you with fake or manipulated content, you are not responsible for what the attacker created.\n\nDigital blackmail is when someone uses digital information, images, videos, messages, or claims to pressure or threaten another person. The content may be genuine, manipulated, completely fabricated, or AI-generated. A threat does not prove that the person actually has what they claim.\n\nAI tools can manipulate a person's face, voice, photograph, video, audio, background, or text. The result can appear convincing even when it is not genuine. These technologies are often referred to as deepfakes or synthetic/manipulated media.\n\nAI-manipulated content can potentially be used for impersonation, harassment, fraud, reputation attacks, extortion, misinformation, and privacy violations. A video looking realistic does not automatically mean it is authentic.\n\nExample: A student receives a message: I created a video of you. Send me money or I will publish it. The student does not know whether the video is real or manipulated. Don't panic. Don't send money. Don't send additional personal information. Don't forward the content to other people. Instead: Preserve relevant evidence; Stop unnecessary communication; Secure affected accounts; Report the account/content; Tell a trusted person; Seek appropriate professional or legal support if necessary."},
+    {"title":"Session 2 — S.A.F.E.R., What NOT To Do and Evidence","content":"The BLACKMAIL Response Model — S.A.F.E.R.","framework":[["S — Stop","Don't immediately comply with demands."],["A — Avoid Further Engagement","Don't continue unnecessary negotiation with the person."],["F — File Evidence","Preserve relevant messages, account information, URLs, and timestamps."],["E — Enhance Security","Change compromised passwords, enable MFA, and review account sessions."],["R — Report","Report the account/content and use appropriate support or law-enforcement channels."]],"dont":["Don't send money simply because they demand it.","Don't provide your password.","Don't provide OTP/MFA codes.","Don't send additional personal information.","Don't forward the suspected content unnecessarily.","Don't attempt to retaliate.","Don't publicly post the suspected content to prove it is fake.","Don't blame yourself."],"checklist":["Username","Profile name","Profile URL","Email address","Phone number, where relevant","Messages","Threats","Dates and times","Platform name","Relevant URLs","Screenshots"],"callout":"Create an Incident Evidence Checklist rather than asking users to upload intimate or highly sensitive content to your platform. Your platform should not encourage victims to upload intimate images/videos for AI analysis. Instead, your UI can ask: Do you have evidence of the incident? Screenshot → Save securely → Record account details → Report.\n\nThere is no single visual clue that proves a video is fake. Possible warning signs can include: Strange facial movements; Inconsistent lighting; Unnatural lip synchronization; Audio that doesn't match the person; Unusual transitions; Inconsistent background details; Unnatural speech patterns; Visual inconsistencies; Contradictory context. These signs are not definitive proof.\n\nContext Verification: Who originally posted it? Where did it first appear? Is there an original source? Does the surrounding context make sense? Is the person actually known to have been present? Are multiple trustworthy sources reporting the same event? Has the supposed person or organization confirmed it?"},
+    {"title":"Session 2 — Verification Exercise and Blackmail + Fake AI Content Scenario","content":"AI Video Verification Exercise: A video appears online showing a person saying something they supposedly never said. A. Immediately assume it is real. B. Immediately assume it is fake. C. Investigate the source and context and avoid spreading it until verified. D. Download and repost it. Correct Answer: C.\n\nBlackmail + Fake AI Content Scenario\nSituation: Someone contacts a woman through social media. They claim: I have an embarrassing video of you. They demand money. They send a suspicious video that appears to show her.\n\nStep 1 — STOP\nDon't immediately respond to the demand.\n\nStep 2 — DON'T PAY OR PROVIDE INFORMATION\nDon't provide additional information or authentication codes.\n\nStep 3 — PRESERVE\nRecord relevant account and message information.\n\nStep 4 — SECURE\nReview account security and enable MFA.\n\nStep 5 — REPORT\nReport the account and content to the platform.\n\nStep 6 — SEEK SUPPORT\nTell a trusted person and consider appropriate professional/legal support."},
+    {"title":"Session 2 — Tools, Reporting, Emergency Screen and Decision Tree","content":"AI Media Awareness Checker — not 100% Deepfake Detector, because automated systems cannot guarantee that a piece of media is real or fake. Accept a publicly available or non-sensitive sample media file for educational demonstration. It can explain: Possible visual inconsistencies; Audio/video synchronization issues; Contextual concerns; Source information if available; Why automated analysis is uncertain. Results: No obvious indicators detected; Potential manipulation indicators; Multiple manipulation indicators. Disclaimer: This tool provides an educational assessment and cannot guarantee that media is authentic or manipulated. Do not rely on an automated result for legal or safety decisions.\n\nBlackmail Response Assistant options: Someone is threatening me; Someone created a fake profile; Someone claims to have private content; Someone shared manipulated content; Someone is demanding money; Someone is repeatedly contacting me; Other. If selected: Someone is threatening me with a fake video. First: Don't panic. Protect: Secure your important accounts. Preserve: Save relevant evidence. Don't: Don't send passwords, OTPs, or additional private information. Report: Report the account/content through the platform. Get Support: Contact a trusted person and appropriate support/reporting services.\n\nPakistan — Reporting Cyber Harassment & Blackmail: NCCIA Helpline: 1799; NCCIA Official Website: https://www.nccia.gov.pk/; NCCIA Online Complaint Portal: https://complaint.nccia.gov.pk/; NCCIA Cyber Harassment Information: https://www.nccia.gov.pk/harrasment.php; Digital Rights Foundation Cyber Harassment Helpline: 0800-39393; Pakistan Citizen Portal: https://web.citizenportal.gov.pk/\n\nI'm Being Blackmailed: You don't have to handle this alone. Do now: Secure your accounts; Preserve relevant evidence; Don't share passwords or OTPs; Avoid unnecessary communication; Report the account/content; Tell someone you trust; Use appropriate reporting/support channels.\n\nInteractive Decision Tree: Are you being threatened? YES. Is the person demanding money or another action? YES. Is the content possibly fake/manipulated? YES / DON'T KNOW. Don't try to prove it yourself. Preserve relevant evidence. Secure accounts. Report the account/content. Seek support. Pakistan: NCCIA — 1799; DRF — 0800-39393."},
+    {"title":"Session 2 — Knowledge Quiz, Remember Card and Recommended Placement","content":"Q1. Does a realistic-looking AI video automatically prove that it is genuine? No.\nQ2. Should you give someone your password because they threaten you? No.\nQ3. What should you preserve? Relevant evidence such as messages, account details, timestamps, and URLs.\nQ4. Should victims upload intimate content to MilcharSec for analysis? No.\nQ5. What should you do before sharing suspicious AI-generated content? Verify the source and context.\nQ6. What is the NCCIA cybercrime helpline? 1799.\nQ7. What is the DRF Cyber Harassment Helpline? 0800-39393.\n\nTHREATENED ONLINE?\nDON'T PANIC\nSecure your accounts\nPreserve evidence\nDon't share passwords/OTPs\nDon't automatically comply with demands\nReport the account/content\nTell someone you trust\nContact appropriate support/reporting services\n\nFAKE OR REAL — YOU DON'T HAVE TO HANDLE DIGITAL BLACKMAIL ALONE.\n\nRecommended placement: Session 1 — Women's Digital Safety & Privacy → Accounts, social media, location, privacy, impersonation. Session 2 — Online Blackmail & AI-Manipulated Media → Blackmail, deepfakes, threats, evidence, response. Session 3 — Reporting & Getting Help in Pakistan → NCCIA, DRF, platform reporting, incident documentation. Interactive Tools: Digital Privacy Checker; Fake Profile Awareness Checker; Blackmail Response Assistant; AI Media Awareness Checker; Pakistan Cyber Help Directory."}
   ],
-  "sections": [
-    {
-      "title": "What Is Women's Digital Safety?",
-      "content": "Digital safety is not about avoiding technology, but about using it with control and confidence. It has three major goals: Protecting your information, Controlling who accesses it, and Responding effectively when things go wrong.",
-      "subsections": [
-        {
-          "title": "Core Goals",
-          "content": "Protect accounts and devices; Control visibility and access; Respond to incidents safely."
-        }
-      ]
-    },
-    {
-      "title": "Protecting Your Primary Email",
-      "content": "Your primary email is a master key for your digital life and account recovery. It requires the strongest protection.",
-      "bulletPoints": [
-        "Use a unique, strong password.",
-        "Enable Multi-Factor Authentication (MFA).",
-        "Regularly review recovery options and active sessions."
-      ]
-    },
-    {
-      "title": "Location and Photo Privacy",
-      "content": "Real-time location sharing and unfiltered photos can reveal your daily routines and personal identifiers.",
-      "tips": [
-        "Review app location permissions.",
-        "Avoid posting real-time location when unnecessary.",
-        "Check photos for IDs, documents, or workplace signs before posting."
-      ]
-    },
-    {
-      "title": "The S.A.F.E.R. Response Framework",
-      "content": "In the event of blackmail, threats, or harassment, follow this model to maintain control.",
-      "steps": [
-        "Stop: Do not immediately comply with demands.",
-        "Avoid: Do not continue unnecessary negotiation.",
-        "File: Preserve all evidence (screenshots, URLs).",
-        "Enhance: Change passwords, enable MFA.",
-        "Report: Use platform and appropriate legal channels."
-      ]
-    }
-  ],
-  "interactiveExercises": [
-    {
-      "id": "ex-09-01",
-      "type": "simulation",
-      "title": "Privacy Setting Simulator",
-      "question": "Which of these settings creates the highest privacy exposure?",
-      "options": [
-        "Public profile with visible phone number and location sharing.",
-        "Private profile with limited tag access.",
-        "Allowing friends-only messaging."
-      ],
-      "correctAnswer": "Public profile with visible phone number and location sharing.",
-      "explanation": "Publicly exposing contact and location details is a high-risk practice."
-    },
-    {
-      "id": "ex-09-02",
-      "type": "analysis",
-      "title": "Fake Profile Detector",
-      "question": "An account claiming to be a friend messages you, demanding money urgently. What is the most likely indicator that this is a fake profile?",
-      "options": [
-        "They used your name.",
-        "They are using a profile picture of you.",
-        "They are pressuring you for money and private communication.",
-        "The profile was created 2 days ago."
-      ],
-      "correctAnswer": "They are pressuring you for money and private communication.",
-      "explanation": "Urgency and pressure for financial/private action are classic indicators of an impersonation or fraud attempt."
-    }
-  ],
-  "scenarios": [
-    {
-      "id": "sc-09-01",
-      "title": "The Fake Impersonation Account",
-      "content": "You discover an Instagram account using your name and photos to message people.",
-      "impact": "Impersonation and privacy violation.",
-      "lesson": "Preserve evidence and report immediately.",
-      "choices": [
-        {
-          "text": "Message the fake account and threaten them",
-          "correct": false,
-          "consequence": "Engaging unnecessarily may increase harassment or provide them with more information about you."
-        },
-        {
-          "text": "Preserve evidence (screenshots, profile URL), secure your own account, and report the fake profile to the platform",
-          "correct": true,
-          "consequence": "This is the safest path to protect your identity and remove the offending content."
-        }
-      ],
-      "correctAnswer": "Preserve evidence (screenshots, profile URL), secure your own account, and report the fake profile to the platform"
-    },
-    {
-      "id": "sc-09-02",
-      "title": "The Blackmail Threat",
-      "content": "Someone threatens to publish private images of you unless you send money.",
-      "impact": "Digital blackmail.",
-      "lesson": "Do not pay. Panic leads to poor decisions. Follow S.A.F.E.R.",
-      "choices": [
-        {
-          "text": "Send a small amount to make them stop",
-          "correct": false,
-          "consequence": "Paying once rarely stops the threat; it marks you as a target who will pay, often leading to increased demands."
-        },
-        {
-          "text": "Stay calm, do not pay, preserve the messages, and contact a trusted person/authority",
-          "correct": true,
-          "consequence": "Maintaining composure and seeking support breaks the power dynamic. Do not negotiate with attackers."
-        }
-      ],
-      "correctAnswer": "Stay calm, do not pay, preserve the messages, and contact a trusted person/authority"
-    }
-  ],
-  "tools": [],
-  "quiz": [
-    {
-      "id": "q-09-01",
-      "type": "multiple-choice",
-      "question": "What should you do if you receive an unexpected MFA request?",
-      "options": [
-        "Approve it to see what happens.",
-        "Do not approve it, preserve information, and check your account security.",
-        "Share it with your friend to ask for advice."
-      ],
-      "correctAnswer": "Do not approve it, preserve information, and check your account security.",
-      "explanation": "Unexpected MFA prompts are a sign of unauthorized access attempts."
-    },
-    {
-      "id": "q-09-02",
-      "type": "multiple-choice",
-      "question": "What is the official cybercrime helpline in Pakistan?",
-      "options": [
-        "100",
-        "1799",
-        "911"
-      ],
-      "correctAnswer": "1799",
-      "explanation": "1799 is the NCCIA helpline for reporting cybercrime."
-    }
-  ],
-  "keyTakeaways": [
-    "Digital safety is about taking control, not avoiding technology.",
-    "Primary email accounts require the strongest possible protection (unique password + MFA).",
-    "Never pay blackmail demands; preserve evidence and seek help instead.",
-    "Automated 'deepfake detectors' for intimate content are not reliable; rely on personal discretion and support services.",
-    "Pakistan-specific resources like NCCIA (1799) and Digital Rights Foundation (0800-39393) provide necessary support."
-  ],
-  "reflectApply": [
-    "Review your current social media privacy settings. Are there any that could be stricter?",
-    "Identify a trusted person you could contact if you experienced an online safety incident."
-  ]
+  "interactiveExercises":[],"scenarios":[],"tools":[],
+  "quiz":[{"id":"q-09-01","type":"multiple-choice","question":"Should you share your MFA code with someone claiming to be support?","options":["Yes.","No."],"correctAnswer":"No.","explanation":"Never share authentication codes with someone claiming to be support."},{"id":"q-09-02","type":"multiple-choice","question":"Should real-time location always be publicly shared?","options":["Yes.","No."],"correctAnswer":"No.","explanation":"Avoid unnecessary real-time location sharing."},{"id":"q-09-03","type":"multiple-choice","question":"What should you do if someone creates a fake profile using your identity?","options":["Ignore it.","Preserve evidence, report the profile, secure your account, and seek appropriate help."],"correctAnswer":"Preserve evidence, report the profile, secure your account, and seek appropriate help.","explanation":"Preserve, secure, report, and seek support."},{"id":"q-09-04","type":"multiple-choice","question":"What should you do with serious online threats?","options":["Respond publicly.","Preserve relevant information, seek support, and report appropriately."],"correctAnswer":"Preserve relevant information, seek support, and report appropriately.","explanation":"Preserve information, seek support, and report appropriately."},{"id":"q-09-05","type":"multiple-choice","question":"What is the current Pakistani cybercrime agency?","options":["NCCIA — National Cyber Crime Investigation Agency.","DRF."],"correctAnswer":"NCCIA — National Cyber Crime Investigation Agency.","explanation":"NCCIA is Pakistan's current dedicated cybercrime investigation agency."},{"id":"q-09-06","type":"multiple-choice","question":"What is the NCCIA cybercrime helpline?","options":["100","1799","911"],"correctAnswer":"1799","explanation":"1799 is the NCCIA helpline for reporting cybercrime."},{"id":"q-09-07","type":"multiple-choice","question":"What organization provides a Cyber Harassment Helpline?","options":["Digital Rights Foundation.","NCCIA."],"correctAnswer":"Digital Rights Foundation.","explanation":"Digital Rights Foundation provides the Cyber Harassment Helpline."},{"id":"q-09-08","type":"multiple-choice","question":"What is the DRF Cyber Harassment Helpline?","options":["0800-39393","1799"],"correctAnswer":"0800-39393","explanation":"Digital Rights Foundation lists 0800-39393 for its Cyber Harassment Helpline."}],
+  "keyTakeaways":["Digital safety is about taking control, not avoiding technology.","Primary email accounts require the strongest possible protection (unique password + MFA).","Never pay blackmail demands; preserve evidence and seek help instead.","Automated 'deepfake detectors' for intimate content are not reliable; rely on personal discretion and support services.","Pakistan-specific resources like NCCIA (1799) and Digital Rights Foundation (0800-39393) provide necessary support.","PROTECT → CONTROL → THINK → PRESERVE → REPORT","YOUR DATA. YOUR ACCOUNT. YOUR PRIVACY. YOUR CONTROL."],"reflectApply":["Review your current social media privacy settings. Are there any that could be stricter?","Identify a trusted person you could contact if you experienced an online safety incident."]
 }
