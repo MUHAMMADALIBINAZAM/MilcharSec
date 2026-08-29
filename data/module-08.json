@@ -92,21 +92,90 @@
       "title": "The Manager's PDF",
       "content": "You receive an unexpected attachment 'Project_Update.pdf' from your manager's real email address, but the text is very short and generic.",
       "action": "Call your manager to verify. Their account may have been compromised and is now sending malware to contacts.",
-      "lesson": "Compromised accounts can send malicious mail from 'trusted' addresses."
+      "lesson": "Compromised accounts can send malicious mail from 'trusted' addresses.",
+      "choices": [
+        {
+          "text": "Open the PDF — it came from your manager's real email address",
+          "correct": false,
+          "consequence": "A compromised mailbox can send from the real address. PDFs and other attachments are a common malware delivery channel, and opening one executes the payload."
+        },
+        {
+          "text": "Reply asking if the attachment is legitimate",
+          "correct": false,
+          "consequence": "The reply goes to the compromised mailbox. The attacker will say \"yes, please open it\" and you will trust them because the reply came from the real address."
+        },
+        {
+          "text": "Call your manager on a known number to verify before opening anything",
+          "correct": true,
+          "consequence": "A two-minute call bypasses the compromised mailbox entirely. If it is legitimate, you open it safely later; if not, you just prevented a malware execution."
+        },
+        {
+          "text": "Forward it to a coworker to check if it is safe",
+          "correct": false,
+          "consequence": "You just distributed a potentially malicious attachment to another inbox. If either of you opens it, the malware has a new foothold."
+        }
+      ],
+      "correctAnswer": "Call your manager on a known number to verify before opening anything"
     },
     {
       "id": "sc-08-02",
       "title": "The Supplier Invoice",
       "content": "A regular supplier emails: 'Our bank is being audited. Please send all future payments to this new account number.'",
       "action": "Do NOT pay. Call the supplier on their known, official number to verify the change.",
-      "lesson": "Financial detail changes must always be verified out-of-band."
+      "lesson": "Financial detail changes must always be verified out-of-band.",
+      "choices": [
+        {
+          "text": "Update the supplier's bank details and pay the next invoice to the new account",
+          "correct": false,
+          "consequence": "Your payment goes to the attacker. Invoice fraud is one of the costliest attacks on businesses — once the wire leaves your bank, recovery is rarely full."
+        },
+        {
+          "text": "Reply to the email asking for confirmation on the new account",
+          "correct": false,
+          "consequence": "The reply goes back to the compromised mailbox. The attacker will confirm their own account and you will have a false sense of verification."
+        },
+        {
+          "text": "Call the supplier on the phone number you already have on file to verify the change out-of-band",
+          "correct": true,
+          "consequence": "An out-of-band call to a number you already trust confirms with the real supplier. Never use contact details included in the suspicious request itself."
+        },
+        {
+          "text": "Pay half the invoice to the new account as a test",
+          "correct": false,
+          "consequence": "You still sent money to the attacker. A \"test payment\" is still a successful fraud — just a smaller one."
+        }
+      ],
+      "correctAnswer": "Call the supplier on the phone number you already have on file to verify the change out-of-band"
     },
     {
       "id": "sc-08-03",
       "title": "The CEO Gift Card Request",
       "content": "The CEO emails you (a junior staff member) directly, asking for an urgent favor while they are 'busy in a meeting'.",
       "action": "Be highly skeptical. CEOs rarely ask junior staff for urgent financial favors via email.",
-      "lesson": "Attackers target staff who might be intimidated by authority."
+      "lesson": "Attackers target staff who might be intimidated by authority.",
+      "choices": [
+        {
+          "text": "Buy the gift cards and reply with the codes — the CEO is waiting",
+          "correct": false,
+          "consequence": "Gift card codes are effectively cash. Once sent, the attacker redeems them within minutes and the money is unrecoverable."
+        },
+        {
+          "text": "Verify the request through a separate channel (call the CEO's assistant, or the CEO directly on a known number)",
+          "correct": true,
+          "consequence": "Executive-impersonation fraud depends on you not checking. A quick call to a trusted channel is exactly what the attacker is counting on you skipping."
+        },
+        {
+          "text": "Reply to the email asking for more details",
+          "correct": false,
+          "consequence": "You are still negotiating with the attacker. They will add more urgency and authority to push you to buy the cards before you think it through."
+        },
+        {
+          "text": "Forward the request to a coworker and ask them to handle it",
+          "correct": false,
+          "consequence": "You pass the trap to someone who may be less skeptical. The attack now has two chances to succeed inside your organization."
+        }
+      ],
+      "correctAnswer": "Verify the request through a separate channel (call the CEO's assistant, or the CEO directly on a known number)"
     },
     {
       "id": "sc-08-04",
@@ -114,7 +183,30 @@
       "content": "You need to send an update to 200 external customers. You put all their addresses in the 'CC' field.",
       "impact": "Privacy violation. Every customer can now see every other customer's email address.",
       "action": "Use BCC for large external distributions.",
-      "lesson": "BCC protects the privacy of recipients."
+      "lesson": "BCC protects the privacy of recipients.",
+      "choices": [
+        {
+          "text": "Send the email as-is with all addresses in CC",
+          "correct": false,
+          "consequence": "Every recipient now has the full list of 200 customer email addresses. This is a privacy breach that can trigger regulatory fines (GDPR, local equivalents) and erode customer trust."
+        },
+        {
+          "text": "Move all recipient addresses to BCC before sending",
+          "correct": true,
+          "consequence": "BCC hides the recipient list from each recipient. The message reaches everyone, and no customer learns who else is on the distribution."
+        },
+        {
+          "text": "Send the email to yourself and forward it to each customer individually",
+          "correct": false,
+          "consequence": "Tedious and error-prone — and if you later use Reply-All on any thread, you recreate the same privacy breach you were trying to avoid."
+        },
+        {
+          "text": "Post the update on a public webpage and email the link",
+          "correct": false,
+          "consequence": "Publicly posting customer-directed content may be fine, but it depends on what the update contains. Customer-specific or sensitive information should not be made public."
+        }
+      ],
+      "correctAnswer": "Move all recipient addresses to BCC before sending"
     }
   ],
   "tools": [],

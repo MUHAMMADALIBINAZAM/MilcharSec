@@ -81,7 +81,30 @@
       "title": "The Unexpected MFA Alert",
       "content": "Your phone buzzes with a verification code you didn't request, followed by a call from someone claiming to be 'IT Support' asking for the code.",
       "action": "Do NOT share the code. IT will never ask for your MFA code or password. This is a credential theft attempt.",
-      "lesson": "MFA codes are private and should never be shared."
+      "lesson": "MFA codes are private and should never be shared.",
+      "choices": [
+        {
+          "text": "Read the code aloud to the caller — they said they are IT",
+          "correct": false,
+          "consequence": "You handed the attacker the second factor. Combined with a leaked password they may already have, they can now log into your account from their own device."
+        },
+        {
+          "text": "Hang up and call IT back on the official number listed on your intranet / ID badge",
+          "correct": true,
+          "consequence": "You broke the attacker's live session. A callback on a number you already trust confirms whether a real support case exists — IT will never ask for your MFA code."
+        },
+        {
+          "text": "Make up a fake code and give it to them to waste their time",
+          "correct": false,
+          "consequence": "You are still engaged with a social engineer. They may try a different tactic on the same call, pressure you harder, or move on to another colleague in your organization."
+        },
+        {
+          "text": "Text the code to a friend to ask what to do",
+          "correct": false,
+          "consequence": "The code is now in an unprotected message thread and visible to anyone with access to that phone. MFA codes should never leave your authenticator app."
+        }
+      ],
+      "correctAnswer": "Hang up and call IT back on the official number listed on your intranet / ID badge"
     },
     {
       "id": "sc-02-02",
@@ -92,14 +115,60 @@
         "Threat of account loss.",
         "Generic greeting."
       ],
-      "lesson": "Scammers use fear and urgency to make you act without thinking."
+      "lesson": "Scammers use fear and urgency to make you act without thinking.",
+      "choices": [
+        {
+          "text": "Click the link quickly before the account is deleted",
+          "correct": false,
+          "consequence": "The link leads to a phishing page designed to harvest your credentials. Real services do not threaten instant deletion in an email."
+        },
+        {
+          "text": "Reply asking for proof that the account is real",
+          "correct": false,
+          "consequence": "You confirm to the attacker that your mailbox is active and responsive, which puts you on a higher-value target list for future scams."
+        },
+        {
+          "text": "Ignore the email and log into the service directly through its official website or app",
+          "correct": true,
+          "consequence": "If there is a real issue, it will be visible inside the authenticated account. You bypass the email's urgency and verify through a trusted channel."
+        },
+        {
+          "text": "Forward the email to coworkers to warn them",
+          "correct": false,
+          "consequence": "Forwarding spreads the malicious link. Some recipients may click before anyone realizes it is a scam."
+        }
+      ],
+      "correctAnswer": "Ignore the email and log into the service directly through its official website or app"
     },
     {
       "id": "sc-02-03",
       "title": "Unrecognized Device Login",
       "content": "You receive a legitimate alert from a service stating: 'New login detected from a Linux device in another country.'",
       "action": "Immediately change your password and check for unauthorized changes to the account.",
-      "lesson": "Login alerts are a critical early warning system for account takeover."
+      "lesson": "Login alerts are a critical early warning system for account takeover.",
+      "choices": [
+        {
+          "text": "Dismiss the alert — you probably logged in from somewhere and forgot",
+          "correct": false,
+          "consequence": "If the login is not yours, the attacker now has an active session. Ignoring the alert is the difference between stopping a takeover in minutes and discovering it in months."
+        },
+        {
+          "text": "Log into the service directly (not via the alert), change your password, and review recent activity",
+          "correct": true,
+          "consequence": "You cut off the attacker's current session, lock out anyone with your old password, and create an audit trail the service can use to investigate."
+        },
+        {
+          "text": "Reply to the alert email asking for more information",
+          "correct": false,
+          "consequence": "If the alert email is spoofed or part of a phishing chain, your reply hands an active conversation to the attacker."
+        },
+        {
+          "text": "Share the alert on social media to get advice",
+          "correct": false,
+          "consequence": "You expose details about your accounts and the incident. Attackers monitoring your profile can use those details to refine their next attempt."
+        }
+      ],
+      "correctAnswer": "Log into the service directly (not via the alert), change your password, and review recent activity"
     }
   ],
   "tools": [

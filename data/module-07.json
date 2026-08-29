@@ -94,14 +94,60 @@
       "title": "MFA Push Spam",
       "content": "You receive 10 MFA push notifications in a row while you are watching TV and not trying to log in.",
       "action": "Do NOT approve the request. Report it to IT immediately. This means an attacker has your password and is trying to bypass MFA.",
-      "lesson": "MFA fatigue is a tactic where attackers wear you down until you hit 'Approve'."
+      "lesson": "MFA fatigue is a tactic where attackers wear you down until you hit 'Approve'.",
+      "choices": [
+        {
+          "text": "Approve one of the pushes to make the spam stop",
+          "correct": false,
+          "consequence": "You just completed the attacker's login. They now have an active session on your account and can change settings, read data, and pivot to other systems."
+        },
+        {
+          "text": "Deny the pushes and immediately report the spam to IT / security",
+          "correct": true,
+          "consequence": "You blocked the bypass attempt and gave security the signal they need — a spam of MFA pushes almost always means your password is already compromised and must be reset."
+        },
+        {
+          "text": "Ignore them and keep watching TV",
+          "correct": false,
+          "consequence": "Ignoring delays detection. The attacker may try a different channel (SMS, phone call) or move on to your colleagues using your identity."
+        },
+        {
+          "text": "Turn off MFA in your account settings to stop the notifications",
+          "correct": false,
+          "consequence": "Disabling MFA removes your strongest defense. An attacker with your password now has direct access to your account with no second factor."
+        }
+      ],
+      "correctAnswer": "Deny the pushes and immediately report the spam to IT / security"
     },
     {
       "id": "sc-07-02",
       "title": "The Malware Alert",
       "content": "Your antivirus software pops up saying 'Malware Blocked: Trojan.Generic' but your computer seems to be running fine.",
       "action": "Note the details of the alert and report it to the security team. They may need to check if the threat was fully neutralized.",
-      "lesson": "Security alerts should always be followed up on, even if they say the threat was 'blocked'."
+      "lesson": "Security alerts should always be followed up on, even if they say the threat was 'blocked'.",
+      "choices": [
+        {
+          "text": "Dismiss the alert — the antivirus said it was blocked and the machine runs fine",
+          "correct": false,
+          "consequence": "\"Blocked\" often means \"blocked on this attempt.\" A second variant, a dropped payload, or a persistence mechanism may already be on the machine. Silent infection is the most common outcome."
+        },
+        {
+          "text": "Record the alert details (malware name, time, file path) and report them to the security team",
+          "correct": true,
+          "consequence": "Security can check whether the family of malware has other variants on the endpoint, whether the block was complete, and whether any lateral movement followed."
+        },
+        {
+          "text": "Run your own deep scan and fix whatever it finds",
+          "correct": false,
+          "consequence": "Local scans are useful, but without reporting, the security team loses visibility. If the infection is part of a wider campaign, they need the signal to protect others."
+        },
+        {
+          "text": "Restart the computer and assume it is clean",
+          "correct": false,
+          "consequence": "A restart does not remove persistent malware. Some threats re-launch on boot. You may also destroy forensic evidence the security team would have used."
+        }
+      ],
+      "correctAnswer": "Record the alert details (malware name, time, file path) and report them to the security team"
     },
     {
       "id": "sc-07-03",
@@ -109,8 +155,20 @@
       "content": "You need to report a suspicious email. Which report is more helpful?",
       "option_a": "'I think my computer is hacked, help.'",
       "option_b": "'I received a suspicious email claiming to be from HR at 2:15 PM. I did not click the link. See attached screenshot and original email.'",
-      "correctAnswer": "Option B",
-      "lesson": "Specific details help security teams react faster."
+      "correctAnswer": "Option B: \"I received a suspicious email claiming to be from HR at 2:15 PM. I did not click the link. See attached screenshot and original email.\"",
+      "lesson": "Specific details help security teams react faster.",
+      "choices": [
+        {
+          "text": "Option A: \"I think my computer is hacked, help.\"",
+          "correct": false,
+          "consequence": "A vague report creates a slow, back-and-forth triage. The security team does not know what happened, when, or how urgent it is — response time suffers."
+        },
+        {
+          "text": "Option B: \"I received a suspicious email claiming to be from HR at 2:15 PM. I did not click the link. See attached screenshot and original email.\"",
+          "correct": true,
+          "consequence": "Specific, timestamped, evidence-backed reports let the security team react in minutes: pull the mail from other inboxes, block the sender, and confirm you are not compromised."
+        }
+      ]
     }
   ],
   "tools": [],

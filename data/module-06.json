@@ -96,28 +96,120 @@
       "title": "Hotel Guest Wi-Fi",
       "content": "You are at a hotel and see two networks: 'Hotel_Guest_WiFi' and 'Hotel_Free_HighSpeed_WiFi' (no password).",
       "action": "Use the official network with a password and your VPN. The free, open network might be a 'Twin' set up by an attacker.",
-      "lesson": "Open, unencrypted networks are high-risk."
+      "lesson": "Open, unencrypted networks are high-risk.",
+      "choices": [
+        {
+          "text": "Join the open \"Hotel_Free_HighSpeed_WiFi\" — it is faster and has no password hassle",
+          "correct": false,
+          "consequence": "An open network with a friendly name is the classic \"evil twin\" setup. All traffic you send is visible to whoever is running it, including your logins."
+        },
+        {
+          "text": "Join the official password-protected network and use a VPN for sensitive traffic",
+          "correct": true,
+          "consequence": "The password-protected network is the one the hotel actually operates. Adding a VPN on top encrypts your traffic end-to-end, even if the hotel network itself is later compromised."
+        },
+        {
+          "text": "Turn off Wi-Fi and use your phone's mobile data only",
+          "correct": false,
+          "consequence": "Mobile data is generally safer than open Wi-Fi, but you lose the ability to use the hotel network for your laptop at all — a reasonable fallback, but unnecessary when a secured network exists."
+        },
+        {
+          "text": "Ask the front desk which network is real, then connect to whichever they name without further checks",
+          "correct": false,
+          "consequence": "Front-desk staff can be mistaken, and an attacker could have given them the wrong name too. Pair the staff answer with the password-protected network and a VPN for real confidence."
+        }
+      ],
+      "correctAnswer": "Join the official password-protected network and use a VPN for sensitive traffic"
     },
     {
       "id": "sc-06-02",
       "title": "The Cafe Coffee Break",
       "content": "You are working in a crowded cafe. You need to step away for 60 seconds to grab your coffee from the counter.",
       "action": "Lock your screen and take your device with you, or at least ensure it is physically secured and locked.",
-      "lesson": "A minute is all it takes for someone to steal a device or insert a malicious USB."
+      "lesson": "A minute is all it takes for someone to steal a device or insert a malicious USB.",
+      "choices": [
+        {
+          "text": "Leave the laptop open and unlocked — you will only be gone a minute",
+          "correct": false,
+          "consequence": "A minute is enough for a passerby to plug in a malicious USB, copy open files, or walk away with the device. Physical access beats most software defenses."
+        },
+        {
+          "text": "Lock the screen (Win+L / Cmd+Ctrl+Q) and take the device with you",
+          "correct": true,
+          "consequence": "The device is both physically and logically protected while you step away. Even if someone grabs it, they still face the screen lock."
+        },
+        {
+          "text": "Close the lid but leave it unlocked",
+          "correct": false,
+          "consequence": "Closing the lid may not lock the session depending on power settings. The device is still easy to grab and open without a password."
+        },
+        {
+          "text": "Ask a stranger at the next table to watch it",
+          "correct": false,
+          "consequence": "You just asked an unknown person to be responsible for your work device. They have no obligation to protect it and may themselves be a threat."
+        }
+      ],
+      "correctAnswer": "Lock the screen (Win+L / Cmd+Ctrl+Q) and take the device with you"
     },
     {
       "id": "sc-06-03",
       "title": "Shoulder Surfing in the Park",
       "content": "You are reviewing a confidential report on a bench. You notice someone sitting close behind you who seems to be looking at your screen.",
       "action": "Adjust your position, use a privacy filter, or stop working on sensitive data until you are in a private area.",
-      "lesson": "Be aware of your physical surroundings when accessing sensitive data."
+      "lesson": "Be aware of your physical surroundings when accessing sensitive data.",
+      "choices": [
+        {
+          "text": "Keep working — they are probably just looking at the scenery",
+          "correct": false,
+          "consequence": "Shoulder surfing is a real, low-tech attack. A few seconds of visibility on a password, email subject line, or confidential report is enough to leak it."
+        },
+        {
+          "text": "Adjust your position, tilt the screen, or move to a more private area before continuing",
+          "correct": true,
+          "consequence": "You remove the line of sight without drawing attention. Confidential work stays confidential and you can continue safely."
+        },
+        {
+          "text": "Confront the person and ask them to move",
+          "correct": false,
+          "consequence": "Confrontation can escalate and rarely proves intent. They can simply move a few feet and continue watching from a different angle."
+        },
+        {
+          "text": "Take a photo of the person as evidence",
+          "correct": false,
+          "consequence": "Photographing a stranger can be unlawful depending on jurisdiction and may escalate a situation that is easier to solve by simply moving."
+        }
+      ],
+      "correctAnswer": "Adjust your position, tilt the screen, or move to a more private area before continuing"
     },
     {
       "id": "sc-06-04",
       "title": "The Missing Laptop",
       "content": "You realize your corporate laptop was stolen from your car trunk.",
       "action": "Report it to IT and the police immediately. Speed is critical for remote wiping and disabling access.",
-      "lesson": "Immediate reporting minimizes the window for data exploitation."
+      "lesson": "Immediate reporting minimizes the window for data exploitation.",
+      "choices": [
+        {
+          "text": "Wait a day to see if it turns up — it might just be misplaced",
+          "correct": false,
+          "consequence": "Every hour the device is out of your control is an hour an attacker has to extract data, clone the disk, or use cached sessions to access your accounts."
+        },
+        {
+          "text": "Report it to IT and local law enforcement immediately so remote wipe and account revocation can start",
+          "correct": true,
+          "consequence": "Fast reporting lets IT issue a remote wipe, revoke tokens, and reset passwords tied to the device. A police report is often required for insurance and compliance."
+        },
+        {
+          "text": "Try to track it yourself using a consumer \"find my device\" service",
+          "correct": false,
+          "consequence": "Consumer tracking may work, but it does not trigger the remote wipe or token revocation that actually protects the data on the device."
+        },
+        {
+          "text": "Change your own passwords from your phone and hope for the best",
+          "correct": false,
+          "consequence": "Changing passwords is useful but incomplete. Sessions, tokens, and cached credentials on the stolen device still work until IT revokes them."
+        }
+      ],
+      "correctAnswer": "Report it to IT and local law enforcement immediately so remote wipe and account revocation can start"
     }
   ],
   "tools": [],

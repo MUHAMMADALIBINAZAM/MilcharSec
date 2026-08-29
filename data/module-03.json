@@ -89,28 +89,120 @@
       "title": "15-Minute Suspension",
       "content": "An email claims your student account will be suspended in 15 minutes unless you verify your password and MFA code immediately via a link.",
       "action": "Delete the email or report it. Never click links in high-urgency emails. Go to the official portal directly.",
-      "lesson": "Extreme time pressure is a classic phishing tactic."
+      "lesson": "Extreme time pressure is a classic phishing tactic.",
+      "choices": [
+        {
+          "text": "Click the link and verify quickly before the suspension happens",
+          "correct": false,
+          "consequence": "The link goes to a phishing page that harvests your password and MFA code. Real institutions do not threaten instant suspension to force verification."
+        },
+        {
+          "text": "Delete the email or report it, then go to the portal by typing its address yourself",
+          "correct": true,
+          "consequence": "You bypass the urgency and verify through the only channel you can trust — the official site. If there is a real issue, you will see it there."
+        },
+        {
+          "text": "Reply asking why they are suspending you",
+          "correct": false,
+          "consequence": "A reply confirms your mailbox is active and that the urgency tactic is working. Expect more pressure in follow-up messages."
+        },
+        {
+          "text": "Forward the email to a friend and ask what to do",
+          "correct": false,
+          "consequence": "You spread the malicious link. Your friend may click before realizing it is phishing."
+        }
+      ],
+      "correctAnswer": "Delete the email or report it, then go to the portal by typing its address yourself"
     },
     {
       "id": "sc-03-02",
       "title": "The Bank SMS",
       "content": "A text message says: 'Your bank account is closed. Click here to reactivate: bit.ly/fake-bank'.",
       "action": "Do not click. Banks will not send account closure notices with shortened links via SMS.",
-      "lesson": "Smishing often uses shortened links to hide the real destination."
+      "lesson": "Smishing often uses shortened links to hide the real destination.",
+      "choices": [
+        {
+          "text": "Tap the shortened link to see where it goes",
+          "correct": false,
+          "consequence": "Shortened URLs hide the real destination. The landing page is designed to look like your bank and steal whatever you type in."
+        },
+        {
+          "text": "Ignore the text and open your bank's app or website directly to check",
+          "correct": true,
+          "consequence": "If the account really were closed, the bank's official site or app would tell you. You avoid the attacker's link entirely."
+        },
+        {
+          "text": "Reply asking which branch closed the account",
+          "correct": false,
+          "consequence": "You confirm your phone number is active and owned by a real person, which increases its value on scam target lists."
+        },
+        {
+          "text": "Call the phone number shown in the text",
+          "correct": false,
+          "consequence": "The number is controlled by the attacker, who will impersonate the bank and ask for your PIN or OTP to \"reactivate\" your account."
+        }
+      ],
+      "correctAnswer": "Ignore the text and open your bank's app or website directly to check"
     },
     {
       "id": "sc-03-03",
       "title": "The OTP Voice Call",
       "content": "A caller says they are from 'Fraud Detection' and they need the One-Time Password (OTP) sent to your phone to 'secure' your account.",
       "action": "Hang up. Legitimate companies will never call and ask for an OTP that they sent to you.",
-      "lesson": "Vishing attempts to steal MFA codes through social pressure."
+      "lesson": "Vishing attempts to steal MFA codes through social pressure.",
+      "choices": [
+        {
+          "text": "Give the OTP — the caller said they are from Fraud Detection",
+          "correct": false,
+          "consequence": "The OTP is the second factor on your account. Handing it over lets the attacker finish logging in as you, even if they only had your password before."
+        },
+        {
+          "text": "Hang up and call the institution back on the official number printed on your card or statement",
+          "correct": true,
+          "consequence": "You cut off the social engineer and verify through a number you already trust. No legitimate institution ever calls to ask for an OTP they sent you."
+        },
+        {
+          "text": "Read back the previous OTP that expired",
+          "correct": false,
+          "consequence": "Even an expired OTP signals to the attacker that you are willing to share codes over the phone. They will trigger a new one and try again."
+        },
+        {
+          "text": "Stay on the line but give a made-up code",
+          "correct": false,
+          "consequence": "You stay engaged with a social engineer who can pivot tactics, ask for other details, or call you back with a more convincing story."
+        }
+      ],
+      "correctAnswer": "Hang up and call the institution back on the official number printed on your card or statement"
     },
     {
       "id": "sc-03-04",
       "title": "The CEO's Urgent Favor",
       "content": "The Director sends a DM: 'I'm in a meeting. Can you bypass the normal procedure and send me the confidential sales report for last year immediately?'",
       "action": "Verify through a different channel (e.g., call them or wait for the meeting to end).",
-      "lesson": "Authority impersonation tries to make you ignore security procedures."
+      "lesson": "Authority impersonation tries to make you ignore security procedures.",
+      "choices": [
+        {
+          "text": "Send the report immediately — it is the Director, and they are in a meeting",
+          "correct": false,
+          "consequence": "You bypass normal procedure because of perceived authority. If the DM account was compromised, confidential data just left the organization."
+        },
+        {
+          "text": "Verify the request through a different channel — call the Director or wait until the meeting ends",
+          "correct": true,
+          "consequence": "A two-minute call confirms whether the request is real. Attackers rely on you not checking; legitimate leaders expect verification for sensitive requests."
+        },
+        {
+          "text": "Reply asking for more details in the DM",
+          "correct": false,
+          "consequence": "You are still talking to the compromised account. The attacker will invent more urgency to push you to send the file."
+        },
+        {
+          "text": "Email the report to your own personal address to review later",
+          "correct": false,
+          "consequence": "You moved confidential data to an uncontrolled mailbox. Even if the DM was legitimate, this creates a separate data-leakage incident."
+        }
+      ],
+      "correctAnswer": "Verify the request through a different channel — call the Director or wait until the meeting ends"
     }
   ],
   "tools": [],

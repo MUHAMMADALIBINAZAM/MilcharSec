@@ -107,28 +107,120 @@
       "title": "The Accounting Error",
       "content": "You need to send a spreadsheet to 'accounts@example.com' but accidentally send it to 'accounting@example.net' because of auto-complete.",
       "impact": "Data breach / Unauthorized disclosure.",
-      "lesson": "Auto-complete is helpful but dangerous for sensitive data."
+      "lesson": "Auto-complete is helpful but dangerous for sensitive data.",
+      "choices": [
+        {
+          "text": "Email the unintended recipient and ask them to delete it",
+          "correct": false,
+          "consequence": "A deletion request does not undo the disclosure. The file may already be downloaded, forwarded, or cached. A formal incident response is still required."
+        },
+        {
+          "text": "Do nothing — maybe they will not open it",
+          "correct": false,
+          "consequence": "Hope is not a control. The file sits in an unauthorized inbox where it can be opened, forwarded, or exfiltrated at any time."
+        },
+        {
+          "text": "Report the mis-send to your data-protection officer / IT immediately so the incident can be contained",
+          "correct": true,
+          "consequence": "Formal incident response can issue a legal deletion request, log the breach for compliance, and mitigate harm faster than an informal email."
+        },
+        {
+          "text": "Send a second email to the wrong recipient apologizing and attaching the right version",
+          "correct": false,
+          "consequence": "You now have two copies of sensitive data in the wrong inbox and a paper trail that confirms the content was sensitive."
+        }
+      ],
+      "correctAnswer": "Report the mis-send to your data-protection officer / IT immediately so the incident can be contained"
     },
     {
       "id": "sc-05-02",
       "title": "The 'Reply All' Trap",
       "content": "A colleague sends an email to 50 people. You reply with a confidential attachment meant only for the colleague, but you hit 'Reply All'.",
       "action": "Immediately contact IT and the recipients to request deletion, and report the incident.",
-      "lesson": "Always check the 'To' and 'CC' fields before hitting send."
+      "lesson": "Always check the 'To' and 'CC' fields before hitting send.",
+      "choices": [
+        {
+          "text": "Send a second \"disregard my last email\" message to the thread",
+          "correct": false,
+          "consequence": "The second email reaches all 50 recipients too and draws attention to the original message. Many will open the attachment now just to see what it was."
+        },
+        {
+          "text": "Immediately contact IT / the recipients out-of-band and request deletion without replying on the thread",
+          "correct": true,
+          "consequence": "A quiet, direct recall avoids amplifying the incident on the same distribution list and gives IT a chance to pull the message from the mail server before it is opened."
+        },
+        {
+          "text": "Wait to see if anyone notices",
+          "correct": false,
+          "consequence": "The longer the confidential attachment sits in 50 inboxes, the higher the chance someone opens, forwards, or downloads it."
+        },
+        {
+          "text": "Delete your own copy of the sent email",
+          "correct": false,
+          "consequence": "Deleting your sent copy does not remove the message from the recipients' mailboxes or the mail server. It only removes your record of the incident."
+        }
+      ],
+      "correctAnswer": "Immediately contact IT / the recipients out-of-band and request deletion without replying on the thread"
     },
     {
       "id": "sc-05-03",
       "title": "Open Folder Risk",
       "content": "You find a folder of salary information on the company cloud drive set to 'Anyone with the link can view'.",
       "action": "Report it to the folder owner or IT immediately to restrict access.",
-      "lesson": "Permissions should always follow the 'Principle of Least Privilege'."
+      "lesson": "Permissions should always follow the 'Principle of Least Privilege'.",
+      "choices": [
+        {
+          "text": "Leave it — someone must have set it up that way on purpose",
+          "correct": false,
+          "consequence": "The folder is exposed to anyone who finds or is forwarded the link. The longer it stays public, the larger the blast radius when (not if) it is discovered."
+        },
+        {
+          "text": "Share the link with a friend to check if it really is confidential",
+          "correct": false,
+          "consequence": "You just forwarded confidential data to an unauthorized person, creating a second data-handling incident on top of the original exposure."
+        },
+        {
+          "text": "Report the open permission to the folder owner or IT so access can be restricted",
+          "correct": true,
+          "consequence": "The owner or IT can lock the folder, review who accessed it, and reset permissions to least privilege before more data is exposed."
+        },
+        {
+          "text": "Copy the files to your own drive so you still have them if the folder is locked",
+          "correct": false,
+          "consequence": "You created an additional unauthorized copy of salary data, which may itself violate data-handling policy."
+        }
+      ],
+      "correctAnswer": "Report the open permission to the folder owner or IT so access can be restricted"
     },
     {
       "id": "sc-05-04",
       "title": "The Curious Friend",
       "content": "A friend in a different department asks to see a customer's record 'just to check something out' because they know you have access.",
       "action": "Politely refuse. Access to data should only be for authorized business purposes.",
-      "lesson": "Unauthorized access, even by trusted colleagues, is a security violation."
+      "lesson": "Unauthorized access, even by trusted colleagues, is a security violation.",
+      "choices": [
+        {
+          "text": "Show them the record — they are a trusted colleague",
+          "correct": false,
+          "consequence": "Trust does not equal authorization. Accessing a customer record without a business need is a policy violation and often a legal one (privacy laws), for both of you."
+        },
+        {
+          "text": "Politely refuse and explain that access is only for authorized business purposes",
+          "correct": true,
+          "consequence": "You uphold the Principle of Least Privilege and set a clear boundary. If they have a legitimate need, they can request their own access through proper channels."
+        },
+        {
+          "text": "Take a screenshot of the record and send it to them privately",
+          "correct": false,
+          "consequence": "You bypassed access logging by taking a screenshot and created an uncontrolled copy of a customer record on a personal device or chat."
+        },
+        {
+          "text": "Let them use your account to look it up themselves",
+          "correct": false,
+          "consequence": "You just shared credentials and let an unauthorized person act under your identity. Anything they do is logged as you."
+        }
+      ],
+      "correctAnswer": "Politely refuse and explain that access is only for authorized business purposes"
     }
   ],
   "tools": [],

@@ -102,28 +102,120 @@
       "title": "The Accidental Disclosure",
       "content": "Ali accidentally sends a confidential customer spreadsheet to the wrong external email address.",
       "impact": "Confidentiality violation.",
-      "lesson": "Always double-check recipient addresses before sending sensitive data."
+      "lesson": "Always double-check recipient addresses before sending sensitive data.",
+      "choices": [
+        {
+          "text": "Email the intended external recipient and ask them to delete it",
+          "correct": false,
+          "consequence": "Once sent, the data is out of your control. Asking an external party to delete it does not undo the disclosure and may not be honored or even seen in time."
+        },
+        {
+          "text": "Say nothing and hope nobody notices",
+          "correct": false,
+          "consequence": "The spreadsheet is already in an unauthorized inbox. Silence increases the window the recipient has to forward, copy, or misuse the data."
+        },
+        {
+          "text": "Immediately notify your manager / data-protection officer and send a recall request",
+          "correct": true,
+          "consequence": "Fast, honest reporting is the only realistic way to limit harm. The recipient can be asked to delete and confirm, and your organization can log and contain the breach."
+        },
+        {
+          "text": "Forward the same file to more people so everyone has the latest version",
+          "correct": false,
+          "consequence": "This widens the breach rather than fixing it — more unauthorized copies of confidential data now exist."
+        }
+      ],
+      "correctAnswer": "Immediately notify your manager / data-protection officer and send a recall request"
     },
     {
       "id": "sc-01-02",
       "title": "The Ghost in the Database",
       "content": "Someone secretly changes student grades inside a database.",
       "impact": "Integrity violation.",
-      "lesson": "Data accuracy and protection against unauthorized changes are critical."
+      "lesson": "Data accuracy and protection against unauthorized changes are critical.",
+      "choices": [
+        {
+          "text": "Ignore it — it is probably a typo",
+          "correct": false,
+          "consequence": "Altered records silently break decisions that depend on them (grades, payroll, reports). The longer the tampering goes unnoticed, the wider the damage."
+        },
+        {
+          "text": "Quietly correct the value yourself",
+          "correct": false,
+          "consequence": "Editing the data without an audit trail looks like you made the change. You may be blamed for the tampering."
+        },
+        {
+          "text": "Report it to the data owner / security team without touching the record",
+          "correct": true,
+          "consequence": "Security and data stewards can pull logs, identify who changed the record, and restore a known-good version with a proper audit trail."
+        },
+        {
+          "text": "Tell the person you suspect so they can explain",
+          "correct": false,
+          "consequence": "Confronting the suspect tips them off and gives them time to cover tracks or destroy evidence before an investigation."
+        }
+      ],
+      "correctAnswer": "Report it to the data owner / security team without touching the record"
     },
     {
       "id": "sc-01-03",
       "title": "System Downtime",
       "content": "A server becomes unavailable, and employees cannot access a spreadsheet needed for their work.",
       "impact": "Availability violation.",
-      "lesson": "System uptime is a core security requirement."
+      "lesson": "System uptime is a core security requirement.",
+      "choices": [
+        {
+          "text": "Wait for the system to come back on its own",
+          "correct": false,
+          "consequence": "Lost time compounds into lost revenue, missed deadlines, and SLA breaches. Outages that are not reported also hide the real cause from the people who can fix them."
+        },
+        {
+          "text": "Reboot your own machine repeatedly to force a reconnect",
+          "correct": false,
+          "consequence": "This wastes time and can make troubleshooting harder — your logs now look like a client-side issue rather than a server outage."
+        },
+        {
+          "text": "Report the outage to IT / service desk with what you observed and when",
+          "correct": true,
+          "consequence": "A logged ticket puts the outage on the radar of the team responsible, starts an incident timer, and helps others who are affected be routed to the same fix."
+        },
+        {
+          "text": "Post about it on social media so others know",
+          "correct": false,
+          "consequence": "Public posts can leak internal system details and may violate your organization's communication policy before the incident is even triaged."
+        }
+      ],
+      "correctAnswer": "Report the outage to IT / service desk with what you observed and when"
     },
     {
       "id": "sc-01-04",
       "title": "The Fake Invoice",
       "content": "A financial bank detail change request arrives from a regular supplier, but something seems off.",
       "impact": "Potential financial loss / Fraud.",
-      "lesson": "Verify any changes to financial details through a secondary, trusted channel."
+      "lesson": "Verify any changes to financial details through a secondary, trusted channel.",
+      "choices": [
+        {
+          "text": "Reply to the email and confirm the new bank details",
+          "correct": false,
+          "consequence": "A reply goes straight back to the attacker's mailbox. You are now negotiating with the fraudster, who will confirm their own account."
+        },
+        {
+          "text": "Update the supplier record and pay the next invoice to the new account",
+          "correct": false,
+          "consequence": "Your payment is routed to the attacker. Once funds leave the banking system, recovery is slow, partial, or impossible."
+        },
+        {
+          "text": "Call the supplier on a known, trusted number to verify the change",
+          "correct": true,
+          "consequence": "An out-of-band call to a number you already have on file confirms the request with the real supplier — the single most reliable defense against invoice fraud."
+        },
+        {
+          "text": "Forward the email to the supplier's old address and ask if it is real",
+          "correct": false,
+          "consequence": "If the original supplier mailbox is compromised, your verification request lands in the attacker's inbox too — you get a fake \"yes\" back."
+        }
+      ],
+      "correctAnswer": "Call the supplier on a known, trusted number to verify the change"
     }
   ],
   "tools": [],

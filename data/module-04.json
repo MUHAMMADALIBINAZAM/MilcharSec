@@ -91,21 +91,90 @@
       "title": "Look-alike University Domain",
       "content": "You see a link for university-login-example.com, but your university's real site is university.edu.",
       "action": "Do not enter credentials. This is a look-alike domain designed to steal your login.",
-      "lesson": "Always verify the domain name in the address bar."
+      "lesson": "Always verify the domain name in the address bar.",
+      "choices": [
+        {
+          "text": "Enter your credentials — the page looks identical to the real one",
+          "correct": false,
+          "consequence": "The look-alike domain captures whatever you type. The attacker now has your username and password and can log in from their own device."
+        },
+        {
+          "text": "Close the page and navigate to the university portal by typing the known address yourself",
+          "correct": true,
+          "consequence": "You avoid the attacker-controlled page entirely. If a real login is needed, you will reach it through the official domain."
+        },
+        {
+          "text": "Hover over the link, see it looks similar, and proceed",
+          "correct": false,
+          "consequence": "Look-alike domains are designed to survive a quick glance. \"university-login-example.com\" is not the same as \"university.edu\" and will still steal credentials."
+        },
+        {
+          "text": "Save your password in the browser so you do not have to type it",
+          "correct": false,
+          "consequence": "Password managers usually refuse to auto-fill on an unrecognized domain — but if they do, you just stored your credentials in a place the attacker can now trigger to auto-submit."
+        }
+      ],
+      "correctAnswer": "Close the page and navigate to the university portal by typing the known address yourself"
     },
     {
       "id": "sc-04-02",
       "title": "The Virus Pop-up",
       "content": "While browsing, a window appears: 'WARNING: Your device has 12 viruses! Install SecureFix now to clean them.'",
       "action": "Close the window/browser tab immediately. Do not click anything inside the pop-up.",
-      "lesson": "Scareware uses fake warnings to trick you into installing real malware."
+      "lesson": "Scareware uses fake warnings to trick you into installing real malware.",
+      "choices": [
+        {
+          "text": "Click \"Install SecureFix\" to clean the viruses",
+          "correct": false,
+          "consequence": "The \"antivirus\" is the malware. Installing it gives the attacker persistent access, keylogging, and ransomware capability on your device."
+        },
+        {
+          "text": "Call the support number shown in the pop-up",
+          "correct": false,
+          "consequence": "The number routes to a scam call center that will ask for remote access to your computer and a credit card to \"fix\" a problem that does not exist."
+        },
+        {
+          "text": "Close the browser tab (or force-quit the browser) without clicking inside the pop-up",
+          "correct": true,
+          "consequence": "Scareware cannot scan your device — it is a web page pretending to be a scan. Closing the tab ends the attack with no installation and no data exposed."
+        },
+        {
+          "text": "Restart the computer and log back in",
+          "correct": false,
+          "consequence": "Restarting is safer than installing anything, but unnecessary — the \"warning\" only existed in that browser tab. You lose unsaved work for no gain."
+        }
+      ],
+      "correctAnswer": "Close the browser tab (or force-quit the browser) without clicking inside the pop-up"
     },
     {
       "id": "sc-04-03",
       "title": "The Update Alert",
       "content": "You get a system notification from Windows/macOS about a security update. At the same time, a website you are on says 'Browser Update Required' with a download button.",
       "action": "Trust the system notification. Never download 'updates' from a random website.",
-      "lesson": "Legitimate updates come through your device's built-in update tool, not a website pop-up."
+      "lesson": "Legitimate updates come through your device's built-in update tool, not a website pop-up.",
+      "choices": [
+        {
+          "text": "Click the website's download button — it is faster than waiting for the OS update",
+          "correct": false,
+          "consequence": "Website-prompted \"updates\" are a common malware delivery channel. You are about to install an attacker-controlled executable."
+        },
+        {
+          "text": "Apply only the OS-level notification and ignore the website's prompt",
+          "correct": true,
+          "consequence": "Legitimate updates arrive through your device's built-in update mechanism. The OS notification is signed and verified; a website prompt is not."
+        },
+        {
+          "text": "Download from the website, then run an antivirus scan on it",
+          "correct": false,
+          "consequence": "Antivirus may not yet recognize a freshly released payload. Running the file at all gives it a chance to execute before the scan finishes."
+        },
+        {
+          "text": "Skip both updates to avoid the hassle",
+          "correct": false,
+          "consequence": "You leave a known vulnerability unpatched. Attackers automate exploitation of exactly these skipped updates within days of their disclosure."
+        }
+      ],
+      "correctAnswer": "Apply only the OS-level notification and ignore the website's prompt"
     }
   ],
   "tools": [],
