@@ -4,6 +4,7 @@ import { inspectEmail } from './phishing-inspector.js';
 import { validateURL } from './url-validator.js';
 import { calculateSeverity, generateReportDraft } from './incident-reporter.js';
 import { analyzeLog, SAMPLES as LOG_SAMPLES } from './log-analyzer.js';
+import { scoreDeviceChecklist, CHECKLIST_ITEMS, DEVICE_TIPS } from './device-checklist.js';
 
 export { LOG_SAMPLES as SAMPLES };
 
@@ -17,7 +18,8 @@ export const TOOL_DEFINITIONS = {
   'tool-04': { name: 'Cybersecurity Quick Check', icon: 'clipboard-pen-line', kind: 'incident', note: 'Safe for real daily use: incident details are assessed entirely in this browser and never transmitted or stored.' },
   'tool-05': { name: 'Incident Report Assistant', icon: 'file-text', kind: 'incident-assistant', note: 'Safe for real daily use: report details stay in this browser and are never transmitted or stored. This tool never submits reports or contacts anyone.' },
   'tool-06': { name: 'QR Code Safety Checker', icon: 'qr-code', kind: 'qr', note: 'Safe for real daily use: QR images and decoded content are processed entirely in this browser and never transmitted or stored.' },
-  'tool-07': { name: 'Security Log Analyzer', icon: 'scroll-text', kind: 'log', note: 'Safe for real daily use: your log text is analyzed entirely in this browser and never transmitted or stored.' }
+  'tool-07': { name: 'Security Log Analyzer', icon: 'scroll-text', kind: 'log', note: 'Safe for real daily use: your log text is analyzed entirely in this browser and never transmitted or stored.' },
+  'tool-08': { name: 'Device Security Checklist', icon: 'clipboard-check', kind: 'device', note: 'Self-assessment checklist: your answers are processed in this browser and never transmitted or stored. This tool does not scan your device automatically.' }
 };
 
 const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' }[c]));
@@ -30,6 +32,7 @@ export function analyze(id, input) {
   if (id === 'tool-03') return validateURL(input.url || '');
   if (id === 'tool-05') return analyzeAssistant(input);
   if (id === 'tool-07') return analyzeLog(input.logText || LOG_SAMPLES.compromised.text);
+  if (id === 'tool-08') return scoreDeviceChecklist(input.checkedItems || []);
   const assessment = calculateSeverity(input);
   return { ...assessment, draft: generateReportDraft({ ...input, severity: assessment.severity }) };
 }
@@ -80,6 +83,15 @@ function resultPanel(result, id) {
       : '<p class="tool-muted">No detection rules triggered. This log looks clean.</p>';
     return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="log-risk-badge log-risk-${esc(result.risk)}">${esc(result.risk)} risk</span><strong>${result.flaggedCount} of ${result.totalLines} lines flagged</strong></div><p>${esc(result.headline)}</p>${ruleRows}<h4>Line-by-line review</h4><ol class="log-lines">${lineRows}</ol><p class="tool-privacy">This log was analyzed locally and is never transmitted or stored.</p></div>`;
   }
+  if (id === 'tool-08') {
+    const breakdown = result.loweredBy.length
+      ? `<div class="device-breakdown"><h4>Your score is lowered by</h4><ul class="device-breakdown-list">${result.loweredBy.map((x) => `<li>${icon('circle-alert','w-4 h-4')}${esc(x)}</li>`).join('')}</ul></div>`
+      : `<p class="device-perfect">All checklist items are addressed — strong device security posture.</p>`;
+    const tips = result.tips.map((t) => `<li>${icon('lightbulb','w-4 h-4')}${esc(t)}</li>`).join('');
+    const badge = result.score >= 80 ? 'low' : result.score >= 50 ? 'medium' : 'high';
+    const label = result.score >= 80 ? 'Strong' : result.score >= 50 ? 'Moderate' : 'Weak';
+    return `<div class="tool-result-panel device-result"><div class="tool-result-heading"><span class="risk-badge ${badge}">${label}</span><strong>Device Security Score</strong></div><div class="device-score-display"><strong>${result.score}</strong><em>/100</em></div><p>${result.checked.length} of ${result.total} checklist items addressed.</p>${breakdown}<div class="device-tips"><h4>Security tips from Module 6</h4><ul>${tips}</ul></div><p class="tool-privacy">This result was calculated locally and is never transmitted or stored by the tool.</p></div>`;
+  }
   return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge ${result.severity.toLowerCase()}">${esc(result.severity)} severity</span></div><p>Your incident details were assessed locally and are never transmitted or stored by this tool.</p><pre class="report-preview">${esc(result.draft)}</pre></div>`;
 }
 
@@ -93,6 +105,10 @@ function form(id, instance) {
     const sampleButtons = sampleKeys.map((k, i) => `<button type="button" class="secondary-btn log-sample-btn ${i === 1 ? 'active' : ''}" data-log-sample="${k}">${esc(LOG_SAMPLES[k].label)}</button>`).join('');
     return `<p class="assistant-disclaimer">Paste or edit a plain-text activity log. The detection rules run only in this browser — nothing is transmitted or stored. Try the sample logs to see how different patterns are interpreted.</p><div class="log-samples"><strong>Sample logs</strong><div class="log-sample-toolbar">${sampleButtons}</div></div><label>Activity log (one event per line)<textarea data-tool-input="logText" class="log-textarea" spellcheck="false" placeholder="08:41 Login successful&#10;08:43 Login failed&#10;…">${esc(LOG_SAMPLES.compromised.text)}</textarea></label><button class="primary-btn" data-analyze-tool="${id}">Analyze log ${icon('scan-search','w-4 h-4')}</button>`;
   }
+  if (id === 'tool-08') {
+    const items = CHECKLIST_ITEMS.map((item) => `<label class="device-checklist-item"><input type="checkbox" data-device-item="${esc(item.id)}"><span class="device-checklist-label">${esc(item.label)}</span></label>`).join('');
+    return `<p class="assistant-disclaimer">This is a self-assessment checklist. It does not scan your device or check anything automatically — you are self-reporting your current device security settings.</p><div class="device-checklist">${items}</div><div class="device-score-live" data-device-score></div><button class="primary-btn" data-analyze-tool="${id}">Calculate score ${icon('clipboard-check','w-4 h-4')}</button>`;
+  }
   return `<div class="tool-grid"><label>Incident category<select data-tool-input="category"><option>Phishing or social engineering</option><option>Account compromise</option><option>Lost or stolen device</option><option>Accidental data exposure</option><option>Malware or suspicious file</option></select></label><label>Potential impact<select data-tool-input="impact"><option>Low</option><option>Medium</option><option>High</option></select></label></div><label>Affected users<input data-tool-input="affectedUsers" type="number" min="0" placeholder="0"></label><label>What happened?<textarea data-tool-input="description" placeholder="Describe the incident"></textarea></label><div class="timeline-builder"><strong>Build a timeline</strong><div class="tool-grid"><input data-timeline-time placeholder="Time or date"><input data-timeline-event placeholder="What happened?"></div><button type="button" class="secondary-btn" data-add-timeline>Add timeline event</button><ol data-timeline-list></ol></div><button class="primary-btn" data-analyze-tool="${id}">Generate incident report ${icon('file-check-2','w-4 h-4')}</button>`;
 }
 
@@ -105,7 +121,7 @@ export function renderTool(id, { mode = 'standalone', instance = 'standalone' } 
 
 export function collectInput(view) {
   const get = (key) => view.querySelector(`[data-tool-input="${key}"]`)?.value.trim() || '';
-  return { password:get('password'), sender:get('sender'), subject:get('subject'), body:get('body'), links:get('links').split(/\n/).map((x) => x.trim()).filter(Boolean), url:get('url'), category:get('category'), impact:get('impact'), affectedUsers:Number(get('affectedUsers')) || 0, description:get('description'), timeline:[...view.querySelectorAll('[data-timeline-list] li')].map((x) => x.textContent).join('\n'), incidentType:get('incidentType'), when:get('when'), system:get('system'), actions:get('actions'), details:get('details'), logText:get('logText') };
+  return { password:get('password'), sender:get('sender'), subject:get('subject'), body:get('body'), links:get('links').split(/\n/).map((x) => x.trim()).filter(Boolean), url:get('url'), category:get('category'), impact:get('impact'), affectedUsers:Number(get('affectedUsers')) || 0, description:get('description'), timeline:[...view.querySelectorAll('[data-timeline-list] li')].map((x) => x.textContent).join('\n'), incidentType:get('incidentType'), when:get('when'), system:get('system'), actions:get('actions'), details:get('details'), logText:get('logText'), checkedItems:[...view.querySelectorAll('[data-device-item]:checked')].map((x) => x.dataset.deviceItem) };
 }
 
 export function renderResult(view, result, id) { const target = view.querySelector('[data-tool-result]'); if (target) target.innerHTML = resultPanel(result, id); }
