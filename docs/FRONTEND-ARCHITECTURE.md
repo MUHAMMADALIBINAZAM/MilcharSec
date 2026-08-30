@@ -1,78 +1,95 @@
 # Frontend Architecture Design — MilcharSec Learning Engine
 
-This document defines the architectural standards, data flow, and state models for the MilcharSec frontend, specifically focusing on the reusable **Module Learning Engine**.
+This document describes the **as-built** architecture of the MilcharSec frontend (verified against the source tree on 2026-08-30). The original design sketch proposed a React/TypeScript component tree with Zustand state management; that stack was not used. The shipped implementation is a dependency-free static application built with HTML5, vanilla JavaScript ES modules, plain CSS, and local JSON data. Sections below describe what actually exists, and call out the original design direction where it diverged.
 
 ---
 
 ## 1. Directory Structure
 
-The project follows a component-based modular structure to ensure clear separation between the generic "Engine" and the specific "Data".
+The project separates the generic engine from the data it renders:
 
 ```text
+index.html                  # Static app shell: header nav, loader, view containers, toast host
+modules/
+└── module-engine.js        # The ModuleEngine class: routing, dashboard, module player,
+                            #   assessment flow, scoring, persistence, recommendations
 src/
-├── api/                # Data fetching and future backend abstraction
-├── components/         # Shared UI components (Button, Card, Progress, etc.)
-│   └── common/
-├── engine/             # The Reusable Module-Learning Engine
-│   ├── components/     # Internal engine sub-components
-│   │   ├── StepRenderer.tsx
-│   │   ├── ContentSection.tsx
-│   │   ├── InteractivePortal.tsx
-│   │   ├── ScenarioWrapper.tsx
-│   │   └── QuizEngine.tsx
-│   ├── hooks/          # Engine-specific logic (useModuleState, useScoring)
-│   ├── types/          # Shared interfaces for Module JSON
-│   └── ModuleEngine.tsx # Main entry point
-├── services/           # Business logic (Scoring, Progress, Storage)
-├── state/              # Global state management (Zustand or Redux)
-├── tools/              # The 4 core platform tools (isolated components)
-└── views/              # Page-level components (Dashboard, ModuleView)
+├── auth/                   # Empty placeholder (future access-gate work)
+├── components/common/      # Empty placeholder
+└── tools/
+    ├── tool-hub.js         # Authoritative TOOL_DEFINITIONS registry (8 tools), form/result
+    │                       #   dispatchers, shared checklist helpers, QR analysis
+    ├── password-evaluator.js
+    ├── phishing-inspector.js
+    ├── url-validator.js
+    ├── incident-reporter.js
+    ├── log-analyzer.js
+    └── device-checklist.js
+css/
+├── style.css               # Module player and shared styles
+├── dashboard.css           # Dashboard, modules grid, assessment styles
+└── tools.css               # Tool hub, tool forms, result panels, checklists
+data/
+├── project.json            # Platform catalog: 10 modules, 8 tools, assessment/recommendation config
+└── module-01..10.json      # One standalone curriculum document per module
+docs/                       # Requirements, architecture, curriculum index/audit documents
+validate_config.js          # Node script enforcing catalog/registry consistency
+manifest.json               # PWA manifest (icons referenced but not yet committed)
 ```
+
+There is no package manifest, build step, or test suite. Tailwind CSS, Animate.css, Lucide icons, and jsQR are loaded from CDNs by `index.html`.
 
 ---
 
 ## 2. Data Flow (JSON → Engine → UI)
 
-The system treats module data as a "configuration" that drives the UI.
+The system treats module data as "configuration" that drives the UI.
 
-1.  **Selection**: The user selects a module on the Dashboard.
-2.  **Fetch**: The `ModuleView` fetches the corresponding JSON (e.g., `data/module-01.json`).
-3.  **Initialization**: The `ModuleEngine` receives the JSON as a prop and initializes the `useModuleState` hook.
-4.  **Parsing**: The engine maps the JSON structure into a sequence of "Steps".
-5.  **Rendering**: The `StepRenderer` identifies the current step type (Section, Quiz, Scenario, etc.) and renders the appropriate child component.
-6.  **Interaction**: User progress and answers are captured and pushed to the **State Model**.
+1. **Bootstrap**: `index.html` loads `modules/module-engine.js` as an ES module; the engine fetches `data/project.json` (and `data/module-07.json` for incident-report guidance used by tool-05).
+2. **Routing**: Query-string routes — `?modules`, `?tools`, `?tool=<id>`, `?module=<id|number>`, `?assessment` — drive view switching, with History API integration for back/forward.
+3. **Fetch**: Opening a module fetches the corresponding JSON (e.g., `data/module-10.json`) and hydrates a per-module state object from saved progress.
+4. **Parsing**: The engine derives a checkpoint list (sections, exercises, scenarios, quiz, reflections) and a step path for the sidebar.
+5. **Rendering**: Views are rendered as HTML strings into `#module-container`, `#assessment-view`, or `#dashboard-view`; event handlers are rebound after each render; `lucide.createIcons()` initializes icons.
+6. **Interaction**: User progress and answers update engine state and persist to localStorage on every checkpoint change.
 
 ---
 
 ## 3. Module Rendering Architecture (Step-Based)
 
-The engine decomposes the JSON into a linear array of steps to simplify navigation:
+The engine decomposes each module into a linear step path:
 
-1.  **Introduction**: `moduleMetadata` + `learningObjectives`.
-2.  **Learning**: `sections` (mapped 1:1 to steps or grouped).
-3.  **Practice**: `interactiveExercises`.
-4.  **Application**: `scenarios`.
-5.  **Assessment**: `quiz`.
-6.  **Consolidation**: `keyTakeaways` + `reflectApply`.
+1. **Introduction**: `moduleMetadata` + `learningObjectives`.
+2. **Learning**: `sections` (supports content blocks, bullet lists, tables, frameworks, evidence checklists, callouts, and subsections).
+3. **Practice**: `interactiveExercises` (choice/simulation/analysis/categorization questions, sorting/mapping review lists, tool-interaction portals, and report-field builders).
+4. **Application**: `scenarios` (choice-based, one at a time, with attempts, feedback, hints, retry, and a summary view).
+5. **Assessment**: `quiz` (one question at a time, explanations, retry, submission gating).
+6. **Consolidation**: `keyTakeaways` + `reflectApply` (selectable reflection states), then module completion.
+
+Unknown exercise types render an explicit "not yet supported" fallback rather than failing silently.
 
 ---
 
 ## 4. State Model
 
-The engine maintains a localized state for the active module attempt:
+The engine maintains a localized state object for the active module attempt (JavaScript, not TypeScript):
 
-```typescript
-interface ModuleAttemptState {
-  moduleId: string;
-  currentSection: number;
-  completed: Record<string, boolean>; // Checkpoint status, keyed by content ID
-  exerciseAnswers: Record<string, string | "completed">;
-  quizAnswers: Record<string, any>;
-  scenarioAnswers: Record<string, any>;
-  reflectionStates: Record<string, "I Will Check This" | "Completed" | "Review Later">;
-  quizSubmitted: boolean;
-  isCompleted: boolean;
-  score: number;
+```javascript
+{
+  id,                       // module id
+  currentSection,           // current section index
+  view,                     // current step view (intro/sections/exercises/scenarios/quiz/reflection/done)
+  completed: {},            // checkpoint status, keyed by checkpoint id
+  exerciseAnswers: {},      // exercise id -> selected answer / completed marker
+  scenarioAnswers: {},      // scenario id -> selected choice
+  scenarioAttempts: {},     // scenario id -> attempt count
+  scenarioHints: {},        // scenario id -> hint shown
+  scenarioIndex,            // current scenario index
+  scenarioSummary,          // summary screen reached
+  quizAnswers: {},          // question id -> selected option
+  quizSubmitted, quizIndex, // quiz state
+  reflectionStates: {},     // reflection index -> selected state
+  moduleCompleted,          // module finished
+  moduleScore               // final score
 }
 ```
 
@@ -80,7 +97,7 @@ interface ModuleAttemptState {
 
 ## 5. Progress Model (Completion Formula)
 
-Completion is calculated based on "logical checkpoints" rather than just page views to ensure users interact with all content.
+Completion is calculated from "logical checkpoints" rather than page views.
 
 **Formula**:
 $$Progress\% = \left( \frac{\text{Completed Checkpoints}}{\text{All Applicable Checkpoints}} \right) \times 100$$
@@ -96,7 +113,9 @@ $$Progress\% = \left( \frac{\text{Completed Checkpoints}}{\text{All Applicable C
 
 *Individual Module Score:* `(Quiz Score × 0.7) + (Scenario Score × 0.3)`.
 
-The dashboard awareness score is the arithmetic mean of submitted module quiz scores. The curriculum does not currently provide a Quick Check result or category benchmarks for every module attempt, so the engine does not fabricate a weighted CAS calculation.
+The dashboard awareness score is the arithmetic mean of submitted module quiz scores. The curriculum does not provide a Quick Check result or category benchmarks for every module attempt, so the engine does not fabricate a weighted calculation.
+
+Scenario scoring grades only scenarios that declare `correctAnswer`; all 30 current scenarios declare it. A module whose scenarios lack the field would fall back to completion-based scoring, but no current module is in that state.
 
 ---
 
@@ -104,23 +123,26 @@ The dashboard awareness score is the arithmetic mean of submitted module quiz sc
 
 ### Quiz Engine
 -   **Input**: `quiz` array from JSON.
--   **Logic**: One question at a time. Immediate feedback on each.
--   **Validation**: Must answer all to "complete" the step.
+-   **Logic**: One question at a time, immediate per-question feedback with explanations, navigation between questions.
+-   **Validation**: All questions must be answered before submission; submission gates completion.
 
-### Scenario Wrapper
--   **Input**: `scenarios` array.
--   **Logic**: Presents a situation (image/text). User chooses an action.
--   **Feedback**: Explains the impact of the choice (Confidentiality hit, Integrity hit, etc.).
+### Scenario Engine
+-   **Input**: `scenarios` array (choice-based schema: `content`, `choices`, `correctAnswer`, feedback, hints).
+-   **Logic**: Presents one situation at a time; the user chooses an action; attempts and hints are tracked.
+-   **Feedback**: Explains the impact of the choice; retry is offered; a summary screen scores the scenario set.
 
 ---
 
 ## 8. Tool Integration Model
 
-Core tools (e.g., `Tool 1 — Password Checker`) are built as standalone, reusable components.
+The 8 core tools are defined once in `TOOL_DEFINITIONS` (`src/tools/tool-hub.js`) and are rendered standalone from the Tools navigation (`?tools`, `?tool=<id>`).
 
--   **Deep Linking**: Module JSON can include a `toolId`.
--   **Portal Rendering**: When the Engine hits an `interactiveExercise` with a `toolId`, it renders the tool inside a modal or inline "Interactive Portal".
--   **Context Passing**: Tools can receive pre-filled values from the module (e.g., a "Weak Password" to analyze in the checker).
+-   **Registry**: `TOOL_DEFINITIONS` is the single authoritative tool list; the Tools page, tool tabs, and the project catalog (`data/project.json`) all render from it or are validated against it by `validate_config.js`.
+-   **Deep Linking**: Module JSON exercises can reference a tool by `toolId`.
+-   **Portal Rendering**: An `interactiveExercise` of type `tool-interaction` renders the full tool inline inside the module player (portal slot) with a "Mark tool activity complete" control.
+-   **Shared Analysis**: The QR Code Safety Checker decodes images/camera input with jsQR and reuses the URL analysis engine; the Cybersecurity Quick Check reuses the Incident Report Assistant's draft generator.
+
+All tool analysis runs client-side; tool inputs are never persisted or transmitted.
 
 ---
 
@@ -133,7 +155,8 @@ To support offline-first/MVP persistence, all data is stored under a namespace:
 **Shape**:
 ```json
 {
-  "user": { "name": "...", "preferences": {} },
+  "version": 2,
+  "currentModule": "module-02",
   "progress": {
     "module-01": { "status": "completed", "percent": 100, "moduleScore": 90 },
     "module-02": { "status": "in-progress", "currentSection": 3 }
@@ -142,38 +165,42 @@ To support offline-first/MVP persistence, all data is stored under a namespace:
     "quizzes": { "module-01": [80, 90] },
     "scenarios": { "module-01": [100] }
   },
-  "global": { "awarenessScore": 74 }
+  "toolUsage": { "tool-01": 3 },
+  "activity": [],
+  "global": { "awarenessScore": 74 },
+  "assessments": { "pre": null, "post": null }
 }
 ```
 
-The shipped engine uses `milchar_sec_v2_storage` to avoid changing legacy attempts. It persists current module and section, checkpoint completion, non-sensitive exercise/scenario/quiz selections, quiz state and score, reflection states, and module completion. It never persists tool input or free-text reporting practice, so real passwords and credentials are not retained even if entered by mistake.
+The engine persists current module and section, checkpoint completion, non-sensitive exercise/scenario/quiz selections, quiz state and score, reflection states, module completion, tool usage counts, up to 25 recent activity records, and pre/post assessment results. It never persists tool input or free-text reporting practice, so real passwords and credentials are not retained even if entered by mistake.
 
 ---
 
-## 10. Future Backend Integration Strategy
+## 10. Backend Integration Strategy (Future Scope)
 
-The architecture uses a **Repository Pattern** to shield the UI from data-source changes.
+No backend exists today. The original design proposed a Repository Pattern (`ApiService` over `LocalStorageProvider`, later swapped to a `RestApiProvider`); the shipped engine instead reads/writes `localStorage` directly in its `store()`/`save()` methods.
 
--   **Current**: `ApiService` calls `LocalStorageProvider`.
--   **Future**: `ApiService` is updated to call a `RestApiProvider` (FastAPI/Node.js).
--   **Minimal Change**: Only the `Provider` implementations and `AuthService` need to change. The `ModuleEngine` and `Dashboard` remain untouched as they consume data from the same `ApiService` interfaces.
-
----
-
-## 11. Reusable Component Strategy
-
-To ensure consistency, the engine utilizes a set of "Dumb" components:
-
--   **ModuleLayout**: Frame with navigation, progress bar, and exit button.
--   **ContentBlock**: Renders markdown/text, images, and bullet points.
--   **DecisionButton**: Standardized buttons for scenarios and quizzes.
--   **FeedbackPanel**: Shared component for success/error/explanation messages.
+-   **Current**: static hosting only (the site is served as-is from the repository root).
+-   **Future**: introduce the planned FastAPI/Node.js backend and database, then migrate persistence and add authentication. Because all state flows through the engine's store/save layer, that migration is a contained change.
+-   **Placeholders**: `src/auth/` and `supabase/functions/notify-access-request/` exist as empty directories reserved for this work.
 
 ---
 
-## 12. Scalability: Adding Module 9
+## 11. Rendering & Styling Conventions
 
-To add "Module 9 — Advanced Forensics":
-1.  Add `data/module-09.json` following the schema.
-2.  Update `data/project.json` list of modules.
-3.  **Engine behavior**: The engine automatically detects the new file, adds it to the Dashboard, and handles its rendering, progress tracking, and scoring using existing logic. **No code change required.**
+-   **Views as HTML strings**: The engine builds views with template literals and rebinds handlers after each render; `this.esc()` escapes all user/content strings before insertion.
+-   **Shared UI vocabulary**: Reusable styling is provided by CSS classes (`primary-btn`, `secondary-btn`, `activity-card`, `tool-result-panel`, `risk-badge`, `module-card`, etc.) rather than framework components.
+-   **Icons**: Lucide icons via `<i data-lucide="...">` elements, initialized after each render.
+-   **Feedback**: A shared toast system (`#toast-container`) reports successes and errors.
+
+---
+
+## 12. Scalability: Adding Modules 9 and 10
+
+This section originally described "Adding Module 9" as a future step. Modules 9 (Women's Digital Safety & Online Privacy) and 10 (Industrial & Workplace Cybersecurity) have since been added — the process matched the prediction:
+
+1.  Added `data/module-09.json` / `data/module-10.json` following the module schema.
+2.  Added the module entries to the `modules` array in `data/project.json`.
+3.  **Engine behavior**: The engine picked both modules up automatically — dashboard cards, routing, rendering, progress tracking, and scoring all worked with no engine code changes.
+
+Module 10 additionally required its original grouped-exercise format and original scenario format to be converted to the engine's supported schemas (`simulation` exercises and choice-based scenarios); the originals are preserved under each converted item's `conversionSource` field. `validate_config.js` was updated to expect 10 modules and 8 tools and to enforce that the project catalog and the `TOOL_DEFINITIONS` registry stay in sync, so future module/tool additions that skip step 2 will fail validation.

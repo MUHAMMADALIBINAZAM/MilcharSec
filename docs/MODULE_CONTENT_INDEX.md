@@ -1,6 +1,17 @@
 # MilcharSec — Module Content Index
 
-This document serves as an exhaustive, authoritative index of the educational curriculum for Modules 1 through 8 of the MilcharSec platform, as detailed in **"Module Content.pdf"**.
+This document serves as an exhaustive, authoritative index of the educational curriculum for **Modules 1 through 8** of the MilcharSec platform, as detailed in **"Module Content.pdf"**.
+
+**Platform note (2026-08-30):** The platform now ships **10 modules**. Modules 9 and 10 were added after the original PDF curriculum, from separate curriculum sources, and are therefore not indexed in this document:
+
+| Module | Title | Sections | Exercises | Scenarios | Quiz questions | Source |
+|---|---|---:|---:|---:|---:|---|
+| 09 | Women's Digital Safety & Online Privacy | 23 | 0 | 0 | 8 | Added platform module (not in Module Content.pdf) |
+| 10 | Industrial & Workplace Cybersecurity | 32 | 21 (converted from 5 original grouped exercises) | 1 | 10 | Added platform module (not in Module Content.pdf) |
+
+The authoritative content for Modules 9 and 10 is `data/module-09.json` and `data/module-10.json`; see `docs/PROJECT-INVENTORY.md` for platform-wide totals and structure. Modules 1–8 below reflect the as-built JSON data, which was verified against the PDF by the curriculum completeness audit (`docs/CURRICULUM-COMPLETENESS-AUDIT.md`).
+
+**Tool naming note:** The curriculum content (and this index) uses the tool names as they appear in "Module Content.pdf" — for example, *Password Strength Checker*, *Phishing & Message Checker*, *URL Safety Checker*, and *Email Security Checker*. The shipped tool registry uses updated names: *Password Strength Evaluator* (tool-01), *Phishing Email Inspector* (tool-02), and *Safe URL & Link Validator* (tool-03); the PDF's Email Security Checker concept is covered by the Phishing Email Inspector. Where a module's lesson text still says "Password Strength Checker" or "URL Safety Checker" (e.g., Modules 2 and 4), it refers to these same shipped tools.
 
 ---
 

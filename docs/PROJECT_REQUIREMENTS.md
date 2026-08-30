@@ -1,5 +1,42 @@
 # MilcharSec — Project Requirements
 
+## Current Implementation Status (verified 2026-08-30)
+
+This section states what actually exists in the codebase today, verified by reading the source and data files. It supersedes any older counts elsewhere in this document. The requirement sections below it retain the original planning text for context.
+
+**Verified platform totals:**
+
+| Item | Count |
+|---|---:|
+| Learning modules | 10 |
+| Quiz questions (all modules) | 79 |
+| Scenarios | 30 |
+| Interactive exercises (original curriculum units) | 20 |
+| Interactive exercise entries in module JSON | 36 |
+| Runtime tools (catalog and code registry, in sync) | 8 |
+
+The 36 exercise entries derive from the 20 original curriculum units: Modules 1–8 contain 15 exercises, Module 9 contains none, and Module 10's five original grouped exercises were structurally converted into 21 single-answer simulation entries.
+
+**Feature implementation status:**
+
+| Feature | Status | Notes |
+|---|---|---|
+| Pre/post assessment | Implemented | Deterministic 12-question pool drawn from all module quizzes; initial assessment available from the start; the post-learning assessment unlocks after all 10 modules are complete; improvement is displayed on the dashboard. |
+| Scenario engine | Implemented | All 30 scenarios use the choice-based schema with `correctAnswer`, attempts, per-choice feedback, hints, retry, summary, and scoring. |
+| Progress tracking | Implemented | Checkpoint-based completion (sections, exercises, scenarios, quiz, reflections) persisted to browser `localStorage` under `milchar_sec_v2_storage`, together with answers, scores, activity (last 25 events), and tool usage. |
+| Recommendation engine | Partially implemented | Recommends the lowest-scoring module (below 70%) or the next incomplete module, using seven catalog relationships. Falls back to "continue this module" when no relationship exists. Does not yet map weak categories to specific tools or scenarios as described in the Recommendation System section. |
+| Dashboard analytics | Partially implemented | Shows overall progress, awareness score, completed modules, tool usage, resume target, strongest module, weak areas (quiz scores below 70%), quiz/scenario averages, recent activity, and recommendations. No group-level analytics. |
+| Risk profile | Future scope | No user risk-profile model or risk-profile UI exists. The weak-area panel on the dashboard covers part of the intent, but a dedicated risk profile is not built. |
+| Access gate (login/registration) | Future scope | No authentication code exists. `src/auth/` is an empty placeholder directory. |
+| Admin capabilities | Future scope | No admin UI or functions. `supabase/functions/notify-access-request/` is an empty placeholder directory. |
+| Backend / database | Future scope | The platform is entirely client-side (static HTML/JS + JSON data + localStorage). The `supabase/` directory is empty scaffolding; no backend service or database is implemented. |
+
+**Known data inconsistencies (verified):**
+
+- `data/project.json` has `study_time_minutes: null` for Modules 1–8 even though each module's JSON metadata carries a study time (30–40 minutes), so module cards show "— min".
+- Module 9's catalog study time (45 minutes) disagrees with its module JSON metadata (75 minutes); Module 10 agrees (90 minutes) in both places.
+- `manifest.json` references `icon-192x192.png` and `icon-512x512.png`, which do not exist in the repository.
+
 ## Project Overview
 **MilcharSec** is an interactive web-based cybersecurity learning and awareness platform designed specifically to help non-technical users understand, recognize, and respond effectively to common cybersecurity threats. 
 
@@ -48,7 +85,7 @@ The main objectives of the MilcharSec platform are:
 
 ## Core Learning Workflow
 The platform orchestrates the user's journey through a structured, highly integrated core workflow:
-1. **User Registration/Login:** Secure access to the personal user space.
+1. **User Registration/Login:** Secure access to the personal user space. *(Future scope — not yet built; the current platform is a local, single-profile client-side application with no login.)*
 2. **User Dashboard:** The central hub showing overall progress, awareness score, weak areas, and recommendations.
 3. **Select or Continue Learning Module:** The user selects a module or resumes from their last saved position.
 4. **Interactive Lesson Content:** The user studies cybersecurity concepts with structured, beginner-friendly material and "Quick Check" prompts.
@@ -61,7 +98,7 @@ The platform orchestrates the user's journey through a structured, highly integr
 11. **Recommend Next Module:** The system generates a personalized recommendation for the next learning steps, creating an integrated learning loop.
 
 ## Complete Module List
-The platform includes 8 foundational learning modules:
+The platform includes 10 learning modules. Modules 1–8 form the Digital Security Basics curriculum from "Module Content.pdf"; Modules 9 and 10 were added later from separate curriculum sources and are built and shipped:
 1. **Module 1 — Cybersecurity Fundamentals:** Introduces the basic purpose of cybersecurity, why it matters, the CIA Triad (Confidentiality, Integrity, Availability), the threat landscape (cybercriminals, insiders, nation-states, opportunistic attackers), malware basics, social engineering basics, and the crucial human role in security.
 2. **Module 2 — Password & Account Security:** Focuses on protecting user accounts. Covers strong vs. weak passwords, length and uniqueness, common mistakes, password managers, Multi-Factor Authentication (MFA), account takeover, credential theft, fake login pages, password reset scams, and protecting high-priority email accounts.
 3. **Module 3 — Phishing & Social Engineering:** Teaches how attackers manipulate people using urgency and fear tactics, authority impersonation, smishing (SMS), vishing (voice), pretexting, baiting, fake login pages, suspicious links, and unexpected attachments. Outlines the STOP verification method.
@@ -70,16 +107,21 @@ The platform includes 8 foundational learning modules:
 6. **Module 6 — Mobile & Remote Work Security:** Focuses on security outside the office. Covers mobile device risks, screen locking, application permissions, software updates on mobile/laptops, public Wi-Fi risks (fake networks), safer remote working practices, secure remote access (VPN/MFA), physical laptop security, shoulder surfing, and lost/stolen device reporting (BYOD policies).
 7. **Module 7 — Security Incident Recognition & Reporting:** Teaches users how to recognize possible security incidents (unusual login alerts, lost devices, sudden password changes, malware warnings, suspicious files, accidental exposure) and follow a simple 5-step response process: Recognize $\rightarrow$ Stop $\rightarrow$ Preserve Information $\rightarrow$ Report $\rightarrow$ Follow Instructions.
 8. **Module 8 — Email & Business Communication Security:** Focuses on professional communication. Topics include business email security, identifying suspicious attachments/links/fake invoices, executive impersonation, Business Email Compromise (BEC) concepts, sender address and domain verification, safe use of CC and BCC, and misaddressed emails.
+9. **Module 9 — Women's Digital Safety & Online Privacy:** Covers digital safety topics specific to women's online experiences, including privacy protection, account security, online harassment recognition and response, and safe social media practices. (23 sections, 8 quiz questions; contains no exercises or scenarios.)
+10. **Module 10 — Industrial & Workplace Cybersecurity:** Cybersecurity awareness for industrial, manufacturing, engineering, and workplace personnel. Covers OT/ICS-awareness topics, physical and process safety intersections with cybersecurity, removable media, workplace reporting culture, and industrial incident response, with an educational (non-scanning, non-connecting) disclaimer. (32 sections, 21 converted simulation exercises, 1 scenario, 10 quiz questions.)
 
 ## Complete Tool List
-The platform includes 4 primary integrated interactive tools:
-1. **Tool 1 — Password Strength Checker:** Evaluates entered passwords on length, repeated characters, common patterns, and predictability. Provides a strength rating (Weak, Moderate, Strong, Very Strong), highlights specific weaknesses, offers improvement recommendations, and provides educational explanations. *Rule: Passwords must be analyzed securely (ideally locally) and must not be permanently stored. Users are instructed to test only fictional passwords.*
-2. **Tool 2 — Phishing and Message Checker:** Allows users to paste a suspicious message or email. The tool analyzes indicators (urgent language, requests for sensitive info, suspicious wording, impersonation, suspicious links, social engineering techniques), explains why specific elements are suspicious, and provides an educational risk level (Low, Medium, High Risk) with recommended actions.
-3. **Tool 3 — URL Safety Checker:** Users enter a URL for educational analysis. The tool inspects characteristics such as HTTPS usage, URL structure, IP-address-based URLs, excessive or misleading subdomains, suspicious keywords, and look-alike domain patterns. Returns a risk level (Low, Medium, High Risk) and educational explanations of the flags found.
-4. **Tool 4 — Cybersecurity Quick Check:** A platform-wide cybersecurity awareness assessment tool. Users answer habit-based questions across multiple categories (Password reuse, MFA usage, Software updates, Suspicious links, Data sharing, Public Wi-Fi awareness, Backups, Device security, Privacy awareness). It evaluates their overall security hygiene, generates an overall Cybersecurity Awareness Score (0–100), identifies specific weak areas, and recommends corresponding learning modules.
+The platform includes 8 interactive tools. The authoritative registry is `TOOL_DEFINITIONS` in `src/tools/tool-hub.js`, and `data/project.json` declares the same 8 tools with matching IDs and names (enforced by `validate_config.js`):
+1. **Tool 1 — Password Strength Evaluator:** Evaluates entered passwords locally on length, character variety, repeated characters, keyboard sequences, common words, and predictability. Provides a strength rating, pass/fail reasoning checklist, and improvement recommendations. Passwords are analyzed in-memory in the browser and never stored.
+2. **Tool 2 — Phishing Email Inspector:** Analyzes a pasted sender, subject, message body, and links for urgent language, sensitive requests, threats, generic wording, sender mismatch, and other phishing indicators. Returns an educational risk level (Low/Medium/High) with a pass/fail reasoning checklist.
+3. **Tool 3 — Safe URL & Link Validator:** Educational analysis of a URL's HTTPS usage, raw-IP use, subdomain nesting, sensitive path keywords, look-alike characters, and typo-squatting patterns. Returns a risk level with explanations; not a guarantee of safety.
+4. **Tool 4 — Cybersecurity Quick Check:** An incident severity assessment. The user describes an incident (category, potential impact, affected users, description) and the tool grades severity (Low/Medium/High/Critical) with a reasoning checklist and a locally generated report draft.
+5. **Tool 5 — Incident Report Assistant:** A guided three-step builder that collects incident details (type, when, system, actions, details plus an optional timeline) and generates a client-side report draft with copy and download actions. Nothing is submitted anywhere.
+6. **Tool 6 — QR Code Safety Checker:** Decodes an uploaded QR image or camera stream entirely in the browser (jsQR) and passes decoded HTTP(S) URLs through the URL analysis engine.
+7. **Tool 7 — Security Log Analyzer:** Parses timestamped log text (three built-in samples: normal, compromised, ambiguous) and applies fixed detection rules for brute force, account takeover, MFA changes, off-hours activity, new devices, recovery-detail changes, and bulk exports, returning findings and an overall risk level.
+8. **Tool 8 — Device Security Checklist:** A nine-item manual self-assessment of device security controls (screen lock, updates, apps, antivirus, backup, and similar). Scores the checked items and lists unchecked items with static security tips. It does not scan the device.
 
-*Secondary/Optional Tool:*
-* **Email Security Checker (Tool 5):** Detailed in Module 8, this tool allows users to enter a sender address, subject line, email body, link information, and attachment name. It analyzes sender details (unusual domain, look-alike domain, sender mismatch), message content (urgent language, unexpected requests, pressure tactics, sensitive requests), financial requests (payments, bank detail changes, invoice anomalies), links, and attachments to determine an educational risk level (Low, Medium, High Risk) and explain business email threats.
+The original requirement's "Email Security Checker (Tool 5)" concept is covered by the Phishing Email Inspector (tool-02), which analyzes sender, subject, body, and links.
 
 ## Assessment System
 Each learning module is designed with a robust, integrated assessment system configured as follows:
@@ -102,6 +144,8 @@ The platform provides controlled, safe, and realistic practical scenarios to tra
   * What immediate action should be taken.
   * Whether the incident should be reported.
 
+*(Implementation note: implemented. The platform ships 30 choice-based scenarios distributed across the modules — every scenario follows the choice/feedback/hint/retry flow described here, and all 30 are graded via `correctAnswer`. The four scenario concepts above are covered by the module scenarios rather than existing as four standalone scenario types.)*
+
 ## Scoring System
 MilcharSec tracks and evaluates user performance across all components of the platform:
 * **Metrics Tracked:**
@@ -121,11 +165,13 @@ MilcharSec tracks and evaluates user performance across all components of the pl
 
 ## Progress Tracking
 Progress tracking is maintained per user and visualized on the central dashboard. The tracking system records:
-* Which of the 8 modules are started, in progress, or completed.
+* Which of the 10 modules are started, in progress, or completed.
 * Historical scores for each quiz attempt.
 * Completed practical scenarios and associated performance data.
 * Usage of the integrated interactive tools.
 * Date and time of recent learning activity.
+
+*(Implemented — see the status table at the top of this document. Progress is stored per browser in `localStorage`; server-side per-user tracking awaits the backend.)*
 
 ## Awareness Score
 The **Cybersecurity Awareness Score** is a dynamic, platform-wide metric rated on a scale of **0 to 100** (e.g., 74/100). It is calculated based on:
@@ -134,9 +180,13 @@ The **Cybersecurity Awareness Score** is a dynamic, platform-wide metric rated o
 3. Successful completion of learning activities.
 This score provides a tangible, measurable representation of the user's practical security posture and decision-making capabilities.
 
+*(Implementation note: the shipped engine computes the awareness score as the arithmetic mean of all submitted module quiz scores. The Quick Check (tool-04) is an incident severity assessor rather than a habit survey, so bullet 1 above is not part of the current calculation.)*
+
 ## Weak-Area Identification
 The system analyzes performance data across the different scoring categories to automatically identify the user's lowest-performing security areas. 
 * **Mechanism:** If a user's quiz or scenario scores in a specific category (e.g., *Phishing Awareness* or *Incident Recognition*) fall below a established threshold or are significantly lower than their other category scores, the platform flags this category as a "Weak Area" or "Area for Improvement."
+
+*(Implementation note: the shipped engine identifies weak areas per module — any module whose latest quiz score is below 70% is listed under "Areas for improvement" on the dashboard. Category-level benchmarking across the example categories above is not implemented.)*
 
 ## Recommendation System
 The personalized recommendation system creates a custom learning path based on the user's assessed performance:
@@ -144,11 +194,13 @@ The personalized recommendation system creates a custom learning path based on t
 * **Example:** If a user's Phishing Awareness score is below other scores, the system displays:
   > *"Your score in Phishing & Social Engineering is below your other module scores. It is recommended that you review phishing indicators and complete the practical phishing scenario."*
 
+*(Implementation note: partially implemented. The shipped engine recommends the user's lowest-scoring module below 70% (or the next incomplete module) and enriches the recommendation using seven module relationships declared in `data/project.json`; when no relationship matches, it falls back to "continue this module." Recommendations do not yet point to specific tools or scenarios.)*
+
 ## Dashboard Requirements
 The learner's central dashboard must be a clear, visually appealing interface displaying the following key elements:
 * **Overall Progress Percentage:** (e.g., "Overall Progress: 62%")
 * **Overall Cybersecurity Awareness Score:** (e.g., "74/100")
-* **Modules Completed/Status:** (e.g., "Modules Completed: 5/8")
+* **Modules Completed/Status:** (e.g., "Modules Completed: 5/10")
 * **Current/Resumable Module:** Direct link to continue the active module.
 * **Strongest Area:** The user's highest-scoring security category.
 * **Areas for Improvement / Weak Areas:** Clearly highlighted security vulnerabilities.
@@ -166,6 +218,8 @@ For instructors, administrators, or organization managers, the system requires f
 * **Group Vulnerability Analysis:** Identify common weak areas and collective knowledge gaps among the user base to inform organizational security policies.
 * *Note:* For the initial MVP, the learner experience must receive higher priority than building an extensive administration system.
 
+*(Status: future scope. No administrator features exist in the codebase — no user management, content management, quiz control, scenario management, or group analytics. The `supabase/functions/notify-access-request/` directory is empty placeholder scaffolding.)*
+
 ## Architecture
 A secure, scalable, and modular architecture is required to decouple components and allow future expansion:
 1. **Frontend Layer:** Web-based user interface responsible for rendering learning modules, the dashboard, interactive quizzes, scenarios, security tools, and managing client-side user interactions.
@@ -177,13 +231,15 @@ A secure, scalable, and modular architecture is required to decouple components 
    * URL pattern and domain analysis.
    * Dynamic calculation of the Cybersecurity Awareness Score.
 
+*(Status: layers 2 and 3 are future scope — the shipped platform is client-only. Layer 1 is implemented as a static HTML/ES-module JavaScript application, and layer 4 is implemented as client-side analysis modules in `src/tools/` — all tool analysis runs locally in the browser. See `docs/FRONTEND-ARCHITECTURE.md` for the as-built architecture.)*
+
 ## MVP Scope
-To ensure a rapid, high-quality deployment, the initial MVP is strictly focused on:
-* **8 Core Modules:** The complete Digital Security Basics curriculum.
-* **4 Core Interactive Tools:** Password Strength Checker, Phishing & Message Checker, URL Safety Checker, and Cybersecurity Quick Check.
-* **Assessment & Scenario Features:** Basic module quizzes, simulated scenarios (Email, Passwords, Website, Incident), module scoring, and dynamic awareness scoring.
-* **Learner Dashboard:** Basic progress tracking, module completion tracking, quiz results display, overall awareness score, weak-area identification, and recommendation display.
-* **Simplified Admin:** Basic monitoring capabilities, with complex content management deferred to future releases.
+The initial MVP was scoped as follows; its current build status is noted per item:
+* **8 Core Modules → exceeded:** the platform now ships 10 modules (the 8 PDF-derived Digital Security Basics modules plus Women's Digital Safety & Online Privacy and Industrial & Workplace Cybersecurity).
+* **4 Core Interactive Tools → exceeded:** 8 tools now ship (Password Strength Evaluator, Phishing Email Inspector, Safe URL & Link Validator, Cybersecurity Quick Check, Incident Report Assistant, QR Code Safety Checker, Security Log Analyzer, Device Security Checklist).
+* **Assessment & Scenario Features:** implemented — module quizzes, 30 choice-based graded scenarios, module scoring (70/30 quiz/scenario), awareness scoring, and a pre/post platform assessment.
+* **Learner Dashboard:** implemented — progress tracking, module completion tracking, quiz results display, overall awareness score, weak-area identification, and recommendation display.
+* **Simplified Admin:** not built — future scope (see Administrator Requirements above).
 
 ## Future Development
 Subsequent versions of MilcharSec are designed to expand beyond basic security awareness into:
@@ -206,6 +262,8 @@ Based on the suggested tech stack, the recommended implementation environment co
 * **Deployment:** Vercel (frontend hosting), Render or similar (backend hosting), and cloud-hosted database services. 
 * *Constraint:* To meet timeline constraints, the team must avoid unnecessary infrastructure complexity.
 
+*(As-built note: the shipped implementation is a dependency-free static frontend — HTML5, vanilla JavaScript ES modules, and plain CSS, with Tailwind CSS, Animate.css, Lucide icons, and jsQR loaded from CDNs; all data is local JSON and `localStorage`. There is no package manifest, build step, backend, or database. The React/FastAPI/PostgreSQL stack above remains the plan for the backend-enabled version.)*
+
 ## Security Requirements
 As a security training platform, MilcharSec must adhere to rigorous security standards:
 1. **Password Safety:** The *Password Strength Checker* tool must **NEVER** permanently store user-entered passwords. Passwords must be analyzed securely in-memory or locally in the client browser, and immediately discarded.
@@ -213,7 +271,9 @@ As a security training platform, MilcharSec must adhere to rigorous security sta
 3. **Data Protection:** All user data, progress tracking, and quiz scores must be stored securely, utilizing industry-standard encryption for data-at-rest and TLS/HTTPS for data-in-transit.
 4. **Least Privilege:** Secure role separation between standard Learners and Administrators.
 
+*(Status of security requirements 1–2: implemented — all tool analysis, including the Password Strength Evaluator, runs client-side in the browser; tool inputs and free-text reflections are deliberately never persisted. Requirement 3 is future scope: there is no server-side storage yet, and the platform currently relies on the browser's own storage. Requirement 4 is future scope: no roles exist because there is no login or admin capability.)*
+
 ## Important Constraints
-* **No Frontend Code/HTML in this Phase:** The current phase is strictly limited to research, architecture, and documentation. No frontend layouts or HTML mockups are to be generated.
 * **Curriculum Preservation:** All curriculum content, scenarios, questions, and takeaways from the authoritative PDFs must be fully captured and indexable. Generic cybersecurity information must not replace the specified syllabus.
 * **No Speculative Additions:** If technical rules or content are not specified in the source PDFs, they must be explicitly noted as ambiguities or open implementation details rather than filled with speculative guesses.
+* *(Historical note: an earlier phase constrained the project to research and documentation only, with no frontend code. That phase has concluded — the frontend described throughout this document is built and shipping.)*

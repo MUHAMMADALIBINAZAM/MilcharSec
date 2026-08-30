@@ -1,6 +1,6 @@
 # MilcharSec Project Inventory
 
-Audited from the current working tree on 2026-08-30. Counts below were read directly from every existing `data/module-*.json` file. Statuses are based on source inspection; they are not claims of successful browser/runtime testing.
+Audited from the current working tree on 2026-08-30. Counts below were read directly from every existing `data/module-*.json` file. Statuses are based on source inspection; all 8 tools were additionally browser-tested individually on 2026-08-30 (each loads, accepts input, produces a result, with no console errors beyond the benign Tailwind CDN warning).
 
 ## 1. Modules
 
@@ -49,13 +49,13 @@ The following 14 platform-level feature categories are present in the implementa
 | Static application bootstrap and query-string routing | Fully implemented in source | `module-engine.js` loads `project.json`, routes dashboard/modules/tools/assessments, handles browser history, and has an error view. External CDN dependencies are required by `index.html`. |
 | Dashboard | Fully implemented in source | Renders overall progress, awareness score, completed modules, tool usage, assessment results, current module, performance, strengths, weak areas, activity, recommendations, and module cards. |
 | Module catalog and navigation | Fully implemented in source | Reads the catalog and renders all ten modules; numeric and ID module routes are supported. |
-| Step-based module renderer | Partially working | Supports intro, sections, exercises, scenarios, quizzes, reflections, and completion. Module 10 has now been converted to the renderer's supported `simulation` and choice-based scenario schemas. |
-| Interactive exercise engine | Partially working | Supports the coded choice, sorting/mapping, tool-interaction, and report-field paths. Unknown exercise types render an explicit unsupported-type fallback; current Module 10 exercise types are supported. |
-| Scenario engine | Partially working | Choice-based scenarios provide attempts, feedback, hints, retry, summary, and scoring. Module 10 now uses that choice-based shape. |
+| Step-based module renderer | Fully implemented in source | Supports intro, sections, exercises, scenarios, quizzes, reflections, and completion. Module 10 was converted to the renderer's supported `simulation` and choice-based scenario schemas (originals preserved under `conversionSource`). |
+| Interactive exercise engine | Fully implemented in source | Supports the choice (`scenario-analysis`, `simulation`, `analysis`, `categorization`), sorting/mapping review, tool-interaction portal, and report-field paths. Unknown exercise types render an explicit unsupported-type fallback; all exercise types present in the current data are supported. |
+| Scenario engine | Fully implemented in source | Choice-based scenarios provide attempts, feedback, hints, retry, summary, and scoring. All 30 current scenarios, including Module 10's, use the supported choice-based schema with `correctAnswer`. |
 | Quiz engine | Fully implemented in source | Supports one-question-at-a-time navigation, answer selection, submission, scoring, explanations, retry, and completion gating. All 79 current quiz IDs are unique. |
 | Reflection and module completion | Fully implemented in source | Reflection states are selectable; completion is gated on all generated checkpoints and displays score/takeaways/next module. Free-text reflection is intentionally not saved. |
 | Progress, state, activity, and tool-usage persistence | Fully implemented in source | Stored under `localStorage` key `milchar_sec_v2_storage`; module progress, answers, scores, activity, assessments, and tool usage are serialized locally. |
-| Module scoring and awareness score | Partially working | Quiz score and a 70/30 quiz/scenario module score are implemented. Scenario scoring expects `scenario.correctAnswer`; Module 10 lacks that field, so its scenario is not scored through the normal graded path. |
+| Module scoring and awareness score | Fully implemented in source | Quiz score and a 70/30 quiz/scenario module score are implemented; all current scenarios, including Module 10's, declare `correctAnswer` and are graded through the normal path. The awareness score is the mean of submitted quiz scores. |
 | Dashboard analytics / risk profile | Partially implemented | Analytics identifies resume target, strongest score, scores below 70%, quiz average, scenario average, and tool count. No separate user risk-profile model or risk-profile UI is implemented. |
 | Recommendation engine | Partially implemented | Uses the lowest-scoring module or next incomplete module and seven catalog relationships. Recommendations fall back to continuing the target module when no relationship exists. |
 | Pre/post assessment | Fully implemented in source | Builds a deterministic 12-question pool, stores `pre`/`post` results, unlocks the current assessment after all modules are complete, and displays improvement. |
@@ -99,14 +99,18 @@ All totals below are direct counts from the current source/data files.
 | Total modules | 10 |
 | Total quiz questions across all modules | 79 |
 | Total scenarios | 30 |
-| Total interactive exercises | 36 |
+| Total interactive exercise entries in module JSON | 36 |
+| Total original interactive exercise units (curriculum) | 20 |
 | Total runtime tools in `src/tools/tool-hub.js` / Tools navigation | 8 |
 | Total platform-level feature categories inventoried | 14 |
 
+The 36 exercise entries derive from the 20 original curriculum exercise units: Modules 1–8 contain 15 exercises, Module 9 contains none, and Module 10's five original grouped exercises were converted into 21 single-answer `simulation` entries.
+
 ## Explicit inconsistencies and known issues
 
-- `data/project.json` has `study_time_minutes: null` for Modules 1–8 even though their module JSON metadata contains study times.
-- Documentation files still describe the earlier eight-module state and the architecture document still describes adding Module 9.
+- `data/project.json` has `study_time_minutes: null` for Modules 1–8 even though their module JSON metadata contains study times (30–40 minutes), so module cards render "— min" for those modules.
+- Module 9's catalog study time (45 minutes) disagrees with its module JSON metadata (75 minutes). Module 10 agrees in both places (90 minutes).
 - `manifest.json` references `icon-192x192.png` and `icon-512x512.png`; neither file exists in the repository.
 - Module 10's original grouped exercise format included multi-answer scenarios; the conversion preserves the original accepted-option IDs in `conversionSource` and uses the first accepted option for the existing single-answer renderer.
-- The project is client-only. Requirements mention backend, database, authentication, and administrator capabilities, but no implementations for those capabilities exist.
+- The project is client-only. Requirements mention backend, database, authentication, and administrator capabilities, but no implementations for those capabilities exist. `src/auth/`, `src/components/common/`, `scripts/`, and `supabase/functions/notify-access-request/` are empty placeholder directories.
+- Project documentation was updated on 2026-08-30 to reflect the ten-module, eight-tool state and per-feature implementation status (see `docs/PROJECT_REQUIREMENTS.md`).
