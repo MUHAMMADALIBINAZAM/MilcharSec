@@ -8,7 +8,7 @@ class ModuleEngine {
   blank(){return{version:2,currentModule:null,progress:{},scores:{quizzes:{},scenarios:{}},toolUsage:{},activity:[],global:{},assessments:{pre:null,post:null}}}
   store(){try{return{...this.blank(),...(JSON.parse(localStorage.getItem(this.key))||{})}}catch{return this.blank()}}
   save(x){localStorage.setItem(this.key,JSON.stringify(x))}
-  esc(x=''){let e=document.createElement('span');e.textContent=String(x);return e.innerHTML}
+  esc(x=''){let e=document.createElement('span');e.textContent=String(x);return e.innerHTML.replace(/"/g,'&quot;')}
   icon(n,c='w-5 h-5'){return `<i data-lucide="${n}" class="${c}"></i>`}
 
   // Overall progress = completed checkpoints / all applicable checkpoints × 100.
