@@ -35,7 +35,7 @@ The 36 exercise entries derive from the 20 original curriculum units: Modules 1�
 
 - `data/project.json` has `study_time_minutes: null` for Modules 1–8 even though each module's JSON metadata carries a study time (30–40 minutes), so module cards show "— min".
 - Module 9's catalog study time (45 minutes) disagrees with its module JSON metadata (75 minutes); Module 10 agrees (90 minutes) in both places.
-- `manifest.json` references `icon-192x192.png` and `icon-512x512.png`, which do not exist in the repository.
+- `manifest.json` currently has no icon declarations; icon assets can be added when finalized branding artwork is available.
 
 ## Project Overview
 **MilcharSec** is an interactive web-based cybersecurity learning and awareness platform designed specifically to help non-technical users understand, recognize, and respond effectively to common cybersecurity threats. 
