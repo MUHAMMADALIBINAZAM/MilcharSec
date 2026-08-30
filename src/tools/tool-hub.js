@@ -32,11 +32,11 @@ export function analyze(id, input) {
   if (id === 'tool-01') return analyzePassword(input.password || '');
   if (id === 'tool-02') return inspectEmail(input);
   if (id === 'tool-03') return validateURL(input.url || '');
+  if (id === 'tool-04') { const assessment = calculateSeverity(input); return { ...assessment, draft: generateReportDraft({ ...input, severity: assessment.severity }) }; }
   if (id === 'tool-05') return analyzeAssistant(input);
   if (id === 'tool-07') return analyzeLog(input.logText || LOG_SAMPLES.compromised.text);
   if (id === 'tool-08') return scoreDeviceChecklist(input.checkedItems || []);
-  const assessment = calculateSeverity(input);
-  return { ...assessment, draft: generateReportDraft({ ...input, severity: assessment.severity }) };
+  return null;
 }
 
 export function analyzeDecodedQR(decoded) {
@@ -97,8 +97,11 @@ function resultPanel(result, id) {
     const label = result.score >= 80 ? 'Strong' : result.score >= 50 ? 'Moderate' : 'Weak';
     return `<div class="tool-result-panel device-result"><div class="tool-result-heading"><span class="risk-badge ${badge}">${label}</span><strong>Device Security Score</strong></div><div class="device-score-display"><strong>${result.score}</strong><em>/100</em></div><p>${result.checked.length} of ${result.total} checklist items addressed.</p>${addressed}${breakdown}<div class="device-tips"><h4>Security tips from Module 6</h4><ul>${tips}</ul></div><p class="tool-privacy">This result was calculated locally and is never transmitted or stored by the tool.</p></div>`;
   }
-  const overridden = result.checks && !result.checks[1]?.pass && !result.checks[2]?.pass;
-  return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge ${result.severity.toLowerCase()}">${esc(result.severity)} severity</span></div><h4>Severity assessment</h4>${checklist(result.checks)}${checkSummary(result.checks)}${overridden ? '<p class="tool-muted">The medium-impact threshold was reached first and set the severity, even though other escalation conditions also matched.</p>' : ''}<p>Your incident details were assessed locally and are never transmitted or stored by this tool.</p><pre class="report-preview">${esc(result.draft)}</pre></div>`;
+  if (id === 'tool-04') {
+    const overridden = result.checks && !result.checks[1]?.pass && !result.checks[2]?.pass;
+    return `<div class="tool-result-panel"><div class="tool-result-heading"><span class="risk-badge ${result.severity.toLowerCase()}">${esc(result.severity)} severity</span></div><h4>Severity assessment</h4>${checklist(result.checks)}${checkSummary(result.checks)}${overridden ? '<p class="tool-muted">The medium-impact threshold was reached first and set the severity, even though other escalation conditions also matched.</p>' : ''}<p>Your incident details were assessed locally and are never transmitted or stored by this tool.</p><pre class="report-preview">${esc(result.draft)}</pre></div>`;
+  }
+  return '';
 }
 
 function form(id, instance) {
@@ -115,7 +118,8 @@ function form(id, instance) {
     const items = CHECKLIST_ITEMS.map((item) => `<label class="device-checklist-item"><input type="checkbox" data-device-item="${esc(item.id)}"><span class="device-checklist-label">${esc(item.label)}</span></label>`).join('');
     return `<p class="assistant-disclaimer">This is a self-assessment checklist. It does not scan your device or check anything automatically — you are self-reporting your current device security settings.</p><div class="device-checklist">${items}</div><div class="device-score-live" data-device-score></div><button class="primary-btn" data-analyze-tool="${id}">Calculate score ${icon('clipboard-check','w-4 h-4')}</button>`;
   }
-  return `<div class="tool-grid"><label>Incident category<select data-tool-input="category"><option>Phishing or social engineering</option><option>Account compromise</option><option>Lost or stolen device</option><option>Accidental data exposure</option><option>Malware or suspicious file</option></select></label><label>Potential impact<select data-tool-input="impact"><option>Low</option><option>Medium</option><option>High</option></select></label></div><label>Affected users<input data-tool-input="affectedUsers" type="number" min="0" placeholder="0"></label><label>What happened?<textarea data-tool-input="description" placeholder="Describe the incident"></textarea></label><div class="timeline-builder"><strong>Build a timeline</strong><div class="tool-grid"><input data-timeline-time placeholder="Time or date"><input data-timeline-event placeholder="What happened?"></div><button type="button" class="secondary-btn" data-add-timeline>Add timeline event</button><ol data-timeline-list></ol></div><button class="primary-btn" data-analyze-tool="${id}">Generate incident report ${icon('file-check-2','w-4 h-4')}</button>`;
+  if (id === 'tool-04') return `<div class="tool-grid"><label>Incident category<select data-tool-input="category"><option>Phishing or social engineering</option><option>Account compromise</option><option>Lost or stolen device</option><option>Accidental data exposure</option><option>Malware or suspicious file</option></select></label><label>Potential impact<select data-tool-input="impact"><option>Low</option><option>Medium</option><option>High</option></select></label></div><label>Affected users<input data-tool-input="affectedUsers" type="number" min="0" placeholder="0"></label><label>What happened?<textarea data-tool-input="description" placeholder="Describe the incident"></textarea></label><div class="timeline-builder"><strong>Build a timeline</strong><div class="tool-grid"><input data-timeline-time placeholder="Time or date"><input data-timeline-event placeholder="What happened?"></div><button type="button" class="secondary-btn" data-add-timeline>Add timeline event</button><ol data-timeline-list></ol></div><button class="primary-btn" data-analyze-tool="${id}">Generate incident report ${icon('file-check-2','w-4 h-4')}</button>`;
+  return '';
 }
 
 export function renderTool(id, { mode = 'standalone', instance = 'standalone' } = {}) {

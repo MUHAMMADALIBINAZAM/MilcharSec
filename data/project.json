@@ -433,9 +433,9 @@
   "tools": [
     {
       "id": "tool-01",
-      "name": "Password Strength Checker",
+      "name": "Password Strength Evaluator",
       "type": "Interactive Analyzer",
-      "description": "Users can test password strength and receive detailed educational feedback explaining factors such as length, repeated patterns, predictability, and complexity without permanently storing any entries.",
+      "description": "Users can test password strength and receive detailed educational feedback explaining factors such as length, repeated patterns, predictability, and complexity without permanently storing any entries. Results include a pass/fail checklist of the four strength checks that produced the rating.",
       "inputs_required": [
         "password"
       ],
@@ -446,6 +446,7 @@
           "Strong",
           "Very Strong"
         ],
+        "checks": "Pass/fail list of the four strength checks (length, character mix, sequences, common words)",
         "weaknesses_identified": "Array of specific layout issues found",
         "improvement_recommendations": "Array of actionable modification tips",
         "educational_explanation": "Explanation of password entropy principles"
@@ -461,11 +462,14 @@
     },
     {
       "id": "tool-02",
-      "name": "Phishing & Message Checker",
+      "name": "Phishing Email Inspector",
       "type": "Text Content Parser",
-      "description": "Users enter or paste a suspicious message, email content, or SMS. The tool evaluates potential phishing or social engineering indicators to output risk insights and recommendations.",
+      "description": "Users enter or paste a suspicious message, email content, or SMS. The tool evaluates potential phishing or social engineering indicators to output risk insights and recommendations, including a pass/fail checklist of the six detection checks.",
       "inputs_required": [
-        "message_text"
+        "sender",
+        "subject",
+        "body",
+        "links"
       ],
       "outputs_provided": {
         "risk_level": [
@@ -473,6 +477,7 @@
           "Medium Risk",
           "High Risk"
         ],
+        "checks": "Pass/fail list of the six indicator checks (urgency, sensitive requests, threats, generic wording, sender mismatch, links)",
         "detected_indicators": "Array of flagged techniques (e.g., urgent language, sensitive requests, impersonation, suspicious links, threat/fear, social engineering)",
         "explanation": "Detailed rationale on why the context triggered specific indicators",
         "recommended_safe_action": "Clear guidance on how to safely respond to or report the message"
@@ -487,9 +492,9 @@
     },
     {
       "id": "tool-03",
-      "name": "URL Safety Checker",
+      "name": "Safe URL & Link Validator",
       "type": "Domain structure Inspector",
-      "description": "Analyzes an entered website address to inspect structural indicators of suspicion (such as protocol usage, domain layout, subdomains, IP usage, keywords, and look-alike domains) and return an educational assessment.",
+      "description": "Analyzes an entered website address to inspect structural indicators of suspicion (such as protocol usage, domain layout, subdomains, IP usage, keywords, and look-alike domains) and return an educational assessment, including a pass/fail checklist of the six structural checks.",
       "inputs_required": [
         "url_string"
       ],
@@ -499,7 +504,8 @@
           "Medium Risk",
           "High Risk"
         ],
-        "detected_indicators": "Array of flagged structure traits (HTTPS usage, suspicious URL structure, IP-address-based URL, excessive or misleading subdomains, suspicious keywords, look-alike patterns)",
+        "checks": "Pass/fail list of the six structural checks (HTTPS, IP host, subdomain nesting, sensitive path keywords, internationalized look-alikes, typo-squatting)",
+        "detected_indicators": "Array of flagged structure traits",
         "educational_assessment": "Explanation of URL components and common hijacking methods",
         "recommended_action": "Clear verification guidelines"
       },
@@ -514,19 +520,131 @@
     {
       "id": "tool-04",
       "name": "Cybersecurity Quick Check",
-      "type": "Self-Assessment Diagnostic",
-      "description": "A platform-wide cybersecurity awareness diagnostic tool. Users answer targeted habit and awareness questions to evaluate their security habits and identify overall training recommendations.",
+      "type": "Incident Severity Assessor",
+      "description": "Users describe a workplace security incident (category, potential impact, number of affected users, and what happened) and receive an immediate severity assessment (Low, Medium, High, or Critical) plus a structured incident report draft they can copy into their organization's reporting process. A pass/fail checklist shows which escalation conditions were evaluated.",
       "inputs_required": [
-        "habit_questions_responses"
+        "incident_category",
+        "potential_impact",
+        "affected_users",
+        "description"
       ],
       "outputs_provided": {
-        "overall_progress_percentage": "Computed percentage of completion",
-        "cybersecurity_awareness_score": "Dynamic score out of 100",
-        "weak_areas_identified": "Array of low-performing categories",
-        "recommended_modules": "List of learning modules mapped to weak categories"
+        "severity_level": [
+          "Low",
+          "Medium",
+          "High",
+          "Critical"
+        ],
+        "checks": "Pass/fail list of the three severity conditions (high impact or 100+ users, medium impact or 10+ users, account compromise)",
+        "report_draft": "Plain-text incident report draft with category, severity, description, timeline, and immediate-action guidance"
       },
-      "privacy_rules": [],
-      "related_modules": []
+      "privacy_rules": [
+        "Incident details are assessed entirely in this browser and never transmitted or stored.",
+        "The tool does not submit reports; users report through their organization's approved channel themselves."
+      ],
+      "related_modules": [
+        "module-07"
+      ]
+    },
+    {
+      "id": "tool-05",
+      "name": "Incident Report Assistant",
+      "type": "Guided Report Builder",
+      "description": "A three-step assistant that collects the incident type, context (when, which system), and the user's response so far, then generates a structured incident report draft with recommended next steps drawn from Module 7. The report stays in the page session with copy and download actions; the tool never submits anything or contacts anyone.",
+      "inputs_required": [
+        "incident_type",
+        "when",
+        "system",
+        "actions",
+        "details"
+      ],
+      "outputs_provided": {
+        "report_draft": "Plain-text incident report summary with recommended next steps (Module 7)",
+        "next_steps_checklist": "Recognize, Stop, Preserve, Report, Follow Instructions checklist rendered beside the report"
+      },
+      "privacy_rules": [
+        "Report details stay in this browser and are never transmitted or stored.",
+        "This tool never submits reports or contacts anyone."
+      ],
+      "related_modules": [
+        "module-07"
+      ]
+    },
+    {
+      "id": "tool-06",
+      "name": "QR Code Safety Checker",
+      "type": "QR Content Analyzer",
+      "description": "Users upload a QR image or scan with their device camera; the code is decoded entirely in the browser. Decoded HTTP(S) URLs are passed through the same engine as the Safe URL & Link Validator (including its pass/fail checklist), while non-URL content is classified (Wi-Fi credentials, phone number, email address, or plain text) with an explanation of why URL analysis does not apply.",
+      "inputs_required": [
+        "qr_image_or_camera_stream"
+      ],
+      "outputs_provided": {
+        "content_type": [
+          "URL",
+          "Wi-Fi network credentials",
+          "Phone number",
+          "Email address",
+          "Plain text"
+        ],
+        "decoded_value": "The decoded content, shown for review before any action",
+        "url_analysis": "For HTTP(S) URLs, the full Safe URL & Link Validator assessment with pass/fail checks"
+      },
+      "privacy_rules": [
+        "QR images and decoded content are processed entirely in this browser and never transmitted or stored."
+      ],
+      "related_modules": [
+        "module-03",
+        "module-04"
+      ]
+    },
+    {
+      "id": "tool-07",
+      "name": "Security Log Analyzer",
+      "type": "Log Pattern Analyzer",
+      "description": "Users paste a plain-text activity log (one event per line). Seven fixed detection rules run locally — brute force, account takeover, MFA disabled, unusual hours, rapid privilege change, recovery-detail changes, and bulk download/export — flagging suspicious lines with reasons and an overall risk level. All seven rules are shown, including those with zero hits, so the reasoning is fully visible.",
+      "inputs_required": [
+        "log_text"
+      ],
+      "outputs_provided": {
+        "overall_risk": [
+          "low",
+          "medium",
+          "high",
+          "critical"
+        ],
+        "detection_rules_checked": "All seven rule names with per-rule hit counts (zero-hit rules shown dimmed)",
+        "line_by_line_review": "Each log line with any matching rule pills and plain-language reasons",
+        "sample_logs": "Three built-in samples (normal workday, compromised account, ambiguous) for guided practice"
+      },
+      "privacy_rules": [
+        "Log text is analyzed entirely in this browser and never transmitted or stored."
+      ],
+      "related_modules": [
+        "module-07"
+      ]
+    },
+    {
+      "id": "tool-08",
+      "name": "Device Security Checklist",
+      "type": "Self-Assessment Checklist",
+      "description": "A nine-item self-assessment of device security controls (screen lock, OS and app updates, antivirus, backup, firewall, encryption, unused apps, Bluetooth/Wi-Fi review). A live score updates as items are checked, and the final result shows the score out of 100, which items are addressed, which lowered the score, and static security tips from Module 6. This is a self-assessment only — it does not scan the device.",
+      "inputs_required": [
+        "checked_checklist_items"
+      ],
+      "outputs_provided": {
+        "device_security_score": "Score out of 100 with Strong/Moderate/Weak rating",
+        "items_addressed": "The checklist items the user marked as done",
+        "lowered_by": "The unchecked items that reduced the score",
+        "security_tips": "Static educational tips drawn from Module 6"
+      },
+      "privacy_rules": [
+        "Answers are processed in this browser and never transmitted or stored.",
+        "This tool does not scan your device or check anything automatically — users self-report their current settings."
+      ],
+      "related_modules": [
+        "module-04",
+        "module-06"
+      ]
     }
   ],
   "assessment": {

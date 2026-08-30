@@ -163,11 +163,26 @@
           "title": "Verify Before Acting — The WHO/WHAT/WHY/WHEN/HOW Framework",
           "content": "Before opening or responding to any unexpected request, ask:",
           "framework": [
-            ["WHO?", "Who sent this?"],
-            ["WHAT?", "What are they asking me to do?"],
-            ["WHY?", "Why do they need this?"],
-            ["WHEN?", "Why is it suddenly urgent?"],
-            ["HOW?", "Does the requested process match normal company procedure?"]
+            [
+              "WHO?",
+              "Who sent this?"
+            ],
+            [
+              "WHAT?",
+              "What are they asking me to do?"
+            ],
+            [
+              "WHY?",
+              "Why do they need this?"
+            ],
+            [
+              "WHEN?",
+              "Why is it suddenly urgent?"
+            ],
+            [
+              "HOW?",
+              "Does the requested process match normal company procedure?"
+            ]
           ]
         }
       ]
@@ -189,13 +204,31 @@
       "title": "Section 7 — Social Engineering",
       "content": "Social engineering means manipulating people into performing an action or revealing information.\n\nAttackers may use:",
       "table": {
-        "headers": ["Technique", "Example"],
+        "headers": [
+          "Technique",
+          "Example"
+        ],
         "rows": [
-          ["Authority", "I'm the manager."],
-          ["Urgency", "Do it right now."],
-          ["Fear", "Your account will be disabled."],
-          ["Helpfulness", "I'll fix this for you."],
-          ["Familiarity", "We work with your company."]
+          [
+            "Authority",
+            "I'm the manager."
+          ],
+          [
+            "Urgency",
+            "Do it right now."
+          ],
+          [
+            "Fear",
+            "Your account will be disabled."
+          ],
+          [
+            "Helpfulness",
+            "I'll fix this for you."
+          ],
+          [
+            "Familiarity",
+            "We work with your company."
+          ]
         ]
       },
       "callout": "The Pressure Test: When someone pressures you, ask: 'Would I normally be allowed to do this?' If the answer is unclear: STOP → VERIFY"
@@ -303,10 +336,22 @@
           "title": "Before Sharing Information — The WHO/WHAT/WHERE/WHY Framework",
           "content": "Ask these questions before sharing any company information:",
           "framework": [
-            ["WHO?", "Is the recipient authorized?"],
-            ["WHAT?", "Does the person need this information?"],
-            ["WHERE?", "Am I using an approved communication/storage method?"],
-            ["WHY?", "Is sharing necessary?"]
+            [
+              "WHO?",
+              "Is the recipient authorized?"
+            ],
+            [
+              "WHAT?",
+              "Does the person need this information?"
+            ],
+            [
+              "WHERE?",
+              "Am I using an approved communication/storage method?"
+            ],
+            [
+              "WHY?",
+              "Is sharing necessary?"
+            ]
           ]
         }
       ]
@@ -455,11 +500,26 @@
       "title": "Session 2 — Section 24: The MilcharSec Incident Model",
       "content": "When something goes wrong, follow this five-step model:",
       "framework": [
-        ["1 — RECOGNIZE", "Something doesn't look right."],
-        ["2 — STOP", "Don't continue the potentially unsafe action."],
-        ["3 — PRESERVE", "Keep relevant information."],
-        ["4 — REPORT", "Tell the appropriate person/team."],
-        ["5 — FOLLOW", "Follow authorized instructions."]
+        [
+          "1 — RECOGNIZE",
+          "Something doesn't look right."
+        ],
+        [
+          "2 — STOP",
+          "Don't continue the potentially unsafe action."
+        ],
+        [
+          "3 — PRESERVE",
+          "Keep relevant information."
+        ],
+        [
+          "4 — REPORT",
+          "Tell the appropriate person/team."
+        ],
+        [
+          "5 — FOLLOW",
+          "Follow authorized instructions."
+        ]
       ],
       "callout": "RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW"
     },
@@ -476,27 +536,69 @@
       "title": "Session 2 — Section 27: What to Include in a Report",
       "content": "Employees don't need to write a technical report. Just answer:",
       "framework": [
-        ["WHAT?", "What happened?"],
-        ["WHEN?", "When did it happen?"],
-        ["WHERE?", "Which device/system?"],
-        ["WHO?", "Who sent or requested it?"],
-        ["ACTION?", "What did you click/open/download?"],
-        ["EVIDENCE?", "Do you have the email, message, screenshot, filename, or other relevant information?"]
+        [
+          "WHAT?",
+          "What happened?"
+        ],
+        [
+          "WHEN?",
+          "When did it happen?"
+        ],
+        [
+          "WHERE?",
+          "Which device/system?"
+        ],
+        [
+          "WHO?",
+          "Who sent or requested it?"
+        ],
+        [
+          "ACTION?",
+          "What did you click/open/download?"
+        ],
+        [
+          "EVIDENCE?",
+          "Do you have the email, message, screenshot, filename, or other relevant information?"
+        ]
       ]
     },
     {
       "title": "Section 33 — Role-Based Awareness Guide",
       "content": "Different roles face different risk profiles. Use the guide for your role to focus your awareness.",
       "table": {
-        "headers": ["Role", "Key Focus Areas"],
+        "headers": [
+          "Role",
+          "Key Focus Areas"
+        ],
         "rows": [
-          ["General Employee", "Phishing, Passwords, Data, Devices, Reporting"],
-          ["Technician", "USB, Equipment, Remote support, Physical access, Suspicious system behavior"],
-          ["Engineer", "Engineering workstations, Technical information, Remote access, Vendor access, System changes"],
-          ["Manager", "Executive impersonation, Sensitive information, Payment requests, Incident escalation, Employee reporting"],
-          ["HR", "Employee information, Privacy, Phishing, Document security, Identity-related scams"],
-          ["Finance", "Fake invoices, Payment requests, Bank-detail changes, Business email compromise"],
-          ["Contractor", "Authorization, Device security, Physical access, Data handling, Remote access"]
+          [
+            "General Employee",
+            "Phishing, Passwords, Data, Devices, Reporting"
+          ],
+          [
+            "Technician",
+            "USB, Equipment, Remote support, Physical access, Suspicious system behavior"
+          ],
+          [
+            "Engineer",
+            "Engineering workstations, Technical information, Remote access, Vendor access, System changes"
+          ],
+          [
+            "Manager",
+            "Executive impersonation, Sensitive information, Payment requests, Incident escalation, Employee reporting"
+          ],
+          [
+            "HR",
+            "Employee information, Privacy, Phishing, Document security, Identity-related scams"
+          ],
+          [
+            "Finance",
+            "Fake invoices, Payment requests, Bank-detail changes, Business email compromise"
+          ],
+          [
+            "Contractor",
+            "Authorization, Device security, Physical access, Data handling, Remote access"
+          ]
         ]
       }
     },
@@ -504,14 +606,35 @@
       "title": "Section 34 — Who Should I Contact?",
       "content": "Use the appropriate reporting channel for your situation:",
       "table": {
-        "headers": ["Situation", "Contact"],
+        "headers": [
+          "Situation",
+          "Contact"
+        ],
         "rows": [
-          ["First contact — any concern", "Your Supervisor / Manager"],
-          ["Technical problem", "IT / Help Desk"],
-          ["Cybersecurity problem", "Security Team / SOC"],
-          ["Industrial system problem", "OT / Engineering / Control-System Team"],
-          ["Physical security", "Security Department"],
-          ["Emergency", "Follow your organization's emergency procedures"]
+          [
+            "First contact — any concern",
+            "Your Supervisor / Manager"
+          ],
+          [
+            "Technical problem",
+            "IT / Help Desk"
+          ],
+          [
+            "Cybersecurity problem",
+            "Security Team / SOC"
+          ],
+          [
+            "Industrial system problem",
+            "OT / Engineering / Control-System Team"
+          ],
+          [
+            "Physical security",
+            "Security Department"
+          ],
+          [
+            "Emergency",
+            "Follow your organization's emergency procedures"
+          ]
         ]
       },
       "callout": "Your organization should configure the actual contact details. MilcharSec provides the framework; your workplace provides the specifics."
@@ -590,238 +713,982 @@
       "title": "Module Completion — Five Things to Remember",
       "content": "After completing Module 10, remember these five principles:",
       "framework": [
-        ["PROTECT", "Protect accounts, devices, and information."],
-        ["VERIFY", "Don't trust unexpected requests automatically."],
-        ["STOP", "Don't continue a suspicious action."],
-        ["REPORT", "Report problems quickly — even if you made a mistake."],
-        ["FOLLOW", "Follow your organization's approved procedures."]
+        [
+          "PROTECT",
+          "Protect accounts, devices, and information."
+        ],
+        [
+          "VERIFY",
+          "Don't trust unexpected requests automatically."
+        ],
+        [
+          "STOP",
+          "Don't continue a suspicious action."
+        ],
+        [
+          "REPORT",
+          "Report problems quickly — even if you made a mistake."
+        ],
+        [
+          "FOLLOW",
+          "Follow your organization's approved procedures."
+        ]
       ],
       "callout": "BEFORE YOU CLICK — THINK\nBEFORE YOU CONNECT — VERIFY\nBEFORE YOU GIVE ACCESS — AUTHORIZE\nBEFORE YOU SHARE — CHECK\nWHEN SOMETHING GOES WRONG — STOP → PRESERVE → REPORT\n\nYou don't need to be a cybersecurity expert to be part of the defense."
     }
   ],
   "interactiveExercises": [
     {
-      "id": "ex-10-01",
-      "title": "Industrial Cyber Risk Checker",
-      "type": "self-assessment",
-      "description": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.",
-      "questions": [
-        { "id": "q1", "text": "Do you use MFA on important accounts?", "safeAnswer": true },
-        { "id": "q2", "text": "Do you ever share passwords?", "safeAnswer": false },
-        { "id": "q3", "text": "Do you connect unknown USB devices to company systems?", "safeAnswer": false },
-        { "id": "q4", "text": "Do you install software without organizational approval?", "safeAnswer": false },
-        { "id": "q5", "text": "Do you lock your workstation when leaving it unattended?", "safeAnswer": true },
-        { "id": "q6", "text": "Do you verify unexpected requests before acting?", "safeAnswer": true },
-        { "id": "q7", "text": "Do you use only approved remote-access methods?", "safeAnswer": true },
-        { "id": "q8", "text": "Do you verify vendors and contractors before providing access?", "safeAnswer": true },
-        { "id": "q9", "text": "Do you report suspicious activity promptly?", "safeAnswer": true },
-        { "id": "q10", "text": "Do you know your organization's incident-reporting process?", "safeAnswer": true }
+      "id": "ex-10-01-q1",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q1",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you use MFA on important accounts?",
+      "options": [
+        "Yes",
+        "No"
       ],
-      "scoring": {
-        "high": { "label": "Good Security Habits", "description": "Strong awareness. Keep reinforcing these behaviors.", "threshold": 8 },
-        "medium": { "label": "Improvement Needed", "description": "Several behaviors should be improved to reduce workplace risk.", "threshold": 5 },
-        "low": { "label": "High Attention Required", "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules." }
-      },
-      "topImprovements": [
-        "Improve password practices — use unique passwords and enable MFA.",
-        "Stop connecting unknown USB devices — always follow the removable-media procedure.",
-        "Learn the incident-reporting procedure — know who to contact and when."
-      ],
-      "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q1",
+          "text": "Do you use MFA on important accounts?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
     },
     {
-      "id": "ex-10-02",
-      "title": "Industrial Phishing Simulator",
-      "type": "scenario-decision",
-      "description": "Realistic workplace phishing messages are shown. Choose the safest response for each.",
-      "scenarios": [
-        {
+      "id": "ex-10-01-q2",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q2",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you ever share passwords?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "No",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q2",
+          "text": "Do you ever share passwords?",
+          "safeAnswer": false
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q3",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q3",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you connect unknown USB devices to company systems?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "No",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q3",
+          "text": "Do you connect unknown USB devices to company systems?",
+          "safeAnswer": false
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q4",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q4",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you install software without organizational approval?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "No",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q4",
+          "text": "Do you install software without organizational approval?",
+          "safeAnswer": false
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q5",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q5",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you lock your workstation when leaving it unattended?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q5",
+          "text": "Do you lock your workstation when leaving it unattended?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q6",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q6",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you verify unexpected requests before acting?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q6",
+          "text": "Do you verify unexpected requests before acting?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q7",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q7",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you use only approved remote-access methods?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q7",
+          "text": "Do you use only approved remote-access methods?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q8",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q8",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you verify vendors and contractors before providing access?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q8",
+          "text": "Do you verify vendors and contractors before providing access?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q9",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q9",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you report suspicious activity promptly?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q9",
+          "text": "Do you report suspicious activity promptly?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-01-q10",
+      "type": "simulation",
+      "title": "Industrial Cyber Risk Checker — q10",
+      "question": "A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network.\\n\\nDo you know your organization's incident-reporting process?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "correctAnswer": "Yes",
+      "explanation": "Original self-assessment guidance: A self-assessment tool for industrial and workplace employees. Answer ten questions about your current security habits to see your risk profile and top improvement areas. This is an educational self-assessment only — it does not connect to or analyze any real operational technology (OT), industrial control system (ICS), or company network. Scoring bands: {\"high\":{\"label\":\"Good Security Habits\",\"description\":\"Strong awareness. Keep reinforcing these behaviors.\",\"threshold\":8},\"medium\":{\"label\":\"Improvement Needed\",\"description\":\"Several behaviors should be improved to reduce workplace risk.\",\"threshold\":5},\"low\":{\"label\":\"High Attention Required\",\"description\":\"Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules.\"}} Top improvements: Improve password practices — use unique passwords and enable MFA. | Stop connecting unknown USB devices — always follow the removable-media procedure. | Learn the incident-reporting procedure — know who to contact and when. Disclaimer: This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-01",
+        "originalType": "self-assessment",
+        "originalQuestion": {
+          "id": "q10",
+          "text": "Do you know your organization's incident-reporting process?",
+          "safeAnswer": true
+        },
+        "scoring": {
+          "high": {
+            "label": "Good Security Habits",
+            "description": "Strong awareness. Keep reinforcing these behaviors.",
+            "threshold": 8
+          },
+          "medium": {
+            "label": "Improvement Needed",
+            "description": "Several behaviors should be improved to reduce workplace risk.",
+            "threshold": 5
+          },
+          "low": {
+            "label": "High Attention Required",
+            "description": "Multiple behaviors could increase organizational risk. Review this module and apply the Golden Rules."
+          }
+        },
+        "topImprovements": [
+          "Improve password practices — use unique passwords and enable MFA.",
+          "Stop connecting unknown USB devices — always follow the removable-media procedure.",
+          "Learn the incident-reporting procedure — know who to contact and when."
+        ],
+        "disclaimer": "This is an educational self-assessment only. It does not scan your device, connect to any network, or analyze any operational technology or industrial control system."
+      }
+    },
+    {
+      "id": "ex-10-02-ips-01",
+      "type": "simulation",
+      "title": "Industrial Phishing Simulator — ips-01",
+      "question": "Realistic workplace phishing messages are shown. Choose the safest response for each.\\n\\nFrom: supplier-support@example\\nSubject: Urgent Equipment Update\\nBody: Your production equipment requires an immediate configuration update. Download the attached file and install it before your next shift.",
+      "options": [
+        "Open the attachment and install it.",
+        "Reply to the sender and ask for more details.",
+        "Verify the request independently through a known official contact.",
+        "Report the email as suspicious according to organizational procedures."
+      ],
+      "correctAnswer": "Verify the request independently through a known official contact.",
+      "explanation": "An unexpected attachment requesting urgent installation on production equipment is a classic phishing tactic. The correct responses are to verify through an independent, known channel and/or report the email. Never install software from an unexpected email — especially on industrial systems. Original accepted correct option IDs: c, d; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-02",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ips-01",
           "from": "supplier-support@example",
           "subject": "Urgent Equipment Update",
           "body": "Your production equipment requires an immediate configuration update. Download the attached file and install it before your next shift.",
           "options": [
-            { "id": "a", "text": "Open the attachment and install it." },
-            { "id": "b", "text": "Reply to the sender and ask for more details." },
-            { "id": "c", "text": "Verify the request independently through a known official contact." },
-            { "id": "d", "text": "Report the email as suspicious according to organizational procedures." }
+            {
+              "id": "a",
+              "text": "Open the attachment and install it."
+            },
+            {
+              "id": "b",
+              "text": "Reply to the sender and ask for more details."
+            },
+            {
+              "id": "c",
+              "text": "Verify the request independently through a known official contact."
+            },
+            {
+              "id": "d",
+              "text": "Report the email as suspicious according to organizational procedures."
+            }
           ],
-          "correctOptions": ["c", "d"],
+          "correctOptions": [
+            "c",
+            "d"
+          ],
           "explanation": "An unexpected attachment requesting urgent installation on production equipment is a classic phishing tactic. The correct responses are to verify through an independent, known channel and/or report the email. Never install software from an unexpected email — especially on industrial systems."
         },
-        {
+        "originalDescription": "Realistic workplace phishing messages are shown. Choose the safest response for each."
+      }
+    },
+    {
+      "id": "ex-10-02-ips-02",
+      "type": "simulation",
+      "title": "Industrial Phishing Simulator — ips-02",
+      "question": "Realistic workplace phishing messages are shown. Choose the safest response for each.\\n\\nFrom: hr-noreply@company-hr.net\\nSubject: URGENT: Update Your Payroll Account Now\\nBody: Action required within 2 hours: log in and update your bank account details to avoid payment failure this Friday.",
+      "options": [
+        "Click the link in the email and update immediately.",
+        "Forward it to a colleague.",
+        "Verify by contacting HR directly through the official company directory.",
+        "Report it as a suspicious email."
+      ],
+      "correctAnswer": "Verify by contacting HR directly through the official company directory.",
+      "explanation": "Urgency plus a financial action request is a strong BEC indicator. Verify through the official HR contact, not a link in the email. The sending domain 'company-hr.net' is not the official company domain — a typical look-alike pattern. Original accepted correct option IDs: c, d; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-02",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ips-02",
           "from": "hr-noreply@company-hr.net",
           "subject": "URGENT: Update Your Payroll Account Now",
           "body": "Action required within 2 hours: log in and update your bank account details to avoid payment failure this Friday.",
           "options": [
-            { "id": "a", "text": "Click the link in the email and update immediately." },
-            { "id": "b", "text": "Forward it to a colleague." },
-            { "id": "c", "text": "Verify by contacting HR directly through the official company directory." },
-            { "id": "d", "text": "Report it as a suspicious email." }
+            {
+              "id": "a",
+              "text": "Click the link in the email and update immediately."
+            },
+            {
+              "id": "b",
+              "text": "Forward it to a colleague."
+            },
+            {
+              "id": "c",
+              "text": "Verify by contacting HR directly through the official company directory."
+            },
+            {
+              "id": "d",
+              "text": "Report it as a suspicious email."
+            }
           ],
-          "correctOptions": ["c", "d"],
+          "correctOptions": [
+            "c",
+            "d"
+          ],
           "explanation": "Urgency plus a financial action request is a strong BEC indicator. Verify through the official HR contact, not a link in the email. The sending domain 'company-hr.net' is not the official company domain — a typical look-alike pattern."
-        }
-      ]
+        },
+        "originalDescription": "Realistic workplace phishing messages are shown. Choose the safest response for each."
+      }
     },
     {
-      "id": "ex-10-03",
-      "title": "USB Decision Challenge",
-      "type": "scenario-decision",
-      "description": "Different USB situations are presented. Decide the correct action for each.",
-      "scenarios": [
-        {
+      "id": "ex-10-03-usb-01",
+      "type": "simulation",
+      "title": "USB Decision Challenge — usb-01",
+      "question": "Different USB situations are presented. Decide the correct action for each.\\n\\nYou find a USB drive in the company parking area. There is no label.",
+      "options": [
+        "Plug it in to see who it belongs to.",
+        "Give it to a colleague to check.",
+        "Do not connect it. Hand it to IT or security according to your organization's procedure."
+      ],
+      "correctAnswer": "Do not connect it. Hand it to IT or security according to your organization's procedure.",
+      "explanation": "Found USB drives — especially unlabeled ones in public areas — are a known social-engineering technique (sometimes called a 'USB drop attack'). Never connect an unknown device to any company or industrial system. Follow your organization's found-device procedure. Original accepted correct option IDs: c; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-03",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "usb-01",
           "situation": "You find a USB drive in the company parking area. There is no label.",
           "options": [
-            { "id": "a", "text": "Plug it in to see who it belongs to." },
-            { "id": "b", "text": "Give it to a colleague to check." },
-            { "id": "c", "text": "Do not connect it. Hand it to IT or security according to your organization's procedure." }
+            {
+              "id": "a",
+              "text": "Plug it in to see who it belongs to."
+            },
+            {
+              "id": "b",
+              "text": "Give it to a colleague to check."
+            },
+            {
+              "id": "c",
+              "text": "Do not connect it. Hand it to IT or security according to your organization's procedure."
+            }
           ],
-          "correctOptions": ["c"],
+          "correctOptions": [
+            "c"
+          ],
           "explanation": "Found USB drives — especially unlabeled ones in public areas — are a known social-engineering technique (sometimes called a 'USB drop attack'). Never connect an unknown device to any company or industrial system. Follow your organization's found-device procedure."
         },
-        {
+        "originalDescription": "Different USB situations are presented. Decide the correct action for each."
+      }
+    },
+    {
+      "id": "ex-10-03-usb-02",
+      "type": "simulation",
+      "title": "USB Decision Challenge — usb-02",
+      "question": "Different USB situations are presented. Decide the correct action for each.\\n\\nA colleague hands you a personal USB containing movies and asks you to copy them onto your work computer.",
+      "options": [
+        "Connect it — it's just movies.",
+        "Do not connect it to a company system. Personal media does not belong on work devices.",
+        "Ask IT first before connecting anything."
+      ],
+      "correctAnswer": "Do not connect it to a company system. Personal media does not belong on work devices.",
+      "explanation": "Even a device with legitimate personal content can introduce malware if it has been plugged into an infected machine elsewhere. Personal USB drives should not be connected to company or industrial systems. Original accepted correct option IDs: b, c; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-03",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "usb-02",
           "situation": "A colleague hands you a personal USB containing movies and asks you to copy them onto your work computer.",
           "options": [
-            { "id": "a", "text": "Connect it — it's just movies." },
-            { "id": "b", "text": "Do not connect it to a company system. Personal media does not belong on work devices." },
-            { "id": "c", "text": "Ask IT first before connecting anything." }
+            {
+              "id": "a",
+              "text": "Connect it — it's just movies."
+            },
+            {
+              "id": "b",
+              "text": "Do not connect it to a company system. Personal media does not belong on work devices."
+            },
+            {
+              "id": "c",
+              "text": "Ask IT first before connecting anything."
+            }
           ],
-          "correctOptions": ["b", "c"],
+          "correctOptions": [
+            "b",
+            "c"
+          ],
           "explanation": "Even a device with legitimate personal content can introduce malware if it has been plugged into an infected machine elsewhere. Personal USB drives should not be connected to company or industrial systems."
         },
-        {
+        "originalDescription": "Different USB situations are presented. Decide the correct action for each."
+      }
+    },
+    {
+      "id": "ex-10-03-usb-03",
+      "type": "simulation",
+      "title": "USB Decision Challenge — usb-03",
+      "question": "Different USB situations are presented. Decide the correct action for each.\\n\\nIT has issued you an approved company USB through established procedures and documented it in the asset register.",
+      "options": [
+        "Use it according to organizational policy.",
+        "Refuse to use it.",
+        "Use it freely for any purpose."
+      ],
+      "correctAnswer": "Use it according to organizational policy.",
+      "explanation": "An approved, documented company USB used according to policy is the correct approach. 'Freely for any purpose' is not correct — always follow the specific organizational policy for approved media. Original accepted correct option IDs: a; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-03",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "usb-03",
           "situation": "IT has issued you an approved company USB through established procedures and documented it in the asset register.",
           "options": [
-            { "id": "a", "text": "Use it according to organizational policy." },
-            { "id": "b", "text": "Refuse to use it." },
-            { "id": "c", "text": "Use it freely for any purpose." }
+            {
+              "id": "a",
+              "text": "Use it according to organizational policy."
+            },
+            {
+              "id": "b",
+              "text": "Refuse to use it."
+            },
+            {
+              "id": "c",
+              "text": "Use it freely for any purpose."
+            }
           ],
-          "correctOptions": ["a"],
+          "correctOptions": [
+            "a"
+          ],
           "explanation": "An approved, documented company USB used according to policy is the correct approach. 'Freely for any purpose' is not correct — always follow the specific organizational policy for approved media."
-        }
-      ]
+        },
+        "originalDescription": "Different USB situations are presented. Decide the correct action for each."
+      }
     },
     {
-      "id": "ex-10-04",
-      "title": "Visitor Verification Challenge",
-      "type": "scenario-decision",
-      "description": "A person arrives at the workplace claiming to need access. Choose the correct response.",
-      "scenarios": [
-        {
+      "id": "ex-10-04-vvc-01",
+      "type": "simulation",
+      "title": "Visitor Verification Challenge — vvc-01",
+      "question": "A person arrives at the workplace claiming to need access. Choose the correct response.\\n\\nA person approaches you and says: 'I'm here from the equipment company.' They have no visible authorization badge or visitor pass.",
+      "options": [
+        "Let them enter the work area.",
+        "Give them access to a workstation so they can get started.",
+        "Follow your organization's visitor verification and authorization procedures.",
+        "Give them your account credentials so they can log in."
+      ],
+      "correctAnswer": "Follow your organization's visitor verification and authorization procedures.",
+      "explanation": "Never grant access to a person who lacks proper authorization, regardless of their stated role or urgency. Follow your organization's visitor verification procedures — every time. Options A, B, and D all grant unauthorized access and are incorrect. Original accepted correct option IDs: c; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-04",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "vvc-01",
           "situation": "A person approaches you and says: 'I'm here from the equipment company.' They have no visible authorization badge or visitor pass.",
           "options": [
-            { "id": "a", "text": "Let them enter the work area." },
-            { "id": "b", "text": "Give them access to a workstation so they can get started." },
-            { "id": "c", "text": "Follow your organization's visitor verification and authorization procedures." },
-            { "id": "d", "text": "Give them your account credentials so they can log in." }
+            {
+              "id": "a",
+              "text": "Let them enter the work area."
+            },
+            {
+              "id": "b",
+              "text": "Give them access to a workstation so they can get started."
+            },
+            {
+              "id": "c",
+              "text": "Follow your organization's visitor verification and authorization procedures."
+            },
+            {
+              "id": "d",
+              "text": "Give them your account credentials so they can log in."
+            }
           ],
-          "correctOptions": ["c"],
+          "correctOptions": [
+            "c"
+          ],
           "explanation": "Never grant access to a person who lacks proper authorization, regardless of their stated role or urgency. Follow your organization's visitor verification procedures — every time. Options A, B, and D all grant unauthorized access and are incorrect."
-        }
-      ]
+        },
+        "originalDescription": "A person arrives at the workplace claiming to need access. Choose the correct response."
+      }
     },
     {
-      "id": "ex-10-05",
-      "title": "Incident Decision Simulator",
-      "type": "scenario-decision",
-      "description": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.",
-      "scenarios": [
-        {
+      "id": "ex-10-05-ids-01",
+      "type": "simulation",
+      "title": "Incident Decision Simulator — ids-01",
+      "question": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.\\n\\nYou receive an unexpected MFA approval notification on your phone for an account you are not currently trying to access.",
+      "options": [
+        "Approve it — it's probably an IT update.",
+        "Do not approve it. Report the unexpected MFA request according to organizational procedures.",
+        "Ignore it."
+      ],
+      "correctAnswer": "Do not approve it. Report the unexpected MFA request according to organizational procedures.",
+      "explanation": "An MFA request you did not initiate may indicate that someone is attempting to log into your account using your credentials. Do not approve it. Report it immediately — your organization can investigate and protect your account. Original accepted correct option IDs: b; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-05",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ids-01",
           "situation": "You receive an unexpected MFA approval notification on your phone for an account you are not currently trying to access.",
           "options": [
-            { "id": "a", "text": "Approve it — it's probably an IT update." },
-            { "id": "b", "text": "Do not approve it. Report the unexpected MFA request according to organizational procedures." },
-            { "id": "c", "text": "Ignore it." }
+            {
+              "id": "a",
+              "text": "Approve it — it's probably an IT update."
+            },
+            {
+              "id": "b",
+              "text": "Do not approve it. Report the unexpected MFA request according to organizational procedures."
+            },
+            {
+              "id": "c",
+              "text": "Ignore it."
+            }
           ],
-          "correctOptions": ["b"],
+          "correctOptions": [
+            "b"
+          ],
           "explanation": "An MFA request you did not initiate may indicate that someone is attempting to log into your account using your credentials. Do not approve it. Report it immediately — your organization can investigate and protect your account."
         },
-        {
+        "originalDescription": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model."
+      }
+    },
+    {
+      "id": "ex-10-05-ids-02",
+      "type": "simulation",
+      "title": "Incident Decision Simulator — ids-02",
+      "question": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.\\n\\nYou realize you have left your company laptop on public transport and cannot retrieve it.",
+      "options": [
+        "Wait to see if someone hands it in tomorrow.",
+        "Report the loss immediately to IT and your manager.",
+        "Try to find it yourself before telling anyone."
+      ],
+      "correctAnswer": "Report the loss immediately to IT and your manager.",
+      "explanation": "Lost devices must be reported immediately. The organization may be able to disable access, lock the device remotely, and assess what data was exposed. Delayed reporting increases risk significantly. Original accepted correct option IDs: b; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-05",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ids-02",
           "situation": "You realize you have left your company laptop on public transport and cannot retrieve it.",
           "options": [
-            { "id": "a", "text": "Wait to see if someone hands it in tomorrow." },
-            { "id": "b", "text": "Report the loss immediately to IT and your manager." },
-            { "id": "c", "text": "Try to find it yourself before telling anyone." }
+            {
+              "id": "a",
+              "text": "Wait to see if someone hands it in tomorrow."
+            },
+            {
+              "id": "b",
+              "text": "Report the loss immediately to IT and your manager."
+            },
+            {
+              "id": "c",
+              "text": "Try to find it yourself before telling anyone."
+            }
           ],
-          "correctOptions": ["b"],
+          "correctOptions": [
+            "b"
+          ],
           "explanation": "Lost devices must be reported immediately. The organization may be able to disable access, lock the device remotely, and assess what data was exposed. Delayed reporting increases risk significantly."
         },
-        {
+        "originalDescription": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model."
+      }
+    },
+    {
+      "id": "ex-10-05-ids-03",
+      "type": "simulation",
+      "title": "Incident Decision Simulator — ids-03",
+      "question": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.\\n\\nYou accidentally clicked a link in a suspicious email and a web page briefly opened before you closed it.",
+      "options": [
+        "Hope nothing happened and continue working.",
+        "Delete the email so no one knows.",
+        "Stop what you are doing and report it to IT immediately."
+      ],
+      "correctAnswer": "Stop what you are doing and report it to IT immediately.",
+      "explanation": "Fast reporting after accidentally clicking a suspicious link gives the security team the best chance to respond before any potential harm spreads. Never hide a mistake — delayed reporting consistently makes incidents harder to manage. Original accepted correct option IDs: c; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-05",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ids-03",
           "situation": "You accidentally clicked a link in a suspicious email and a web page briefly opened before you closed it.",
           "options": [
-            { "id": "a", "text": "Hope nothing happened and continue working." },
-            { "id": "b", "text": "Delete the email so no one knows." },
-            { "id": "c", "text": "Stop what you are doing and report it to IT immediately." }
+            {
+              "id": "a",
+              "text": "Hope nothing happened and continue working."
+            },
+            {
+              "id": "b",
+              "text": "Delete the email so no one knows."
+            },
+            {
+              "id": "c",
+              "text": "Stop what you are doing and report it to IT immediately."
+            }
           ],
-          "correctOptions": ["c"],
+          "correctOptions": [
+            "c"
+          ],
           "explanation": "Fast reporting after accidentally clicking a suspicious link gives the security team the best chance to respond before any potential harm spreads. Never hide a mistake — delayed reporting consistently makes incidents harder to manage."
         },
-        {
+        "originalDescription": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model."
+      }
+    },
+    {
+      "id": "ex-10-05-ids-04",
+      "type": "simulation",
+      "title": "Incident Decision Simulator — ids-04",
+      "question": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.\\n\\nYou sent a confidential engineering document to an external contractor who was not the intended recipient.",
+      "options": [
+        "Ask the contractor to delete it and say nothing more.",
+        "Report it immediately to your manager and follow organizational procedures.",
+        "Wait and see if it causes a problem."
+      ],
+      "correctAnswer": "Report it immediately to your manager and follow organizational procedures.",
+      "explanation": "Accidental data disclosure must be reported immediately. The organization can assess the exposure, take appropriate steps, and determine if any obligations (contractual, regulatory) apply. Asking the recipient to delete it is not a substitute for a proper organizational response. Original accepted correct option IDs: b; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-05",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ids-04",
           "situation": "You sent a confidential engineering document to an external contractor who was not the intended recipient.",
           "options": [
-            { "id": "a", "text": "Ask the contractor to delete it and say nothing more." },
-            { "id": "b", "text": "Report it immediately to your manager and follow organizational procedures." },
-            { "id": "c", "text": "Wait and see if it causes a problem." }
+            {
+              "id": "a",
+              "text": "Ask the contractor to delete it and say nothing more."
+            },
+            {
+              "id": "b",
+              "text": "Report it immediately to your manager and follow organizational procedures."
+            },
+            {
+              "id": "c",
+              "text": "Wait and see if it causes a problem."
+            }
           ],
-          "correctOptions": ["b"],
+          "correctOptions": [
+            "b"
+          ],
           "explanation": "Accidental data disclosure must be reported immediately. The organization can assess the exposure, take appropriate steps, and determine if any obligations (contractual, regulatory) apply. Asking the recipient to delete it is not a substitute for a proper organizational response."
         },
-        {
+        "originalDescription": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model."
+      }
+    },
+    {
+      "id": "ex-10-05-ids-05",
+      "type": "simulation",
+      "title": "Incident Decision Simulator — ids-05",
+      "question": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model.\\n\\nAn unknown person approaches a secure workstation area and asks you to log them in because 'the manager said it was okay.'",
+      "options": [
+        "Log them in — the manager approved it.",
+        "Ask the person to wait while you verify the authorization directly with the manager.",
+        "Give them your password so they can log in themselves."
+      ],
+      "correctAnswer": "Ask the person to wait while you verify the authorization directly with the manager.",
+      "explanation": "Always verify authorization through a direct, independent channel — not through the person making the request. Social engineering often uses claimed authority to bypass normal procedures. Logging someone in or sharing your password without verification violates Rule 1 and Rule 4 of the Industrial Cybersecurity Golden Rules. Original accepted correct option IDs: b; the existing single-answer renderer uses the first accepted option as its completion answer.",
+      "conversionSource": {
+        "originalExerciseId": "ex-10-05",
+        "originalType": "scenario-decision",
+        "originalScenario": {
           "id": "ids-05",
           "situation": "An unknown person approaches a secure workstation area and asks you to log them in because 'the manager said it was okay.'",
           "options": [
-            { "id": "a", "text": "Log them in — the manager approved it." },
-            { "id": "b", "text": "Ask the person to wait while you verify the authorization directly with the manager." },
-            { "id": "c", "text": "Give them your password so they can log in themselves." }
+            {
+              "id": "a",
+              "text": "Log them in — the manager approved it."
+            },
+            {
+              "id": "b",
+              "text": "Ask the person to wait while you verify the authorization directly with the manager."
+            },
+            {
+              "id": "c",
+              "text": "Give them your password so they can log in themselves."
+            }
           ],
-          "correctOptions": ["b"],
+          "correctOptions": [
+            "b"
+          ],
           "explanation": "Always verify authorization through a direct, independent channel — not through the person making the request. Social engineering often uses claimed authority to bypass normal procedures. Logging someone in or sharing your password without verification violates Rule 1 and Rule 4 of the Industrial Cybersecurity Golden Rules."
-        }
-      ]
+        },
+        "originalDescription": "Five workplace situations are presented. Choose the correct response for each using the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model."
+      }
     }
   ],
   "scenarios": [
     {
       "id": "sc-10-01",
       "title": "A Normal Working Day",
-      "description": "You are starting your shift. Four things happen in quick succession. For each one, decide what the correct response is.",
-      "steps": [
+      "content": "You are starting your shift. Four things happen in quick succession. For each one, decide what the correct response is.\\n\\nTime: 8:05 AM\\nEvent: You receive an email: 'Urgent maintenance document attached.' The sender is unfamiliar.\\nWarning sign: Suspicious attachment with urgency from an unexpected sender.\\nCorrect action: Don't open automatically. Verify through a known, official contact before taking any action.\\n\\nTime: 8:20 AM\\nEvent: Someone you don't recognize hands you a USB drive and says: 'Check this file quickly.'\\nWarning sign: Unknown removable media from an unverified person.\\nCorrect action: Don't connect it. Follow your organization's removable-media procedure. Verify the person's authorization.\\n\\nTime: 8:40 AM\\nEvent: A visitor says: 'The manager asked me to access this workstation.' They have no visitor badge.\\nWarning sign: Authorization issue — claimed verbal approval with no documented authorization.\\nCorrect action: Follow visitor verification procedures. Do not grant access until authorization is properly confirmed.\\n\\nTime: 9:00 AM\\nEvent: An unexpected security warning appears on your workstation screen.\\nWarning sign: Possible security incident or malware warning.\\nCorrect action: Stop what you are doing. Preserve the information (screenshot if possible, note the time). Report to IT. Do not attempt to 'fix' it yourself or dismiss it.",
+      "lesson": "Industrial environments present multiple potential threats in a single working day. The response is always the same: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW.",
+      "choices": [
         {
-          "time": "8:05 AM",
-          "event": "You receive an email: 'Urgent maintenance document attached.' The sender is unfamiliar.",
-          "warningSign": "Suspicious attachment with urgency from an unexpected sender.",
-          "correctAction": "Don't open automatically. Verify through a known, official contact before taking any action."
+          "text": "Apply the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model to each event.",
+          "correct": true,
+          "consequence": "Industrial environments present multiple potential threats in a single working day. The response is always the same: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW."
         },
         {
-          "time": "8:20 AM",
-          "event": "Someone you don't recognize hands you a USB drive and says: 'Check this file quickly.'",
-          "warningSign": "Unknown removable media from an unverified person.",
-          "correctAction": "Don't connect it. Follow your organization's removable-media procedure. Verify the person's authorization."
+          "text": "Continue the shift without checking or reporting the events.",
+          "correct": false,
+          "consequence": "This ignores the warning signs described in the scenario."
         },
         {
-          "time": "8:40 AM",
-          "event": "A visitor says: 'The manager asked me to access this workstation.' They have no visitor badge.",
-          "warningSign": "Authorization issue — claimed verbal approval with no documented authorization.",
-          "correctAction": "Follow visitor verification procedures. Do not grant access until authorization is properly confirmed."
-        },
-        {
-          "time": "9:00 AM",
-          "event": "An unexpected security warning appears on your workstation screen.",
-          "warningSign": "Possible security incident or malware warning.",
-          "correctAction": "Stop what you are doing. Preserve the information (screenshot if possible, note the time). Report to IT. Do not attempt to 'fix' it yourself or dismiss it."
+          "text": "Connect unknown devices and make changes before contacting the responsible team.",
+          "correct": false,
+          "consequence": "This conflicts with the correct actions in the scenario."
         }
       ],
-      "keyLesson": "Industrial environments present multiple potential threats in a single working day. The response is always the same: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW."
+      "correctAnswer": "Apply the RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW model to each event.",
+      "conversionSource": {
+        "originalScenario": {
+          "id": "sc-10-01",
+          "title": "A Normal Working Day",
+          "description": "You are starting your shift. Four things happen in quick succession. For each one, decide what the correct response is.",
+          "steps": [
+            {
+              "time": "8:05 AM",
+              "event": "You receive an email: 'Urgent maintenance document attached.' The sender is unfamiliar.",
+              "warningSign": "Suspicious attachment with urgency from an unexpected sender.",
+              "correctAction": "Don't open automatically. Verify through a known, official contact before taking any action."
+            },
+            {
+              "time": "8:20 AM",
+              "event": "Someone you don't recognize hands you a USB drive and says: 'Check this file quickly.'",
+              "warningSign": "Unknown removable media from an unverified person.",
+              "correctAction": "Don't connect it. Follow your organization's removable-media procedure. Verify the person's authorization."
+            },
+            {
+              "time": "8:40 AM",
+              "event": "A visitor says: 'The manager asked me to access this workstation.' They have no visitor badge.",
+              "warningSign": "Authorization issue — claimed verbal approval with no documented authorization.",
+              "correctAction": "Follow visitor verification procedures. Do not grant access until authorization is properly confirmed."
+            },
+            {
+              "time": "9:00 AM",
+              "event": "An unexpected security warning appears on your workstation screen.",
+              "warningSign": "Possible security incident or malware warning.",
+              "correctAction": "Stop what you are doing. Preserve the information (screenshot if possible, note the time). Report to IT. Do not attempt to 'fix' it yourself or dismiss it."
+            }
+          ],
+          "keyLesson": "Industrial environments present multiple potential threats in a single working day. The response is always the same: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW."
+        }
+      }
     }
   ],
   "tools": [],
