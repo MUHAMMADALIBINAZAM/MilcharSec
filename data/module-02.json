@@ -104,7 +104,8 @@
           "consequence": "The code is now in an unprotected message thread and visible to anyone with access to that phone. MFA codes should never leave your authenticator app."
         }
       ],
-      "correctAnswer": "Hang up and call IT back on the official number listed on your intranet / ID badge"
+      "correctAnswer": "Hang up and call IT back on the official number listed on your intranet / ID badge",
+      "securityPrinciple": "Never share MFA codes or passwords with anyone claiming to be support — real IT will never ask for them."
     },
     {
       "id": "sc-02-02",
@@ -138,7 +139,8 @@
           "consequence": "Forwarding spreads the malicious link. Some recipients may click before anyone realizes it is a scam."
         }
       ],
-      "correctAnswer": "Ignore the email and log into the service directly through its official website or app"
+      "correctAnswer": "Ignore the email and log into the service directly through its official website or app",
+      "securityPrinciple": "Treat urgency and threats as attack tools; verify by logging in through the service's official site or app."
     },
     {
       "id": "sc-02-03",
@@ -168,7 +170,8 @@
           "consequence": "You expose details about your accounts and the incident. Attackers monitoring your profile can use those details to refine their next attempt."
         }
       ],
-      "correctAnswer": "Log into the service directly (not via the alert), change your password, and review recent activity"
+      "correctAnswer": "Log into the service directly (not via the alert), change your password, and review recent activity",
+      "securityPrinciple": "Act on login alerts immediately through the service directly — early warnings stop account takeover in minutes, not months."
     }
   ],
   "tools": [

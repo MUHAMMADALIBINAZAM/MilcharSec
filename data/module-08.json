@@ -115,7 +115,8 @@
           "consequence": "You just distributed a potentially malicious attachment to another inbox. If either of you opens it, the malware has a new foothold."
         }
       ],
-      "correctAnswer": "Call your manager on a known number to verify before opening anything"
+      "correctAnswer": "Call your manager on a known number to verify before opening anything",
+      "securityPrinciple": "A trusted sender address can be a compromised mailbox — verify unexpected attachments by phone before opening them."
     },
     {
       "id": "sc-08-02",
@@ -145,7 +146,8 @@
           "consequence": "You still sent money to the attacker. A \"test payment\" is still a successful fraud — just a smaller one."
         }
       ],
-      "correctAnswer": "Call the supplier on the phone number you already have on file to verify the change out-of-band"
+      "correctAnswer": "Call the supplier on the phone number you already have on file to verify the change out-of-band",
+      "securityPrinciple": "Always verify banking-detail changes out-of-band, never using contact details supplied in the request itself."
     },
     {
       "id": "sc-08-03",
@@ -175,7 +177,8 @@
           "consequence": "You pass the trap to someone who may be less skeptical. The attack now has two chances to succeed inside your organization."
         }
       ],
-      "correctAnswer": "Verify the request through a separate channel (call the CEO's assistant, or the CEO directly on a known number)"
+      "correctAnswer": "Verify the request through a separate channel (call the CEO's assistant, or the CEO directly on a known number)",
+      "securityPrinciple": "Executive-impersonation fraud relies on you not checking — verify urgent financial requests through a separate, known channel."
     },
     {
       "id": "sc-08-04",
@@ -206,7 +209,8 @@
           "consequence": "Publicly posting customer-directed content may be fine, but it depends on what the update contains. Customer-specific or sensitive information should not be made public."
         }
       ],
-      "correctAnswer": "Move all recipient addresses to BCC before sending"
+      "correctAnswer": "Move all recipient addresses to BCC before sending",
+      "securityPrinciple": "Use BCC for large external distributions to protect recipients' addresses from being disclosed to each other."
     }
   ],
   "tools": [],

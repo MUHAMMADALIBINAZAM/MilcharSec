@@ -130,7 +130,8 @@
           "consequence": "You now have two copies of sensitive data in the wrong inbox and a paper trail that confirms the content was sensitive."
         }
       ],
-      "correctAnswer": "Report the mis-send to your data-protection officer / IT immediately so the incident can be contained"
+      "correctAnswer": "Report the mis-send to your data-protection officer / IT immediately so the incident can be contained",
+      "securityPrinciple": "Double-check auto-completed recipients before sending sensitive data, and report any mis-send for formal incident response."
     },
     {
       "id": "sc-05-02",
@@ -160,7 +161,8 @@
           "consequence": "Deleting your sent copy does not remove the message from the recipients' mailboxes or the mail server. It only removes your record of the incident."
         }
       ],
-      "correctAnswer": "Immediately contact IT / the recipients out-of-band and request deletion without replying on the thread"
+      "correctAnswer": "Immediately contact IT / the recipients out-of-band and request deletion without replying on the thread",
+      "securityPrinciple": "Check the To and CC fields before sending, and contain a mis-sent attachment out-of-band rather than replying on the thread."
     },
     {
       "id": "sc-05-03",
@@ -190,7 +192,8 @@
           "consequence": "You created an additional unauthorized copy of salary data, which may itself violate data-handling policy."
         }
       ],
-      "correctAnswer": "Report the open permission to the folder owner or IT so access can be restricted"
+      "correctAnswer": "Report the open permission to the folder owner or IT so access can be restricted",
+      "securityPrinciple": "Permissions should follow the Principle of Least Privilege — report over-shared data so access can be restricted."
     },
     {
       "id": "sc-05-04",
@@ -220,7 +223,8 @@
           "consequence": "You just shared credentials and let an unauthorized person act under your identity. Anything they do is logged as you."
         }
       ],
-      "correctAnswer": "Politely refuse and explain that access is only for authorized business purposes"
+      "correctAnswer": "Politely refuse and explain that access is only for authorized business purposes",
+      "securityPrinciple": "Trust is not authorization — access data only for an authorized business purpose, and never share your account."
     }
   ],
   "tools": [],

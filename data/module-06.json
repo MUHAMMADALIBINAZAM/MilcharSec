@@ -119,7 +119,8 @@
           "consequence": "Front-desk staff can be mistaken, and an attacker could have given them the wrong name too. Pair the staff answer with the password-protected network and a VPN for real confidence."
         }
       ],
-      "correctAnswer": "Join the official password-protected network and use a VPN for sensitive traffic"
+      "correctAnswer": "Join the official password-protected network and use a VPN for sensitive traffic",
+      "securityPrinciple": "Avoid open, unencrypted networks — use the official secured network with a VPN for sensitive traffic."
     },
     {
       "id": "sc-06-02",
@@ -149,7 +150,8 @@
           "consequence": "You just asked an unknown person to be responsible for your work device. They have no obligation to protect it and may themselves be a threat."
         }
       ],
-      "correctAnswer": "Lock the screen (Win+L / Cmd+Ctrl+Q) and take the device with you"
+      "correctAnswer": "Lock the screen (Win+L / Cmd+Ctrl+Q) and take the device with you",
+      "securityPrinciple": "Never leave a device unattended and unlocked — physical access defeats most software defenses in under a minute."
     },
     {
       "id": "sc-06-03",
@@ -179,7 +181,8 @@
           "consequence": "Photographing a stranger can be unlawful depending on jurisdiction and may escalate a situation that is easier to solve by simply moving."
         }
       ],
-      "correctAnswer": "Adjust your position, tilt the screen, or move to a more private area before continuing"
+      "correctAnswer": "Adjust your position, tilt the screen, or move to a more private area before continuing",
+      "securityPrinciple": "Stay aware of your physical surroundings and remove lines of sight before working on confidential data in public."
     },
     {
       "id": "sc-06-04",
@@ -209,7 +212,8 @@
           "consequence": "Changing passwords is useful but incomplete. Sessions, tokens, and cached credentials on the stolen device still work until IT revokes them."
         }
       ],
-      "correctAnswer": "Report it to IT and local law enforcement immediately so remote wipe and account revocation can start"
+      "correctAnswer": "Report it to IT and local law enforcement immediately so remote wipe and account revocation can start",
+      "securityPrinciple": "Report a lost or stolen device immediately — speed enables remote wipe and token revocation before data is exploited."
     }
   ],
   "tools": [],

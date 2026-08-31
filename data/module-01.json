@@ -125,7 +125,8 @@
           "consequence": "This widens the breach rather than fixing it — more unauthorized copies of confidential data now exist."
         }
       ],
-      "correctAnswer": "Immediately notify your manager / data-protection officer and send a recall request"
+      "correctAnswer": "Immediately notify your manager / data-protection officer and send a recall request",
+      "securityPrinciple": "Report accidental data disclosure immediately — fast, honest reporting is the only way to contain a breach you cannot undo."
     },
     {
       "id": "sc-01-02",
@@ -155,7 +156,8 @@
           "consequence": "Confronting the suspect tips them off and gives them time to cover tracks or destroy evidence before an investigation."
         }
       ],
-      "correctAnswer": "Report it to the data owner / security team without touching the record"
+      "correctAnswer": "Report it to the data owner / security team without touching the record",
+      "securityPrinciple": "Report suspected data tampering to the data owner without altering the record, so the audit trail stays intact."
     },
     {
       "id": "sc-01-03",
@@ -185,7 +187,8 @@
           "consequence": "Public posts can leak internal system details and may violate your organization's communication policy before the incident is even triaged."
         }
       ],
-      "correctAnswer": "Report the outage to IT / service desk with what you observed and when"
+      "correctAnswer": "Report the outage to IT / service desk with what you observed and when",
+      "securityPrinciple": "Availability is a security requirement — report outages to the responsible team instead of waiting them out."
     },
     {
       "id": "sc-01-04",
@@ -215,7 +218,8 @@
           "consequence": "If the original supplier mailbox is compromised, your verification request lands in the attacker's inbox too — you get a fake \"yes\" back."
         }
       ],
-      "correctAnswer": "Call the supplier on a known, trusted number to verify the change"
+      "correctAnswer": "Call the supplier on a known, trusted number to verify the change",
+      "securityPrinciple": "Verify any change to financial details out-of-band, using contact details you already hold on file."
     }
   ],
   "tools": [],

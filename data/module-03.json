@@ -112,7 +112,8 @@
           "consequence": "You spread the malicious link. Your friend may click before realizing it is phishing."
         }
       ],
-      "correctAnswer": "Delete the email or report it, then go to the portal by typing its address yourself"
+      "correctAnswer": "Delete the email or report it, then go to the portal by typing its address yourself",
+      "securityPrinciple": "Extreme time pressure signals phishing — never click links in urgent emails; reach the portal by typing its address yourself."
     },
     {
       "id": "sc-03-02",
@@ -142,7 +143,8 @@
           "consequence": "The number is controlled by the attacker, who will impersonate the bank and ask for your PIN or OTP to \"reactivate\" your account."
         }
       ],
-      "correctAnswer": "Ignore the text and open your bank's app or website directly to check"
+      "correctAnswer": "Ignore the text and open your bank's app or website directly to check",
+      "securityPrinciple": "Never trust shortened links in unsolicited SMS — check account status only in the bank's official app or website."
     },
     {
       "id": "sc-03-03",
@@ -172,7 +174,8 @@
           "consequence": "You stay engaged with a social engineer who can pivot tactics, ask for other details, or call you back with a more convincing story."
         }
       ],
-      "correctAnswer": "Hang up and call the institution back on the official number printed on your card or statement"
+      "correctAnswer": "Hang up and call the institution back on the official number printed on your card or statement",
+      "securityPrinciple": "No legitimate institution ever calls to ask for an OTP it sent you — hang up and call back on an official number."
     },
     {
       "id": "sc-03-04",
@@ -202,7 +205,8 @@
           "consequence": "You moved confidential data to an uncontrolled mailbox. Even if the DM was legitimate, this creates a separate data-leakage incident."
         }
       ],
-      "correctAnswer": "Verify the request through a different channel — call the Director or wait until the meeting ends"
+      "correctAnswer": "Verify the request through a different channel — call the Director or wait until the meeting ends",
+      "securityPrinciple": "Claimed authority never justifies bypassing procedure — verify sensitive requests through an independent, trusted channel."
     }
   ],
   "tools": [],

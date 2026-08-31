@@ -1688,7 +1688,8 @@
           ],
           "keyLesson": "Industrial environments present multiple potential threats in a single working day. The response is always the same: RECOGNIZE → STOP → PRESERVE → REPORT → FOLLOW."
         }
-      }
+      },
+      "securityPrinciple": "Apply one consistent response to every suspicious event: RECOGNIZE, STOP, PRESERVE, REPORT, FOLLOW."
     }
   ],
   "tools": [],

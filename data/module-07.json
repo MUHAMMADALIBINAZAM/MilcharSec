@@ -117,7 +117,8 @@
           "consequence": "Disabling MFA removes your strongest defense. An attacker with your password now has direct access to your account with no second factor."
         }
       ],
-      "correctAnswer": "Deny the pushes and immediately report the spam to IT / security"
+      "correctAnswer": "Deny the pushes and immediately report the spam to IT / security",
+      "securityPrinciple": "Deny unexpected MFA prompts and report them — push spam means your password is already compromised."
     },
     {
       "id": "sc-07-02",
@@ -147,7 +148,8 @@
           "consequence": "A restart does not remove persistent malware. Some threats re-launch on boot. You may also destroy forensic evidence the security team would have used."
         }
       ],
-      "correctAnswer": "Record the alert details (malware name, time, file path) and report them to the security team"
+      "correctAnswer": "Record the alert details (malware name, time, file path) and report them to the security team",
+      "securityPrinciple": "Follow up on every security alert, even a 'blocked' one — record the details and report them to the security team."
     },
     {
       "id": "sc-07-03",
@@ -168,7 +170,8 @@
           "correct": true,
           "consequence": "Specific, timestamped, evidence-backed reports let the security team react in minutes: pull the mail from other inboxes, block the sender, and confirm you are not compromised."
         }
-      ]
+      ],
+      "securityPrinciple": "Report incidents with specific, timestamped, evidence-backed detail — precision lets security teams react in minutes."
     }
   ],
   "tools": [],

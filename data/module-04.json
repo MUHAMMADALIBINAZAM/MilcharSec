@@ -114,7 +114,8 @@
           "consequence": "Password managers usually refuse to auto-fill on an unrecognized domain — but if they do, you just stored your credentials in a place the attacker can now trigger to auto-submit."
         }
       ],
-      "correctAnswer": "Close the page and navigate to the university portal by typing the known address yourself"
+      "correctAnswer": "Close the page and navigate to the university portal by typing the known address yourself",
+      "securityPrinciple": "Always verify the exact domain in the address bar before entering credentials — look-alike domains survive a quick glance."
     },
     {
       "id": "sc-04-02",
@@ -144,7 +145,8 @@
           "consequence": "Restarting is safer than installing anything, but unnecessary — the \"warning\" only existed in that browser tab. You lose unsaved work for no gain."
         }
       ],
-      "correctAnswer": "Close the browser tab (or force-quit the browser) without clicking inside the pop-up"
+      "correctAnswer": "Close the browser tab (or force-quit the browser) without clicking inside the pop-up",
+      "securityPrinciple": "A web page cannot scan your device — close scareware pop-ups without clicking inside them."
     },
     {
       "id": "sc-04-03",
@@ -174,7 +176,8 @@
           "consequence": "You leave a known vulnerability unpatched. Attackers automate exploitation of exactly these skipped updates within days of their disclosure."
         }
       ],
-      "correctAnswer": "Apply only the OS-level notification and ignore the website's prompt"
+      "correctAnswer": "Apply only the OS-level notification and ignore the website's prompt",
+      "securityPrinciple": "Install updates only through your device's built-in update tool, never from a website prompt."
     }
   ],
   "tools": [],
