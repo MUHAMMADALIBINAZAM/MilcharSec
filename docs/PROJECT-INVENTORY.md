@@ -112,5 +112,5 @@ The 36 exercise entries derive from the 20 original curriculum exercise units: M
 - Module 9's catalog study time (45 minutes) disagrees with its module JSON metadata (75 minutes). Module 10 agrees in both places (90 minutes).
 - `manifest.json` currently has no icon declarations; icon assets can be added when finalized branding artwork is available.
 - Module 10's original grouped exercise format included multi-answer scenarios; the conversion preserves the original accepted-option IDs in `conversionSource` and uses the first accepted option for the existing single-answer renderer.
-- The project is client-only. Requirements mention backend, database, authentication, and administrator capabilities, but no implementations for those capabilities exist. `src/auth/`, `src/components/common/`, `scripts/`, and `supabase/functions/notify-access-request/` are empty placeholder directories.
+- The project is client-only. Requirements mention backend, database, authentication, and administrator capabilities, but no implementations for those capabilities exist. `src/auth/`, `src/components/common/`, and `scripts/` are empty placeholder directories.
 - Project documentation was updated on 2026-08-30 to reflect the ten-module, eight-tool state and per-feature implementation status (see `docs/PROJECT_REQUIREMENTS.md`).

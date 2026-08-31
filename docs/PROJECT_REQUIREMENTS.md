@@ -28,8 +28,8 @@ The 36 exercise entries derive from the 20 original curriculum units: Modules 1�
 | Dashboard analytics | Partially implemented | Shows overall progress, awareness score, completed modules, tool usage, resume target, strongest module, weak areas (quiz scores below 70%), quiz/scenario averages, recent activity, and recommendations. No group-level analytics. |
 | Risk profile | Future scope | No user risk-profile model or risk-profile UI exists. The weak-area panel on the dashboard covers part of the intent, but a dedicated risk profile is not built. |
 | Access gate (login/registration) | Future scope | No authentication code exists. `src/auth/` is an empty placeholder directory. |
-| Admin capabilities | Future scope | No admin UI or functions. `supabase/functions/notify-access-request/` is an empty placeholder directory. |
-| Backend / database | Future scope | The platform is entirely client-side (static HTML/JS + JSON data + localStorage). The `supabase/` directory is empty scaffolding; no backend service or database is implemented. |
+| Admin capabilities | Future scope | No admin UI or functions. |
+| Backend / database | Future scope | The platform is entirely client-side (static HTML/JS + JSON data + localStorage); no backend service or database is implemented. |
 
 **Known data inconsistencies (verified):**
 
@@ -218,7 +218,7 @@ For instructors, administrators, or organization managers, the system requires f
 * **Group Vulnerability Analysis:** Identify common weak areas and collective knowledge gaps among the user base to inform organizational security policies.
 * *Note:* For the initial MVP, the learner experience must receive higher priority than building an extensive administration system.
 
-*(Status: future scope. No administrator features exist in the codebase — no user management, content management, quiz control, scenario management, or group analytics. The `supabase/functions/notify-access-request/` directory is empty placeholder scaffolding.)*
+*(Status: future scope. No administrator features exist in the codebase — no user management, content management, quiz control, scenario management, or group analytics.)*
 
 ## Architecture
 A secure, scalable, and modular architecture is required to decouple components and allow future expansion:
@@ -258,7 +258,7 @@ Subsequent versions of MilcharSec are designed to expand beyond basic security a
 Based on the suggested tech stack, the recommended implementation environment consists of:
 * **Frontend:** HTML, CSS, JavaScript, with React or Next.js for a responsive, interactive component model, styled with Vanilla CSS for layouts.
 * **Backend:** Python FastAPI (highly efficient for analysis tools) or Node.js/Express.
-* **Database:** PostgreSQL or a managed backend-as-a-service like Supabase for rapid MVP development.
+* **Database:** PostgreSQL or another managed backend service for rapid MVP development.
 * **Deployment:** Vercel (frontend hosting), Render or similar (backend hosting), and cloud-hosted database services. 
 * *Constraint:* To meet timeline constraints, the team must avoid unnecessary infrastructure complexity.
 

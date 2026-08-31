@@ -182,7 +182,7 @@ No backend exists today. The original design proposed a Repository Pattern (`Api
 
 -   **Current**: static hosting only (the site is served as-is from the repository root).
 -   **Future**: introduce the planned FastAPI/Node.js backend and database, then migrate persistence and add authentication. Because all state flows through the engine's store/save layer, that migration is a contained change.
--   **Placeholders**: `src/auth/` and `supabase/functions/notify-access-request/` exist as empty directories reserved for this work.
+-   **Placeholders**: `src/auth/` exists as an empty directory reserved for future authentication work.
 
 ---
 
