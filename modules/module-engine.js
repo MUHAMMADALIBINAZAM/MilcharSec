@@ -73,4 +73,8 @@ class ModuleEngine {
   scoreDisplay(n){let e=document.getElementById('awareness-score-display');if(e)e.textContent=`${n}/100`}
   toast(m,t='info'){let e=document.createElement('div');e.className=`toast ${t}`;e.textContent=m;document.getElementById('toast-container').append(e);setTimeout(()=>e.remove(),4000)}
   error(m){document.getElementById('dashboard-view').innerHTML=`<div class="error-state"><h1>We couldn’t start the learning engine</h1><p>${this.esc(m)}</p></div>`;document.getElementById('dashboard-view').classList.remove('hidden')}
-}new ModuleEngine();
+  sessionQuizFixed(d){if(!(d.title.startsWith('Session 2')&&d.title.includes('Knowledge Quiz')))return '';let mojibakeTitle='Session 2 '+String.fromCharCode(0xe2,0x20ac,0x201d)+' Knowledge Quiz, Remember Card and Recommended Placement';return this._legacySessionQuiz.call(this,{...d,title:mojibakeTitle})}
+}
+ModuleEngine.prototype._legacySessionQuiz=ModuleEngine.prototype.sessionQuiz;
+ModuleEngine.prototype.sessionQuiz=ModuleEngine.prototype.sessionQuizFixed;
+new ModuleEngine();
