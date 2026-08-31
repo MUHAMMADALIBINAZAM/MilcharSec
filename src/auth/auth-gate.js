@@ -1,4 +1,4 @@
-import { supabase, isSupabaseConfigured } from './supabase-client.js';
+import { supabase } from './supabase-client.js';
 
 const authView = document.getElementById('auth-view');
 const appContent = document.getElementById('app-content');
@@ -67,11 +67,6 @@ function showApp(session) {
 }
 
 async function start() {
-  if (!isSupabaseConfigured) {
-    authView.classList.remove('hidden'); appContent.classList.add('hidden'); header.classList.add('hidden'); loader.classList.add('hidden');
-    renderAuth('Supabase is not configured yet. Add MILCHARSEC_SUPABASE_URL and MILCHARSEC_SUPABASE_ANON_KEY to the deployment configuration.');
-    return;
-  }
   authView.innerHTML = '<div class="auth-loading">Checking your session…</div>';
   const { data: { session } } = await supabase.auth.getSession();
   showApp(session);

@@ -95,11 +95,6 @@
     </div>
 
     <!-- Scripts -->
-    <!-- Set these before auth-gate.js in the deployment environment. -->
-    <script>
-        window.MILCHARSEC_SUPABASE_URL = window.MILCHARSEC_SUPABASE_URL || '';
-        window.MILCHARSEC_SUPABASE_ANON_KEY = window.MILCHARSEC_SUPABASE_ANON_KEY || '';
-    </script>
     <script type="module" src="src/auth/auth-gate.js"></script>
     <script>
         document.addEventListener('click', (event) => {
