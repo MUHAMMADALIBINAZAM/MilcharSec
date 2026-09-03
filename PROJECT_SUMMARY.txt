@@ -1,0 +1,23 @@
+MILCHARSEC - PROJECT SUMMARY
+
+1. WHAT THE PROJECT DOES
+MilcharSec is an interactive, browser-based cybersecurity learning and threat-simulation platform that replaces passive compliance training with active practice. It bridges the critical gap between theoretical knowledge and real-world vigilance by allowing users to explore cyber risks and safely experiment with core defensive utility tools. By exposing mistakes in a safe, interactive environment, it empowers users to recognize sophisticated attacks before they can compromise real-world organizations.
+
+2. WHO IT'S FOR
+MilcharSec is designed specifically for non-technical employees, students, and everyday digital users who need to build practical cybersecurity awareness for their work and personal lives. It translates complex security protocols and threat vectors into clear, relatable concepts that any user can confidently apply.
+
+3. WHAT WAS BUILT
+* 10 Learning Modules: Covering Fundamentals, Password/Account Security, Phishing, Safe Browsing/Device Hygiene, Workplace Data Privacy, Remote Work, Incident Reporting, Business Email Security, Women's Digital Safety, and Industrial/Workplace Cybersecurity.
+* 30 Interactive Scenarios: Decision-based simulations where user choices trigger immediate, visual, and realistic security consequences.
+* 79 Quiz Questions: Module-gated knowledge checks with clear explanations to reinforce key takeaways.
+* 8 Working Client-Side Tools:
+  - Password Strength Evaluator: Evaluates character complexity and estimates local time-to-crack using entropy calculations.
+  - Phishing Email Inspector: Analyzes text and links to flag urgent language, mismatched senders, and red flags.
+  - Safe URL & Link Validator: Dissects domain structures to detect subdomains, look-alikes, and typo-squatting.
+  - Cybersecurity Quick Check: Rates described incidents (Low to Critical) and generates a structured incident report.
+  - Incident Report Assistant: A guided 3-step reporting wizard with checklists aligned directly with Module 7 guidelines.
+  - QR Code Safety Checker: Decodes QR images or camera streams locally and runs URL safety analysis.
+  - Security Log Analyzer: Scans activity logs against 7 built-in rules (e.g., brute force, bulk exports) to find threats.
+  - Device Security Checklist: Self-assessment scoring system that returns a security rating and actionable tips.
+* Key Platform Features: Pre/post-course assessments with measured score improvements, a progress-tracking dashboard with a dynamic awareness score, an analytics risk profile highlighting strong and weak areas, an automated recommendation engine for remedial lessons, and backend-free login with local-session persistence.
+* Tech Stack: HTML5, CSS3, Vanilla ES Modules, Tailwind CSS, Lucide Icons, jsQR, and localStorage for client-only local storage.
