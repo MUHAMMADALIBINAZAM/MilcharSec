@@ -31,25 +31,24 @@
     },
     {
       "title": "Data Classification",
-      "content": "Organizations often use levels to determine how data should be handled.",
+      "content": "Data classification is the process of organizing information according to its sensitivity and the level of protection it requires.",
       "levels": [
+        "Public — Information that can generally be shared publicly. Examples: public website content, published announcements, and public job advertisements.",
+        "Internal — Information intended for use within the organization. Examples: internal procedures, routine internal communications, and internal schedules.",
+        "Confidential — Information that should only be accessible to authorized people. Examples: customer records, internal financial documents, business plans, and employee records.",
+        "Highly Confidential / Restricted — Information requiring strong access controls because unauthorized disclosure could cause significant harm. Examples: highly sensitive personal information, critical business secrets, security credentials, and sensitive investigation information."
+      ],
+      "subsections": [
         {
-          "label": "Public",
-          "description": "Safe for everyone to see (e.g., marketing brochures)."
+          "title": "Why classification matters",
+          "content": "Classification helps employees answer: How should I handle this information? A public announcement may be suitable for a public website, while a confidential customer document should not be uploaded to a public website. Classification helps determine who can access information, where it can be stored, how it can be shared, whether encryption is required, how it should be transmitted, how long it should be retained, and how it should eventually be disposed of."
         },
         {
-          "label": "Internal",
-          "description": "Intended for employees only (e.g., company policies)."
-        },
-        {
-          "label": "Confidential",
-          "description": "Sensitive data requiring limited access (e.g., department budgets)."
-        },
-        {
-          "label": "Restricted/Secret",
-          "description": "Highly sensitive data (e.g., customer passwords, medical data)."
+          "title": "Apply the organization’s rules",
+          "content": "Actual classification names and handling rules depend on the organization."
         }
-      ]
+      ],
+      "callout": "Not every piece of information has the same sensitivity. A public university website is usually low sensitivity; a private student academic record is much more sensitive."
     },
     {
       "title": "Safe Data Sharing",
